@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Examination Question Paper - Ashram School</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1e3a8a;
+            --border-color: #334155;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --bg-light: #f8fafc;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Mukta', 'Poppins', sans-serif;
+            background-color: #e2e8f0;
+            color: var(--text-main);
+            line-height: 1.5;
+            padding: 20px;
+        }
+
+        .no-print-toolbar {
+            max-width: 210mm;
+            margin: 0 auto 15px auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #ffffff;
+            padding: 12px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
+
+        .btn-print {
+            background-color: #2563eb;
+            color: white;
+            padding: 8px 18px;
+            border: none;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: background-color 0.2s;
+        }
+
+        .btn-print:hover {
+            background-color: #1d4ed8;
+        }
+
+        .page-container {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            background: white;
+            padding: 15mm 18mm;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        /* School Header */
+        .school-header {
+            text-align: center;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-bottom: 12px;
+        }
+
+        .school-name-mr {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--primary-color);
+            letter-spacing: 0.5px;
+        }
+
+        .school-name-en {
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            color: #334155;
+            text-transform: uppercase;
+        }
+
+        .exam-title-badge {
+            display: inline-block;
+            background: #f1f5f9;
+            border: 1px solid #cbd5e1;
+            padding: 3px 15px;
+            border-radius: 4px;
+            margin-top: 6px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        /* Student Metadata Table */
+        .meta-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 12px;
+            font-size: 13.5px;
+        }
+
+        .meta-table td {
+            border: 1px solid #94a3b8;
+            padding: 4px 8px;
+            vertical-align: middle;
+        }
+
+        .meta-label {
+            font-weight: 700;
+            color: #1e293b;
+            background-color: #f8fafc;
+            width: 15%;
+        }
+
+        .meta-val {
+            width: 35%;
+        }
+
+        /* General Instructions */
+        .instructions-box {
+            background-color: #f8fafc;
+            border: 1px dashed #64748b;
+            border-radius: 4px;
+            padding: 8px 12px;
+            margin-bottom: 14px;
+            font-size: 12.5px;
+        }
+
+        .instructions-title {
+            font-weight: 700;
+            margin-bottom: 4px;
+            color: #1e293b;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .instructions-list {
+            margin-left: 20px;
+        }
+
+        .instructions-list li {
+            margin-bottom: 2px;
+        }
+
+        /* Sections */
+        .section-header {
+            background-color: #f1f5f9;
+            border-left: 4px solid var(--primary-color);
+            padding: 5px 10px;
+            font-weight: 700;
+            font-size: 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 12px;
+            margin-bottom: 10px;
+            border-top: 1px solid #e2e8f0;
+            border-right: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .section-marks {
+            background: #e2e8f0;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 12.5px;
+            font-weight: 700;
+        }
+
+        .q-block {
+            margin-bottom: 10px;
+            page-break-inside: avoid;
+        }
+
+        .q-text {
+            font-size: 13.5px;
+            font-weight: 600;
+            color: #0f172a;
+            display: flex;
+            align-items: flex-start;
+            gap: 6px;
+        }
+
+        .q-num {
+            min-width: 32px;
+            font-weight: 700;
+        }
+
+        .q-text-en {
+            display: block;
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--text-muted);
+            margin-top: 1px;
+            font-style: italic;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px 16px;
+            margin-top: 5px;
+            margin-left: 36px;
+        }
+
+        .opt-item {
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 2px 0;
+        }
+
+        .opt-check {
+            width: 14px;
+            height: 14px;
+            border: 1.5px solid #475569;
+            border-radius: 3px;
+            display: inline-block;
+            flex-shrink: 0;
+        }
+
+        .blank-line {
+            display: inline-block;
+            min-width: 120px;
+            border-bottom: 1.5px solid #334155;
+            margin: 0 4px;
+        }
+
+        /* Match the following table */
+        .match-table {
+            width: 90%;
+            margin: 8px auto;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+
+        .match-table th, .match-table td {
+            border: 1px solid #cbd5e1;
+            padding: 5px 10px;
+        }
+
+        .match-table th {
+            background-color: #f8fafc;
+            font-weight: 700;
+            text-align: left;
+        }
+
+        .match-ans-box {
+            width: 90%;
+            margin: 6px auto;
+            display: flex;
+            justify-content: space-around;
+            background-color: #f8fafc;
+            padding: 6px;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* Writing lines */
+        .write-area {
+            margin-top: 6px;
+            margin-left: 36px;
+        }
+
+        .rule-line {
+            border-bottom: 1px dashed #94a3b8;
+            height: 22px;
+            width: 100%;
+        }
+
+        .page-break {
+            page-break-before: always;
+        }
+
+        .footer-eval {
+            margin-top: 15px;
+            border-top: 2px solid var(--border-color);
+            padding-top: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .marks-summary-table {
+            border-collapse: collapse;
+            font-size: 12px;
+        }
+
+        .marks-summary-table td, .marks-summary-table th {
+            border: 1px solid #64748b;
+            padding: 3px 6px;
+            text-align: center;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .no-print-toolbar {
+                display: none;
+            }
+            .page-container {
+                box-shadow: none;
+                padding: 10mm 14mm;
+                width: 100%;
+                min-height: auto;
+            }
+            .page-break {
+                page-break-before: always;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="no-print-toolbar">
+        <div>
+            <strong>शासकीय माध्यमिक व उच्च माध्यमिक आश्रमशाळा — AI परीक्षा प्रश्नपत्रिका</strong>
+            <div style="font-size: 12px; color: #64748b;">A4 Print-Ready Bilingual Exam Paper | Total Marks: 40</div>
+        </div>
+        <button class="btn-print" onclick="window.print()">
+            🖨️ प्रश्नपत्रिका प्रिंट करा (Print / Save as PDF)
+        </button>
+    </div>
+
+    <!-- ================= PAGE 1 ================= -->
+    <div class="page-container">
+        
+        <!-- School Header -->
+        <div class="school-header">
+            <div class="school-name-mr">शासकीय माध्यमिक व उच्च माध्यमिक आश्रमशाळा</div>
+            <div class="school-name-en">Government Secondary & Higher Secondary Ashram School</div>
+            <div class="exam-title-badge">
+                सत्र / वार्षिक परीक्षा प्रश्नपत्रिका : २०२६–२७ | Examination Question Paper : 2026–27
+            </div>
+        </div>
+
+        <!-- Metadata Table -->
+        <table class="meta-table">
+            <tr>
+                <td class="meta-label">विषय / Subject :</td>
+                <td class="meta-val"><strong>संगणक व कृत्रिम बुद्धिमत्ता (Computer & AI)</strong></td>
+                <td class="meta-label">इयत्ता / Class :</td>
+                <td class="meta-val"><strong>१० वी / 9th–10th (Secondary)</strong></td>
+            </tr>
+            <tr>
+                <td class="meta-label">दिनांक / Date :</td>
+                <td class="meta-val">_____ / _____ / 2026</td>
+                <td class="meta-label">वेळ / Time :</td>
+                <td class="meta-val">१ तास ३० मिनिटे (1 hr 30 mins)</td>
+            </tr>
+            <tr>
+                <td class="meta-label">विद्यार्थ्याचे नाव :</td>
+                <td class="meta-val" colspan="3">__________________________________________________________________________</td>
+            </tr>
+            <tr>
+                <td class="meta-label">हजेरी क्र. / Roll No. :</td>
+                <td class="meta-val">____________________</td>
+                <td class="meta-label">एकूण गुण / Max Marks:</td>
+                <td class="meta-val"><strong>४० (40 Marks)</strong></td>
+            </tr>
+        </table>
+
+        <!-- General Instructions -->
+        <div class="instructions-box">
+            <div class="instructions-title">
+                <span>📌 सामान्य सूचना / General Instructions :</span>
+                <span>सर्व प्रश्न अनिवार्य आहेत / All questions are compulsory</span>
+            </div>
+            <ol class="instructions-list">
+                <li>सर्व प्रश्नांची उत्तरे काळजीपूर्वक व स्वच्छ हस्ताक्षरात लिहा. (Answer all questions neatly.)</li>
+                <li>बहुपर्यायी प्रश्नांसाठी दिलेल्या चौकोनात ✅ अशी खूण करा. (Tick ✅ the most appropriate option.)</li>
+                <li>उजव्या बाजूचे अंक पूर्ण गुण दर्शवितात. (Figures to the right indicate full marks.)</li>
+            </ol>
+        </div>
+
+        <!-- Section A: Multiple Choice Questions -->
+        <div class="section-header">
+            <span>विभाग A — बहुपर्यायी प्रश्न (Section A — Multiple Choice Questions)</span>
+            <span class="section-marks">१० गुण [10 Marks]</span>
+        </div>
+        <p style="font-size: 12px; margin-bottom: 8px; color: #475569; font-style: italic;">
+            * टीप: योग्य उत्तराच्या पर्यायासमोरील चौकोनात ✅ अशी खूण करा. (Mark ✅ for the correct option.)
+        </p>
+
+        <!-- Q.1 -->
+        <div class="q-block">
+            <div class="q-text">
+                <span class="q-num">Q.1</span>
+                <div>
+                    खालीलपैकी कोणते विधान कृत्रिम बुद्धिमत्तेचे (AI) योग्य वर्णन करते?
+                    <span class="q-text-en">Which of the following statements best describes Artificial Intelligence (AI)?</span>
+                </div>
+            </div>
+            <div class="options-grid">
+                <div class="opt-item"><span class="opt-check"></span> A) मानवाच्या बुद्धिमत्तेची आवश्यकता असलेली कार्ये मशीनद्वारे करण्यास सक्षम करणारे तंत्रज्ञान</div>
+                <div class="opt-item"><span class="opt-check"></span> B) फक्त फाइल साठवण्यासाठी वापरले जाणारे उपकरण</div>
+                <div class="opt-item"><span class="opt-check"></span> C) संगणकाला विजेशी जोडण्याची पद्धत</div>
+                <div class="opt-item"><span class="opt-check"></span> D) संगणकाच्या कीबोर्डचा एक प्रकार</div>
+            </div>
+        </div>
+
+        <!-- Q.2 -->
+        <div class="q-block">
+            <div class="q-text">
+                <span class="q-num">Q.2</span>
+                <div>
+                    “AI” या संक्षिप्त रूपाचा पूर्ण अर्थ काय आहे?
+                    <span class="q-text-en">What is the full form of the abbreviation "AI"?</span>
+                </div>
+            </div>
+            <div class="options-grid">
+                <div class="opt-item"><span class="opt-check"></span> A) Automated Internet (स्वयंचलित इंटरनेट)</div>
+                <div class="opt-item"><span class="opt-check"></span> B) Artificial Intelligence (कृत्रिम बुद्धिमत्ता)</div>
+                <div class="opt-item"><span class="opt-check"></span> C) Advanced Information (प्रगत माहिती)</div>
+                <div class="opt-item"><span class="opt-check"></span> D) Automatic Input (स्वयंचलित इनपुट)</div>
+            </div>
+        </div>
+
+        <!-- Q.3 -->
+        <div class="q-block">
+            <div class="q-text">
+                <span class="q-num">Q.3</span>
+                <div>
+                    आधुनिक प्रणालींमध्ये कृत्रिम बुद्धिमत्तेचा वापर का केला जातो?
+                    <span class="q-text-en">Why is Artificial Intelligence used in modern systems?</span>
+                </div>
+            </div>
+            <div class="options-grid">
+                <div class="opt-item"><span class="opt-check"></span> A) समस्या सोडवण्यास आणि कार्ये जलद करण्यास मदत करण्यासाठी</div>
+                <div class="opt-item"><span class="opt-check"></span> B) संगणकाचा भौतिक आकार वाढवण्यासाठी</div>
+                <div class="opt-item"><span class="opt-check"></span> C) सर्व संगणक हार्डवेअर बदलण्यासाठी</div>
+                <div class="opt-item"><span class="opt-check"></span> D) संगणकाला माहितीवर प्रक्रिया करण्यापासून थांबवण्यासाठी</div>
+            </div>
+        </div>
+
+        <!-- Q.4 -->
+        <div class="q-block">
+            <div class="q-text">
+                <span class="q-num">Q.4</span>
+                <div>
+                    दैनंदिन जीवनातील AI चे सामान्य उदाहरण कोणते आहे?
+                    <span class="q-text-en">Which of the following is a common daily life example of AI?</span>
+                </div>
+            </div>
+            <div class="options-grid">
+                <div class="opt-item"><span class="opt-check"></span> A) डिजिटल असिस्टंटमधील आवाज ओळखण्याची सुविधा (उदा. Google Voice)</div>
+                <div class="opt-item"><span class="opt-check"></span> B) लाकडी टेबल (Wooden table)</div>
+                <div class="opt-item"><span class="opt-check"></span> C) साधा विद्युत दिवा (Simple bulb)</div>
+                <div class="opt-item"><span class="opt-check"></span> D) छापील वही (Printed notebook)</div>
+            </div>
+        </div>
+
+        <!-- Q.5 -->
+        <div class="q-block">
+            <div class="q-text">
+                <span class="q-num">Q.5</span>
+                <div>
+                    नमुने ओळखण्यासाठी (Pattern Recognition) आणि अंदाज लावण्यासाठी AI प्रणालीला सामान्यतः कशाची आवश्यकता असते?
+                    <span class="q-text-en">What does an AI system primarily require to recognize patterns and make predictions?</span>
+                </div>
+            </div>
+            <div class="options-grid">
+                <div class="opt-item"><span class="opt-check"></span> A) Data — डेटा / माहिती</div>
+                <div class="opt-item"><span class="opt-check"></span> B) Furniture — फर्निचर</div>
+                <div class="opt-item"><span class="opt-check"></span> C) Paper clips — कागदाच्या क्लिप</div>
+                <div class="opt-item"><span class="opt-check"></span> D) Water — पाणी</div>
+            </div>
+        </div>
+
+        <!-- Q.6 -->
+        <div class="q-block">
+            <div class="q-text">
+                <span class="q-num">Q.6</span>
+                <div>
+                    मूलभूत AI प्रणालीमध्ये “Input” म्हणजे काय?
+                    <span class="q-text-en">What does “Input” mean in a basic AI system?</span>
+                </div>
+            </div>
+            <div class="options-grid">
+                <div class="opt-item"><span class="opt-check"></span> A) प्रणालीला अभ्यासासाठी दिलेली माहिती (Data given to system)</div>
+                <div class="opt-item"><span class="opt-check"></span> B) प्रणालीने तयार केलेला अंतिम निकाल</div>
+                <div class="opt-item"><span class="opt-check"></span> C) संगणकाचे बाह्य प्लास्टिक आवरण</div>
+                <div class="opt-item"><span class="opt-check"></span> D) इमारतीला दिलेला विद्युत पुरवठा</div>
+            </div>
+        </div>
+
+        <!-- Q.7 -->
+        <div class="q-block">
+            <div class="q-text">
+                <span class="q-num">Q.7</span>
+                <div>
+                    AI प्रणालीचा “Output” म्हणजे काय?
+                    <span class="q-text-en">What is meant by the “Output” of an AI system?</span>
+                </div>
+            </div>
+            <div class="options-grid">
+                <div class="opt-item"><span class="opt-check"></span> A) प्रणालीने प्रक्रियेनंतर तयार केलेली माहिती किंवा निकाल (Result)</div>
+                <div class="opt-item"><span class="opt-check"></span> B) वापरकर्त्याने दिलेला कच्चा डेटा</div>
+                <div class="opt-item"><span class="opt-check"></span> C) संगणकाचा विद्युत पुरवठा</div>
+                <div class="opt-item"><span class="opt-check"></span> D) वापरकर्त्याने वापरलेला कीबोर्ड</div>
+            </div>
+        </div>
+
+        <!-- Q.8 -->
+        <div class="q-block">
+            <div class="q-text">
+                <span class="q-num">Q.8</span>
+                <div>
+                    खालीलपैकी कोणत्या क्षेत्राला AI च्या वापराचा सर्वाधिक फायदा होऊ शकतो?
+                    <span class="q-text-en">Which of the following sectors can benefit from the use of AI?</span>
+                </div>
+            </div>
+            <div class="options-grid">
+                <div class="opt-item"><span class="opt-check"></span> A) Healthcare (आरोग्यसेवा व वैद्यकीय)</div>
+                <div class="opt-item"><span class="opt-check"></span> B) Education (शिक्षण क्षेत्र)</div>
+                <div class="opt-item"><span class="opt-check"></span> C) Agriculture (शेती व हवामान अंदाज)</div>
+                <div class="opt-item"><span class="opt-check"></span> D) All of the above (वरील सर्व क्षेत्रे)</div>
+            </div>
+        </div>
+
+        <!-- Q.9 -->
+        <div class="q-block">
+            <div class="q-text">
+                <span class="q-num">Q.9</span>
+                <div>
+                    AI द्वारे तयार केलेल्या माहितीबाबत खालीलपैकी कोणते विधान योग्य आहे?
+                    <span class="q-text-en">Which statement is correct regarding AI-generated information?</span>
+                </div>
+            </div>
+            <div class="options-grid">
+                <div class="opt-item"><span class="opt-check"></span> A) ती नेहमी कोणतीही तपासणी न करता स्वीकारावी</div>
+                <div class="opt-item"><span class="opt-check"></span> B) तिची मानवाकडून प्रत्यक्ष पडताळणी (Verification) करणे आवश्यक असू शकते</div>
+                <div class="opt-item"><span class="opt-check"></span> C) ती नेहमी १००% पूर्णपणे अचूकच असते</div>
+                <div class="opt-item"><span class="opt-check"></span> D) त्या माहितीमध्ये कधीही चुका असू शकत नाहीत</div>
+            </div>
+        </div>
+
+        <!-- Q.10 -->
+        <div class="q-block">
+            <div class="q-text">
+                <span class="q-num">Q.10</span>
+                <div>
+                    डेटामधून नमुने शिकण्याशी (Learning patterns from data) खालीलपैकी कोणती संकल्पना थेट संबंधित आहे?
+                    <span class="q-text-en">Which concept is directly related to learning patterns from data?</span>
+                </div>
+            </div>
+            <div class="options-grid">
+                <div class="opt-item"><span class="opt-check"></span> A) Machine Learning (मशीन लर्निंग)</div>
+                <div class="opt-item"><span class="opt-check"></span> B) File Printing (फाइल प्रिंटिंग)</div>
+                <div class="opt-item"><span class="opt-check"></span> C) Screen Brightness (स्क्रीन ब्राईटनेस)</div>
+                <div class="opt-item"><span class="opt-check"></span> D) Computer Assembly (संगणक जोडणी)</div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ================= PAGE 2 ================= -->
+    <div class="page-container page-break">
+        
+        <!-- Section B -->
+        <div class="section-header">
+            <span>विभाग B — रिकाम्या जागा भरा (Section B — Fill in the Blanks)</span>
+            <span class="section-marks">५ गुण [5 Marks]</span>
+        </div>
+
+        <!-- Q.11 -->
+        <div class="q-block">
+            <div class="q-text">
+                <span class="q-num">Q.11</span>
+                <div>
+                    कृत्रिम बुद्धिमत्तेला संक्षिप्त इंग्रजी स्वरूपात <span class="blank-line"></span> असे म्हणतात.
+                    <span class="q-text-en">Artificial Intelligence is abbreviated in short form as ________.</span>
+                </div>
+            </div>
+            <div class="options-grid">
+                <div class="opt-item">[A] AI — एआय</div>
+                <div class="opt-item">[B] CPU — सीपीयू</div>
+                <div class="opt-item">[C] RAM — रॅम</div>
+                <div class="opt-item">[D] USB — यूएसबी</div>
+            </div>
+        </div>
+
+        <!-- Q.12 -->
+        <div class="q-block">
+            <div class="q-text">
+                <span class="q-num">Q.12</span>
+                <div>
+                    AI प्रणालीला अभ्यासासाठी दिलेल्या प्राथमिक माहितीला <span class="blank-line"></span> म्हणतात.
+                    <span class="q-text-en">The information or data given to an AI system is called ________.</span>
+                </div>
+            </div>
+            <div class="options-grid">
+                <div class="opt-item">[A] Input — इनपुट</div>
+                <div class="opt-item">[B] Output — आउटपुट</div>
+                <div class="opt-item">[C] Result — निकाल</div>
+                <div class="opt-item">[D] Display — डिस्प्ले</div>
+            </div>
+        </div>
+
+        <!-- Q.13 -->
+        <div class="q-block">
+            <div class="q-text">
+                <span class="q-num">Q.13</span>
+                <div>
+                    माहितीवर प्रक्रिया केल्यानंतर संगणक प्रणालीने तयार केलेल्या निष्कर्षाला <span class="blank-line"></span> म्हणतात.
+                    <span class="q-text-en">The result produced by the system after processing information is called ________.</span>
+                </div>
+            </div>
+            <div class="options-grid">
+                <div class="opt-item">[A] Input — इनपुट</div>
+                <div class="opt-item">[B] Output — आउटपुट</div>
+                <div class="opt-item">[C] Data Entry — डेटा एंट्री</div>
+                <div class="opt-item">[D] Storage — संचयन</div>
+            </div>
+        </div>
+
+        <!-- Q.14 -->
+        <div class="q-block">
+            <div class="q-text">
+                <span class="q-num">Q.14</span>
+                <div>
+                    AI प्रणालीच्या विश्लेषणासाठी व प्रशिक्षणासाठी वापरल्या जाणाऱ्या मोठ्या माहितीच्या संग्रहाला <span class="blank-line"></span> म्हणतात.
+                    <span class="q-text-en">A large collection of organized data used for training and analyzing AI is called a ________.</span>
+                </div>
+            </div>
+            <div class="options-grid">
+                <div class="opt-item">[A] Dataset — डेटासेट</div>
+                <div class="opt-item">[B] Keyboard — कीबोर्ड</div>
+                <div class="opt-item">[C] Monitor — मॉनिटर</div>
+                <div class="opt-item">[D] Printer — प्रिंटर</div>
+            </div>
+        </div>
+
+        <!-- Q.15 -->
+        <div class="q-block">
+            <div class="q-text">
+                <span class="q-num">Q.15</span>
+                <div>
+                    AI प्रणाली डेटामधील लपलेले <span class="blank-line"></span> ओळखून उपयुक्त परिणाम तयार करू शकतात.
+                    <span class="q-text-en">AI systems identify ________ in data to generate useful predictions and results.</span>
+                </div>
+            </div>
+            <div class="options-grid">
+                <div class="opt-item">[A] Patterns — नमुने</div>
+                <div class="opt-item">[B] Wires — तारा</div>
+                <div class="opt-item">[C] Buttons — बटणे</div>
+                <div class="opt-item">[D] Cables — केबल्स</div>
+            </div>
+        </div>
+
+        <!-- Section C -->
+        <div class="section-header">
+            <span>विभाग C — चूक की बरोबर ते लिहा (Section C — State True or False)</span>
+            <span class="section-marks">५ गुण [5 Marks]</span>
+        </div>
+
+        <div class="q-block">
+            <div class="q-text">
+                <span class="q-num">Q.16</span>
+                <div style="width: 100%; display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        AI चा वापर मानवाला विविध कठीण कार्ये सुलभतेने करण्यास मदत करण्यासाठी केला जाऊ शकतो.
+                        <span class="q-text-en">AI can be used to assist humans in performing various complex tasks.</span>
+                    </div>
+                    <div style="font-weight: 700;">उत्तर: [ _________ ]</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="q-block">
+            <div class="q-text">
+                <span class="q-num">Q.17</span>
+                <div style="width: 100%; display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        AI चा उपयोग फक्त आणि फक्त संगणक प्रोग्रामिंगच्या क्षेत्रातच मर्यादित आहे.
+                        <span class="q-text-en">The use of AI is strictly limited only to the field of computer programming.</span>
+                    </div>
+                    <div style="font-weight: 700;">उत्तर: [ _________ ]</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="q-block">
+            <div class="q-text">
+                <span class="q-num">Q.18</span>
+                <div style="width: 100%; display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        मशीन लर्निंग (Machine Learning) ही AI या व्यापक तंत्रज्ञान क्षेत्रातील एक महत्त्वाची शाखा आहे.
+                        <span class="q-text-en">Machine Learning is a key branch within the broad domain of AI.</span>
+                    </div>
+                    <div style="font-weight: 700;">उत्तर: [ _________ ]</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="q-block">
+            <div class="q-text">
+                <span class="q-num">Q.19</span>
+                <div style="width: 100%; display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        AI प्रणालीने तयार केलेले प्रत्येक उत्तर १००% अचूक आणि परिपूर्ण असतेच.
+                        <span class="q-text-en">Every single response produced by an AI system is guaranteed to be 100% accurate.</span>
+                    </div>
+                    <div style="font-weight: 700;">उत्तर: [ _________ ]</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="q-block">
+            <div class="q-text">
+                <span class="q-num">Q.20</span>
+                <div style="width: 100%; display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        AI चा वापर शिक्षण, आरोग्यसेवा आणि शेती यांसारख्या सामाजिक व आर्थिक क्षेत्रांमध्ये केला जाऊ शकतो.
+                        <span class="q-text-en">AI can be effectively used in sectors like education, healthcare, and agriculture.</span>
+                    </div>
+                    <div style="font-weight: 700;">उत्तर: [ _________ ]</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section D -->
+        <div class="section-header">
+            <span>विभाग D — योग्य जोड्या जुळवा (Section D — Match the Following)</span>
+            <span class="section-marks">४ गुण [4 Marks]</span>
+        </div>
+
+        <table class="match-table">
+            <thead>
+                <tr>
+                    <th style="width: 48%;">स्तंभ 'अ' (Column A)</th>
+                    <th style="width: 52%;">स्तंभ 'ब' (Column B)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>१. कृत्रिम बुद्धिमत्ता (Artificial Intelligence)</strong></td>
+                    <td>A. प्रणालीला अभ्यासासाठी दिलेली माहिती (Input Data)</td>
+                </tr>
+                <tr>
+                    <td><strong>२. इनपुट (Input)</strong></td>
+                    <td>B. डेटामधून नमुने शिकणे (Learning patterns from data)</td>
+                </tr>
+                <tr>
+                    <td><strong>३. मशीन लर्निंग (Machine Learning)</strong></td>
+                    <td>C. बुद्धिमान मशीनच्या कार्याशी संबंधित प्रगत तंत्रज्ञान</td>
+                </tr>
+                <tr>
+                    <td><strong>४. आउटपुट (Output)</strong></td>
+                    <td>D. प्रक्रियेनंतर प्रणालीने तयार केलेला परिणाम (Final Result)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="match-ans-box">
+            <span>उत्तर / Answers :</span>
+            <span>१ — [ &nbsp;&nbsp;&nbsp;&nbsp; ]</span>
+            <span>२ — [ &nbsp;&nbsp;&nbsp;&nbsp; ]</span>
+            <span>३ — [ &nbsp;&nbsp;&nbsp;&nbsp; ]</span>
+            <span>४ — [ &nbsp;&nbsp;&nbsp;&nbsp; ]</span>
+        </div>
+
+        <!-- Section E -->
+        <div class="section-header">
+            <span>विभाग E — २ ते ३ वाक्यांत उत्तरे द्या (Section E — Short Answers : 2–3 Sentences)</span>
+            <span class="section-marks">६ गुण [3 × 2 = 6 Marks]</span>
+        </div>
+
+        <!-- Q.25 -->
+        <div class="q-block">
+            <div class="q-text">
+                <span class="q-num">Q.25</span>
+                <div>
+                    कृत्रिम बुद्धिमत्ता (Artificial Intelligence) म्हणजे काय? आपल्या सोप्या शब्दांत स्पष्ट करा.
+                    <span class="q-text-en">What is Artificial Intelligence? Explain in your own simple words.</span>
+                </div>
+            </div>
+            <div class="write-area">
+                <div class="rule-line"></div>
+                <div class="rule-line"></div>
+            </div>
+        </div>
+
+        <!-- Q.26 -->
+        <div class="q-block">
+            <div class="q-text">
+                <span class="q-num">Q.26</span>
+                <div>
+                    आपल्या दैनंदिन जीवनात AI तंत्रज्ञान का उपयुक्त ठरते? कोणतीही दोन वास्तविक उदाहरणे द्या.
+                    <span class="q-text-en">Why is AI useful in our daily lives? Provide any two real-world examples.</span>
+                </div>
+            </div>
+            <div class="write-area">
+                <div class="rule-line"></div>
+                <div class="rule-line"></div>
+            </div>
+        </div>
+
+        <!-- Q.27 -->
+        <div class="q-block">
+            <div class="q-text">
+                <span class="q-num">Q.27</span>
+                <div>
+                    Input, Processing आणि Output यांच्या साहाय्याने AI प्रणालीची मूलभूत कार्यप्रक्रिया थोडक्यात स्पष्ट करा.
+                    <span class="q-text-en">Explain the fundamental working process of AI using Input, Processing, and Output.</span>
+                </div>
+            </div>
+            <div class="write-area">
+                <div class="rule-line"></div>
+                <div class="rule-line"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ================= PAGE 3 ================= -->
+    <div class="page-container page-break">
+        
+        <!-- Section F -->
+        <div class="section-header">
+            <span>विभाग F — उपयोगावर आधारित व परिस्थितीजन्य प्रश्न (Section F — Application & Case-Based Questions)</span>
+            <span class="section-marks">१० गुण [10 Marks]</span>
+        </div>
+
+        <!-- Q.28 -->
+        <div class="q-block">
+            <div class="q-text">
+                <span class="q-num">Q.28</span>
+                <div>
+                    <strong>परिस्थिती १ (Situation 1):</strong> एका विद्यार्थ्याने विज्ञानातील एका कठीण विषयाचे स्पष्टीकरण मिळवण्यासाठी AI टूलचा वापर केला. AI ने लगेच उत्तर दिले; परंतु त्या उत्तरातील सर्व माहिती १००% अचूक आहे की नाही याबद्दल विद्यार्थ्याला शंका आहे. आपल्या शालेय असाइनमेंटमध्ये (Assignment) ही माहिती प्रत्यक्ष लिहिण्यापूर्वी त्या विद्यार्थ्याने कोणती खबरदारी घेतली पाहिजे? आपल्या शब्दांत स्पष्ट करा.
+                    <span class="q-text-en">[3 Marks] A student used an AI tool to explain a science topic. The AI gave an answer, but the student is unsure if all information is accurate. What steps should the student take before using it in their school assignment?</span>
+                </div>
+            </div>
+            <div class="write-area">
+                <div class="rule-line"></div>
+                <div class="rule-line"></div>
+                <div class="rule-line"></div>
+                <div class="rule-line"></div>
+            </div>
+        </div>
+
+        <!-- Q.29 -->
+        <div class="q-block">
+            <div class="q-text">
+                <span class="q-num">Q.29</span>
+                <div>
+                    <strong>परिस्थिती २ (Situation 2):</strong> एका शेतकऱ्याला हवामानातील अचानक बदल आणि पिकांवर पडणाऱ्या किडीसंबंधी मार्गदर्शन हवे आहे. अशा परिस्थितीत कृत्रिम बुद्धिमत्ता (AI) तंत्रज्ञान त्या शेतकऱ्याला कशा प्रकारे उपयुक्त ठरू शकते? कोणतेही दोन ते तीन उपयोग लिहा.
+                    <span class="q-text-en">[3 Marks] A farmer needs guidance regarding sudden weather changes and crop disease/pest management. How can AI technology assist the farmer? Mention 2-3 benefits.</span>
+                </div>
+            </div>
+            <div class="write-area">
+                <div class="rule-line"></div>
+                <div class="rule-line"></div>
+                <div class="rule-line"></div>
+                <div class="rule-line"></div>
+            </div>
+        </div>
+
+        <!-- Q.30 -->
+        <div class="q-block">
+            <div class="q-text">
+                <span class="q-num">Q.30</span>
+                <div>
+                    <strong>परिस्थिती ३ (Situation 3):</strong> एका आश्रमशाळेला विद्यार्थ्यांच्या वैयक्तिक क्षमतेनुसार त्यांच्या शिक्षणात मदत करण्यासाठी AI चा योग्य वापर करायचा आहे.
+                    <br>
+                    <strong>(i) खालीलपैकी कोणता पर्याय सर्वात योग्य ठरेल? योग्य पर्यायासमोरील चौकोनात ✅ करा:</strong>
+                    <span class="q-text-en">[4 Marks] A school wants to use AI to support student learning according to individual needs. Which option is most appropriate?</span>
+                </div>
+            </div>
+
+            <div style="margin-left: 36px; margin-top: 6px;">
+                <div class="opt-item"><span class="opt-check"></span> A) विद्यार्थ्यांच्या गरजेनुसार व गतीनुसार वैयक्तिकृत शिक्षण सहाय्य (Personalized learning support) देणे.</div>
+                <div class="opt-item"><span class="opt-check"></span> B) शाळेतील सर्व शिक्षकांना काढून टाकणे आणि फक्त संगणक चालवणे.</div>
+                <div class="opt-item"><span class="opt-check"></span> C) विद्यार्थ्यांना वर्गात प्रश्न विचारण्यापासून रोखणे.</div>
+                <div class="opt-item"><span class="opt-check"></span> D) बाजारातील सर्व मूळ पाठ्यपुस्तके नष्ट करून टाकणे.</div>
+            </div>
+
+            <div class="q-text" style="margin-top: 10px;">
+                <span class="q-num"></span>
+                <div>
+                    <strong>(ii) तुम्ही निवडलेला पर्याय तुम्हाला योग्य का वाटला? त्याचे कारण स्पष्ट करा:</strong>
+                    <span class="q-text-en">Explain why you found this option appropriate:</span>
+                </div>
+            </div>
+            <div class="write-area">
+                <div class="rule-line"></div>
+                <div class="rule-line"></div>
+                <div class="rule-line"></div>
+            </div>
+        </div>
+
+        <!-- Footer / Teacher Sign & Evaluation -->
+        <div class="footer-eval" style="margin-top: 30px;">
+            <div>
+                <table class="marks-summary-table">
+                    <tr>
+                        <th>विभाग (Section)</th>
+                        <th>A (10)</th>
+                        <th>B (5)</th>
+                        <th>C (5)</th>
+                        <th>D (4)</th>
+                        <th>E (6)</th>
+                        <th>F (10)</th>
+                        <th>एकूण (40)</th>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: bold;">प्राप्त गुण (Marks)</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                </table>
+            </div>
+            <div style="text-align: right;">
+                <div style="margin-bottom: 25px;">तपासणाऱ्या शिक्षकाची स्वाक्षरी : ______________________</div>
+                <div>दिनांक : _____ / _____ / 2026</div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

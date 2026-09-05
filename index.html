@@ -1,0 +1,1741 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>शासकीय आश्रमशाळा - संगणक व AI परीक्षा प्रश्नपत्रिका (इयत्ता १ ली ते १० वी)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-dark: #0f172a;
+            --accent: #2563eb;
+            --border-color: #334155;
+            --text-dark: #0f172a;
+            --text-muted: #475569;
+            --bg-page: #f1f5f9;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Mukta', 'Poppins', sans-serif;
+            background-color: var(--bg-page);
+            color: var(--text-dark);
+            line-height: 1.5;
+            padding-bottom: 40px;
+        }
+
+        /* Top Bar - No login required */
+        .top-navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #ffffff;
+            border-bottom: 2px solid #cbd5e1;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            padding: 10px 20px;
+        }
+
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .school-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .school-badge .icon {
+            font-size: 28px;
+        }
+
+        .school-badge h1 {
+            font-size: 17px;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1.2;
+        }
+
+        .school-badge p {
+            font-size: 12px;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1d4ed8;
+        }
+
+        .btn-outline {
+            background-color: #f8fafc;
+            border: 1.5px solid #cbd5e1;
+            color: #334155;
+        }
+
+        .btn-outline:hover {
+            background-color: #e2e8f0;
+        }
+
+        /* Class Selector Tabs */
+        .class-tabs-container {
+            max-width: 1200px;
+            margin: 15px auto 5px auto;
+            padding: 0 15px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .tab-btn {
+            padding: 8px 14px;
+            font-family: 'Mukta', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            border-radius: 6px;
+            border: 1.5px solid #cbd5e1;
+            background: white;
+            color: #1e293b;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            line-height: 1.2;
+            min-width: 95px;
+        }
+
+        .tab-btn:hover {
+            border-color: var(--accent);
+            background-color: #eff6ff;
+        }
+
+        .tab-btn.active {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            box-shadow: 0 4px 6px -1px rgba(30, 58, 138, 0.3);
+        }
+
+        .tab-subtext {
+            font-size: 11px;
+            font-weight: 500;
+            opacity: 0.85;
+        }
+
+        /* Paper Sheet Layout */
+        .paper-viewport {
+            max-width: 210mm;
+            margin: 20px auto;
+            padding: 0 10px;
+        }
+
+        .paper-sheet {
+            background: white;
+            min-height: 297mm;
+            padding: 14mm 16mm;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-radius: 4px;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        /* School Paper Header */
+        .paper-header {
+            text-align: center;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+            margin-bottom: 12px;
+        }
+
+        .school-title-mr {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: 0.5px;
+        }
+
+        .school-title-en {
+            font-size: 13.5px;
+            font-weight: 700;
+            color: #334155;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        .exam-badge {
+            display: inline-block;
+            background: #f1f5f9;
+            border: 1px solid #cbd5e1;
+            padding: 2px 14px;
+            border-radius: 4px;
+            margin-top: 5px;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        /* Student Metadata Header - Only Name, Roll No, Std */
+        .student-info-box {
+            border: 1.5px solid var(--border-color);
+            border-radius: 4px;
+            padding: 8px 12px;
+            margin-bottom: 12px;
+            background-color: #f8fafc;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 10px 15px;
+            font-size: 13.5px;
+        }
+
+        .info-row {
+            display: flex;
+            align-items: baseline;
+            gap: 6px;
+        }
+
+        .info-label {
+            font-weight: 700;
+            color: #1e293b;
+            white-space: nowrap;
+        }
+
+        .info-line {
+            flex-grow: 1;
+            border-bottom: 1px dashed #475569;
+            min-height: 18px;
+        }
+
+        .meta-chips {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12.5px;
+            font-weight: 700;
+            background: #e2e8f0;
+            padding: 4px 10px;
+            border-radius: 3px;
+            margin-bottom: 12px;
+        }
+
+        /* Instructions */
+        .general-instructions {
+            background-color: #ffffff;
+            border: 1px dashed #64748b;
+            border-radius: 4px;
+            padding: 6px 12px;
+            margin-bottom: 12px;
+            font-size: 12px;
+        }
+
+        .general-instructions ol {
+            margin-left: 18px;
+        }
+
+        /* Sections */
+        .section-bar {
+            background-color: #f1f5f9;
+            border-left: 4px solid var(--primary);
+            padding: 4px 10px;
+            font-weight: 700;
+            font-size: 13.5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+            margin-bottom: 8px;
+            border-top: 1px solid #e2e8f0;
+            border-right: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .sec-marks {
+            background: #e2e8f0;
+            padding: 1px 7px;
+            border-radius: 3px;
+            font-size: 12px;
+        }
+
+        /* Questions */
+        .q-item {
+            margin-bottom: 8px;
+            page-break-inside: avoid;
+        }
+
+        .q-title {
+            font-size: 13.5px;
+            font-weight: 600;
+            display: flex;
+            gap: 6px;
+        }
+
+        .q-no {
+            font-weight: 700;
+            min-width: 32px;
+        }
+
+        .q-en {
+            display: block;
+            font-size: 11.5px;
+            font-weight: 500;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        .options-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4px 12px;
+            margin: 4px 0 4px 34px;
+            font-size: 13px;
+        }
+
+        .option-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .checkbox-box {
+            width: 14px;
+            height: 14px;
+            border: 1.5px solid #475569;
+            border-radius: 3px;
+            display: inline-block;
+            flex-shrink: 0;
+        }
+
+        .fill-blank-line {
+            display: inline-block;
+            width: 110px;
+            border-bottom: 1.5px solid #1e293b;
+            margin: 0 4px;
+        }
+
+        /* Match Table */
+        .match-grid {
+            width: 92%;
+            margin: 6px auto;
+            border-collapse: collapse;
+            font-size: 12.5px;
+        }
+
+        .match-grid td, .match-grid th {
+            border: 1px solid #cbd5e1;
+            padding: 4px 8px;
+        }
+
+        .match-grid th {
+            background-color: #f8fafc;
+            font-weight: 700;
+        }
+
+        .ans-inputs {
+            width: 92%;
+            margin: 5px auto;
+            display: flex;
+            justify-content: space-around;
+            background: #f8fafc;
+            padding: 5px;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+            font-size: 12.5px;
+            font-weight: 600;
+        }
+
+        /* Ruled lines for writing */
+        .write-line {
+            border-bottom: 1px dashed #94a3b8;
+            height: 20px;
+            margin-left: 34px;
+            margin-top: 4px;
+        }
+
+        .page-break {
+            page-break-before: always;
+        }
+
+        /* Print formatting */
+        @media print {
+            body {
+                background: white !important;
+                padding: 0 !important;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .paper-viewport {
+                max-width: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            .paper-sheet {
+                box-shadow: none !important;
+                padding: 8mm 12mm !important;
+                min-height: auto !important;
+                margin-bottom: 0 !important;
+                page-break-after: always;
+            }
+            .hidden-for-print {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation Bar (No login required) -->
+    <header class="top-navbar no-print">
+        <div class="nav-inner">
+            <div class="school-badge">
+                <span class="icon">🏫</span>
+                <div>
+                    <h1>शासकीय माध्यमिक व उच्च माध्यमिक आश्रमशाळा</h1>
+                    <p>संगणक व कृत्रिम बुद्धिमत्ता (AI) परीक्षा प्रश्नपत्रिका संच • इयत्ता १ ली ते १० वी (२०२६–२७)</p>
+                </div>
+            </div>
+            <div class="nav-actions">
+                <button class="btn btn-outline" onclick="toggleAllView()">
+                    👁️ सर्व १० प्रश्नपत्रिका पहा (View All 10)
+                </button>
+                <button class="btn btn-primary" onclick="window.print()">
+                    🖨️ वर्तमान प्रश्नपत्रिका प्रिंट करा (Print A4)
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Class Selector Tabs (Std 1 to Std 10) -->
+    <nav class="class-tabs-container no-print" id="tabsBar">
+        <button class="tab-btn active" onclick="showClass(1, this)">
+            <span>इयत्ता १ ली</span>
+            <span class="tab-subtext">Std. 1 (20 Marks)</span>
+        </button>
+        <button class="tab-btn" onclick="showClass(2, this)">
+            <span>इयत्ता २ री</span>
+            <span class="tab-subtext">Std. 2 (20 Marks)</span>
+        </button>
+        <button class="tab-btn" onclick="showClass(3, this)">
+            <span>इयत्ता ३ री</span>
+            <span class="tab-subtext">Std. 3 (20 Marks)</span>
+        </button>
+        <button class="tab-btn" onclick="showClass(4, this)">
+            <span>इयत्ता ४ थी</span>
+            <span class="tab-subtext">Std. 4 (20 Marks)</span>
+        </button>
+        <button class="tab-btn" onclick="showClass(5, this)">
+            <span>इयत्ता ५ वी</span>
+            <span class="tab-subtext">Std. 5 (30 Marks)</span>
+        </button>
+        <button class="tab-btn" onclick="showClass(6, this)">
+            <span>इयत्ता ६ वी</span>
+            <span class="tab-subtext">Std. 6 (30 Marks)</span>
+        </button>
+        <button class="tab-btn" onclick="showClass(7, this)">
+            <span>इयत्ता ७ वी</span>
+            <span class="tab-subtext">Std. 7 (30 Marks)</span>
+        </button>
+        <button class="tab-btn" onclick="showClass(8, this)">
+            <span>इयत्ता ८ वी</span>
+            <span class="tab-subtext">Std. 8 (30 Marks)</span>
+        </button>
+        <button class="tab-btn" onclick="showClass(9, this)">
+            <span>इयत्ता ९ वी</span>
+            <span class="tab-subtext">Std. 9 (40 Marks)</span>
+        </button>
+        <button class="tab-btn" onclick="showClass(10, this)">
+            <span>इयत्ता १० वी</span>
+            <span class="tab-subtext">Std. 10 (40 Marks)</span>
+        </button>
+    </nav>
+
+    <!-- Main Viewport for Papers -->
+    <main class="paper-viewport" id="papersContainer">
+
+        <!-- ======================================================= -->
+        <!-- STD. 1 QUESTION PAPER -->
+        <!-- ======================================================= -->
+        <article class="paper-sheet class-paper" id="paper-std-1">
+            <header class="paper-header">
+                <div class="school-title-mr">शासकीय माध्यमिक व उच्च माध्यमिक आश्रमशाळा</div>
+                <div class="school-title-en">Government Secondary & Higher Secondary Ashram School</div>
+                <div class="exam-badge">सत्र परीक्षा प्रश्नपत्रिका : २०२६–२७ | Examination Question Paper</div>
+            </header>
+
+            <!-- Student Metadata Box: ONLY Name, Roll No., Std -->
+            <div class="student-info-box">
+                <div class="info-row">
+                    <span class="info-label">विद्यार्थ्याचे नाव (Name):</span>
+                    <span class="info-line"></span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">हजेरी क्र. (Roll No.):</span>
+                    <span class="info-line"></span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">इयत्ता (Std):</span>
+                    <strong>१ ली (Std. 1)</strong>
+                </div>
+            </div>
+
+            <div class="meta-chips">
+                <span>विषय: संगणक ओळख (Computer Basics)</span>
+                <span>वेळ: ३० मिनिटे (30 Mins)</span>
+                <span>एकूण गुण: २० (Max Marks: 20)</span>
+            </div>
+
+            <div class="general-instructions">
+                <ol>
+                    <li>सर्व प्रश्नांची उत्तरे देणे आवश्यक आहे. (Answer all questions.)</li>
+                    <li>योग्य पर्यायासमोरील चौकोनात ✅ अशी खूण करा. (Tick ✅ the correct option.)</li>
+                </ol>
+            </div>
+
+            <div class="section-bar">
+                <span>विभाग A — योग्य पर्याय निवडा (Choose Correct Option)</span>
+                <span class="sec-marks">५ गुण [5 Marks]</span>
+            </div>
+
+            <div class="q-item">
+                <div class="q-title"><span class="q-no">Q.1</span> <div>संगणक पाहण्यासाठी आपण कोणते उपकरण वापरतो?<span class="q-en">Which device do we use to see the computer screen?</span></div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) मॉनिटर — Monitor</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) माउस — Mouse</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) कीबोर्ड — Keyboard</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) CPU — सीपीयू</div>
+                </div>
+            </div>
+
+            <div class="q-item">
+                <div class="q-title"><span class="q-no">Q.2</span> <div>टायपिंग करण्यासाठी कोणते उपकरण वापरतात?<span class="q-en">Which device is used for typing?</span></div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) मॉनिटर — Monitor</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) कीबोर्ड — Keyboard</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) माउस — Mouse</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) स्पीकर — Speaker</div>
+                </div>
+            </div>
+
+            <div class="q-item">
+                <div class="q-title"><span class="q-no">Q.3</span> <div>स्क्रीनवर वस्तू निवडण्यासाठी कोणते उपकरण वापरतात?<span class="q-en">Which device is used to select things on the screen?</span></div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) माउस — Mouse</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) कीबोर्ड — Keyboard</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) मॉनिटर — Monitor</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) CPU — सीपीयू</div>
+                </div>
+            </div>
+
+            <div class="q-item">
+                <div class="q-title"><span class="q-no">Q.4</span> <div>संगणकाचा मुख्य भाग कोणता आहे?<span class="q-en">Which is an important main part of a computer?</span></div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) CPU — सीपीयू</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) माउस — Mouse</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) कीबोर्ड — Keyboard</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) स्पीकर — Speaker</div>
+                </div>
+            </div>
+
+            <div class="q-item">
+                <div class="q-title"><span class="q-no">Q.5</span> <div>खालीलपैकी कोणते संगणकाचे उपकरण आहे?<span class="q-en">Which of the following is a computer device?</span></div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) कीबोर्ड — Keyboard</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) पुस्तक — Book</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) पेन — Pen</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) पाण्याची बाटली — Water bottle</div>
+                </div>
+            </div>
+
+            <div class="section-bar">
+                <span>विभाग B — रिकाम्या जागा भरा (Fill in the Blanks)</span>
+                <span class="sec-marks">३ गुण [3 Marks]</span>
+            </div>
+
+            <div class="q-item">
+                <div class="q-title"><span class="q-no">Q.6</span> <div>संगणकावर चित्र पाहण्यासाठी <span class="fill-blank-line"></span> वापरतात.<span class="q-en">We use a ________ to see pictures on a computer.</span></div></div>
+                <div class="options-list">
+                    <div class="option-item">[A] Monitor — मॉनिटर</div>
+                    <div class="option-item">[B] Mouse — माउस</div>
+                    <div class="option-item">[C] Keyboard — कीबोर्ड</div>
+                </div>
+            </div>
+
+            <div class="q-item">
+                <div class="q-title"><span class="q-no">Q.7</span> <div>टाईप करण्यासाठी <span class="fill-blank-line"></span> वापरतात.<span class="q-en">We use a ________ for typing.</span></div></div>
+                <div class="options-list">
+                    <div class="option-item">[A] Keyboard — कीबोर्ड</div>
+                    <div class="option-item">[B] Monitor — मॉनिटर</div>
+                    <div class="option-item">[C] Mouse — माउस</div>
+                </div>
+            </div>
+
+            <div class="q-item">
+                <div class="q-title"><span class="q-no">Q.8</span> <div>स्क्रीनवरील वस्तू निवडण्यासाठी <span class="fill-blank-line"></span> वापरतात.<span class="q-en">We use a ________ to select things on the screen.</span></div></div>
+                <div class="options-list">
+                    <div class="option-item">[A] Mouse — माउस</div>
+                    <div class="option-item">[B] CPU — सीपीयू</div>
+                    <div class="option-item">[C] Monitor — मॉनिटर</div>
+                </div>
+            </div>
+
+            <div class="section-bar">
+                <span>विभाग C — जोड्या जुळवा (Match the Following)</span>
+                <span class="sec-marks">४ गुण [4 Marks]</span>
+            </div>
+
+            <table class="match-grid">
+                <thead><tr><th>स्तंभ 'अ' (भाग)</th><th>स्तंभ 'ब' (कार्य)</th></tr></thead>
+                <tbody>
+                    <tr><td>१. Monitor — मॉनिटर</td><td>A. Typing — टायपिंग करणे</td></tr>
+                    <tr><td>२. Keyboard — कीबोर्ड</td><td>B. Seeing screen — स्क्रीन पाहणे</td></tr>
+                    <tr><td>३. Mouse — माउस</td><td>C. Selecting — निवड करणे</td></tr>
+                    <tr><td>४. CPU — सीपीयू</td><td>D. Processing — प्रक्रिया करणे</td></tr>
+                </tbody>
+            </table>
+            <div class="ans-inputs">
+                <span>१ — [ &nbsp;&nbsp;&nbsp;&nbsp; ]</span>
+                <span>२ — [ &nbsp;&nbsp;&nbsp;&nbsp; ]</span>
+                <span>३ — [ &nbsp;&nbsp;&nbsp;&nbsp; ]</span>
+                <span>४ — [ &nbsp;&nbsp;&nbsp;&nbsp; ]</span>
+            </div>
+
+            <div class="section-bar">
+                <span>विभाग D — ओळखा व सांगा (Identify)</span>
+                <span class="sec-marks">३ गुण [3 Marks]</span>
+            </div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.13</span> <div>संगणकावर लिहिण्यासाठी आपण कोणते उपकरण वापरतो? <span class="fill-blank-line" style="width:160px"></span></div></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.14</span> <div>संगणकाची स्क्रीन कोणती असते? <span class="fill-blank-line" style="width:160px"></span></div></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.15</span> <div>संगणकावर क्लिक करण्यासाठी कोणते उपकरण वापरतात? <span class="fill-blank-line" style="width:160px"></span></div></div></div>
+
+            <div class="section-bar">
+                <span>विभाग E — नावे मराठीत लिहा (Write Names)</span>
+                <span class="sec-marks">५ गुण [5 Marks]</span>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 5px;">
+                <div>Q.16 Monitor : __________________</div>
+                <div>Q.17 Keyboard : __________________</div>
+                <div>Q.18 Mouse : __________________</div>
+                <div>Q.19 CPU : __________________</div>
+                <div>Q.20 Computer : __________________</div>
+            </div>
+        </article>
+
+
+        <!-- ======================================================= -->
+        <!-- STD. 2 QUESTION PAPER -->
+        <!-- ======================================================= -->
+        <article class="paper-sheet class-paper" id="paper-std-2" style="display:none;">
+            <header class="paper-header">
+                <div class="school-title-mr">शासकीय माध्यमिक व उच्च माध्यमिक आश्रमशाळा</div>
+                <div class="school-title-en">Government Secondary & Higher Secondary Ashram School</div>
+                <div class="exam-badge">सत्र परीक्षा प्रश्नपत्रिका : २०२६–२७ | Examination Question Paper</div>
+            </header>
+
+            <div class="student-info-box">
+                <div class="info-row"><span class="info-label">विद्यार्थ्याचे नाव (Name):</span><span class="info-line"></span></div>
+                <div class="info-row"><span class="info-label">हजेरी क्र. (Roll No.):</span><span class="info-line"></span></div>
+                <div class="info-row"><span class="info-label">इयत्ता (Std):</span><strong>२ री (Std. 2)</strong></div>
+            </div>
+
+            <div class="meta-chips">
+                <span>विषय: संगणक (Computer Parts & Uses)</span>
+                <span>वेळ: ३० मिनिटे (30 Mins)</span>
+                <span>एकूण गुण: २० (Max Marks: 20)</span>
+            </div>
+
+            <div class="section-bar">
+                <span>विभाग A — योग्य पर्याय निवडा (Choose the Correct Option)</span>
+                <span class="sec-marks">५ गुण [5 Marks]</span>
+            </div>
+
+            <div class="q-item">
+                <div class="q-title"><span class="q-no">Q.1</span> <div>संगणकावर अक्षरे आणि शब्द लिहिण्यासाठी काय वापरतो?<span class="q-en">What do we use to type letters on a computer?</span></div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) Keyboard — कीबोर्ड</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) Monitor — मॉनिटर</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) Mouse — माउस</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) CPU — सीपीयू</div>
+                </div>
+            </div>
+
+            <div class="q-item">
+                <div class="q-title"><span class="q-no">Q.2</span> <div>माउसचा उपयोग प्रामुख्याने कशासाठी होतो?<span class="q-en">What is a mouse primarily used for?</span></div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) Clicking and selecting — क्लिक व निवड करण्यासाठी</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) Typing — टाइप करण्यासाठी</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) Seeing — पाहण्यासाठी</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) Printing — प्रिंट करण्यासाठी</div>
+                </div>
+            </div>
+
+            <div class="q-item">
+                <div class="q-title"><span class="q-no">Q.3</span> <div>मॉनिटरचा मुख्य उपयोग काय आहे?<span class="q-en">What is the use of a monitor?</span></div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) To see information — माहिती व चित्रे पाहण्यासाठी</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) To type — टाईप करण्यासाठी</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) To click — क्लिक करण्यासाठी</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) To print — प्रिंट करण्यासाठी</div>
+                </div>
+            </div>
+
+            <div class="q-item">
+                <div class="q-title"><span class="q-no">Q.4</span> <div>CPU मध्ये संगणकाच्या माहितीवर काय होते?<span class="q-en">What happens to information in the CPU?</span></div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) Processing — प्रक्रिया</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) Washing — धुणे</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) Drawing only — चित्र काढणे</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) Printing only — प्रिंट करणे</div>
+                </div>
+            </div>
+
+            <div class="q-item">
+                <div class="q-title"><span class="q-no">Q.5</span> <div>खालीलपैकी Input device कोणते आहे?<span class="q-en">Which of the following is an input device?</span></div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) Keyboard — कीबोर्ड</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) Monitor — मॉनिटर</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) Speaker — स्पीकर</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) Printer — प्रिंटर</div>
+                </div>
+            </div>
+
+            <div class="section-bar">
+                <span>विभाग B — रिकाम्या जागा भरा (Fill in the Blanks)</span>
+                <span class="sec-marks">३ गुण [3 Marks]</span>
+            </div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.6</span> <div>Keyboard चा उपयोग <span class="fill-blank-line"></span> करण्यासाठी होतो. [Typing / Seeing / Listening]</div></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.7</span> <div>Mouse चा उपयोग <span class="fill-blank-line"></span> करण्यासाठी होतो. [Clicking / Printing / Listening]</div></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.8</span> <div>Monitor वर आपल्याला <span class="fill-blank-line"></span> दिसते. [Information / Water / Food]</div></div></div>
+
+            <div class="section-bar">
+                <span>विभाग C — चूक की बरोबर लिहा (True or False)</span>
+                <span class="sec-marks">३ गुण [3 Marks]</span>
+            </div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.9</span> <div>कीबोर्डचा उपयोग टायपिंगसाठी होतो. (Keyboard is used for typing.) उत्तर: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]</div></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.10</span> <div>माउसचा उपयोग पाणी पिण्यासाठी होतो. (Mouse is used for drinking.) उत्तर: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]</div></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.11</span> <div>मॉनिटर माहिती आणि चित्र दाखवतो. (Monitor displays info.) उत्तर: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]</div></div></div>
+
+            <div class="section-bar">
+                <span>विभाग D — जोड्या जुळवा (Match)</span>
+                <span class="sec-marks">४ गुण [4 Marks]</span>
+            </div>
+            <table class="match-grid">
+                <tr><td>१. Keyboard</td><td>A. Screen (स्क्रीन)</td></tr>
+                <tr><td>२. Mouse</td><td>B. Typing (टायपिंग)</td></tr>
+                <tr><td>३. Monitor</td><td>C. Processing (प्रक्रिया)</td></tr>
+                <tr><td>४. CPU</td><td>D. Clicking (क्लिक करणे)</td></tr>
+            </table>
+            <div class="ans-inputs"><span>१ — [ &nbsp;&nbsp; ]</span><span>२ — [ &nbsp;&nbsp; ]</span><span>३ — [ &nbsp;&nbsp; ]</span><span>४ — [ &nbsp;&nbsp; ]</span></div>
+
+            <div class="section-bar">
+                <span>विभाग E — एका वाक्यात उत्तरे लिहा (Answer in One Sentence)</span>
+                <span class="sec-marks">५ गुण [5 Marks]</span>
+            </div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.16</span> <div>संगणक म्हणजे काय?</div></div><div class="write-line"></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.17</span> <div>माउसचा एक उपयोग लिहा.</div></div><div class="write-line"></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.18</span> <div>कीबोर्डचा एक उपयोग लिहा.</div></div><div class="write-line"></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.19</span> <div>मॉनिटरचा एक उपयोग लिहा.</div></div><div class="write-line"></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.20</span> <div>संगणकाचे कोणतेही दोन भाग लिहा.</div></div><div class="write-line"></div></div>
+        </article>
+
+        <!-- ======================================================= -->
+        <!-- STD. 3 QUESTION PAPER -->
+        <!-- ======================================================= -->
+        <article class="paper-sheet class-paper" id="paper-std-3" style="display:none;">
+            <header class="paper-header">
+                <div class="school-title-mr">शासकीय माध्यमिक व उच्च माध्यमिक आश्रमशाळा</div>
+                <div class="school-title-en">Government Secondary & Higher Secondary Ashram School</div>
+                <div class="exam-badge">सत्र परीक्षा प्रश्नपत्रिका : २०२६–२७ | Examination Question Paper</div>
+            </header>
+
+            <div class="student-info-box">
+                <div class="info-row"><span class="info-label">विद्यार्थ्याचे नाव (Name):</span><span class="info-line"></span></div>
+                <div class="info-row"><span class="info-label">हजेरी क्र. (Roll No.):</span><span class="info-line"></span></div>
+                <div class="info-row"><span class="info-label">इयत्ता (Std):</span><strong>३ री (Std. 3)</strong></div>
+            </div>
+
+            <div class="meta-chips">
+                <span>विषय: संगणक (Input & Output Basics)</span>
+                <span>वेळ: ४५ मिनिटे (45 Mins)</span>
+                <span>एकूण गुण: २० (Max Marks: 20)</span>
+            </div>
+
+            <div class="section-bar"><span>विभाग A — बहुपर्यायी प्रश्न (MCQs)</span><span class="sec-marks">५ गुण</span></div>
+            <div class="q-item">
+                <div class="q-title"><span class="q-no">Q.1</span> <div>संगणकाचा उपयोग आपण कशासाठी करू शकतो?</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) काम जलद करण्यासाठी</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) माहिती मिळवण्यासाठी</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) शिकण्यासाठी</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) वरील सर्व — All of above</div>
+                </div>
+            </div>
+            <div class="q-item">
+                <div class="q-title"><span class="q-no">Q.2</span> <div>खालीलपैकी Input device कोणते आहे?</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) Keyboard — कीबोर्ड</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) Monitor — मॉनिटर</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) Speaker — स्पीकर</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) Printer — प्रिंटर</div>
+                </div>
+            </div>
+            <div class="q-item">
+                <div class="q-title"><span class="q-no">Q.3</span> <div>Output device चे योग्य उदाहरण कोणते?</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) Monitor — मॉनिटर</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) Keyboard — कीबोर्ड</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) Mouse — माउस</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) Microphone — मायक्रोफोन</div>
+                </div>
+            </div>
+            <div class="q-item">
+                <div class="q-title"><span class="q-no">Q.4</span> <div>CPU चा मुख्य उपयोग काय आहे?</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) Processing — प्रक्रिया करणे</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) Typing — टायपिंग करणे</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) Clicking — क्लिक करणे</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) Drawing only — चित्र काढणे</div>
+                </div>
+            </div>
+            <div class="q-item">
+                <div class="q-title"><span class="q-no">Q.5</span> <div>माउसने आपण खालीलपैकी काय करू शकतो?</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) Click — क्लिक</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) Select — निवडणे</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) Open — उघडणे</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) वरील सर्व — All of above</div>
+                </div>
+            </div>
+
+            <div class="section-bar"><span>विभाग B — रिकाम्या जागा भरा</span><span class="sec-marks">३ गुण</span></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.6</span> <div>Computer हे एक <span class="fill-blank-line"></span> मशीन आहे. [ Electronic / Wooden / Paper ]</div></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.7</span> <div>Keyboard हे <span class="fill-blank-line"></span> उपकरण आहे. [ Input / Output / Storage ]</div></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.8</span> <div>Monitor हे <span class="fill-blank-line"></span> उपकरण आहे. [ Output / Input / Typing ]</div></div></div>
+
+            <div class="section-bar"><span>विभाग C — चूक की बरोबर</span><span class="sec-marks">३ गुण</span></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.9</span> <div>Computer माहिती साठवू शकतो. उत्तर: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]</div></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.10</span> <div>Keyboard हे Output उपकरण आहे. उत्तर: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]</div></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.11</span> <div>Mouse मुळे वस्तू निवडणे सोपे जाते. उत्तर: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]</div></div></div>
+
+            <div class="section-bar"><span>विभाग D — जोड्या जुळवा</span><span class="sec-marks">४ गुण</span></div>
+            <table class="match-grid">
+                <tr><td>१. Keyboard</td><td>A. Processing (प्रक्रिया)</td></tr>
+                <tr><td>२. Mouse</td><td>B. Clicking (क्लिक)</td></tr>
+                <tr><td>३. Monitor</td><td>C. Typing (टायपिंग)</td></tr>
+                <tr><td>४. CPU</td><td>D. Display (माहिती दाखवणे)</td></tr>
+            </table>
+            <div class="ans-inputs"><span>१ — [ &nbsp;&nbsp; ]</span><span>२ — [ &nbsp;&nbsp; ]</span><span>३ — [ &nbsp;&nbsp; ]</span><span>४ — [ &nbsp;&nbsp; ]</span></div>
+
+            <div class="section-bar"><span>विभाग E — थोडक्यात उत्तरे द्या</span><span class="sec-marks">५ गुण</span></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.16</span> <div>संगणकाचे कोणतेही तीन मुख्य भाग लिहा.</div></div><div class="write-line"></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.17</span> <div>Input device म्हणजे काय?</div></div><div class="write-line"></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.18</span> <div>Output device म्हणजे काय?</div></div><div class="write-line"></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.19</span> <div>Monitor चा मुख्य उपयोग काय आहे?</div></div><div class="write-line"></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.20</span> <div>Keyboard चा उपयोग काय आहे?</div></div><div class="write-line"></div></div>
+        </article>
+
+        <!-- ======================================================= -->
+        <!-- STD. 4 QUESTION PAPER -->
+        <!-- ======================================================= -->
+        <article class="paper-sheet class-paper" id="paper-std-4" style="display:none;">
+            <header class="paper-header">
+                <div class="school-title-mr">शासकीय माध्यमिक व उच्च माध्यमिक आश्रमशाळा</div>
+                <div class="school-title-en">Government Secondary & Higher Secondary Ashram School</div>
+                <div class="exam-badge">सत्र परीक्षा प्रश्नपत्रिका : २०२६–२७ | Examination Question Paper</div>
+            </header>
+
+            <div class="student-info-box">
+                <div class="info-row"><span class="info-label">विद्यार्थ्याचे नाव (Name):</span><span class="info-line"></span></div>
+                <div class="info-row"><span class="info-label">हजेरी क्र. (Roll No.):</span><span class="info-line"></span></div>
+                <div class="info-row"><span class="info-label">इयत्ता (Std):</span><strong>४ थी (Std. 4)</strong></div>
+            </div>
+
+            <div class="meta-chips">
+                <span>विषय: संगणक (Input, Output, CPU Functions)</span>
+                <span>वेळ: ४५ मिनिटे (45 Mins)</span>
+                <span>एकूण गुण: २० (Max Marks: 20)</span>
+            </div>
+
+            <div class="section-bar"><span>विभाग A — बहुपर्यायी प्रश्न (MCQs)</span><span class="sec-marks">५ गुण</span></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.1</span> <div>संगणकाचे मुख्य कार्य कोणते आहे?</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) Input घेणे</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) प्रक्रिया करणे</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) Output देणे</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) वरील सर्व — All of above</div>
+                </div>
+            </div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.2</span> <div>Input म्हणजे काय?</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) संगणकाला दिलेली माहिती</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) संगणकाने दिलेला निकाल</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) संगणकाची स्क्रीन</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) संगणकाचे टेबल</div>
+                </div>
+            </div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.3</span> <div>Output म्हणजे काय?</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) संगणकाने दिलेला अंतिम निकाल</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) Keyboard</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) Mouse</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) CPU</div>
+                </div>
+            </div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.4</span> <div>खालीलपैकी Input devices चा योग्य संच कोणता?</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) Keyboard and Mouse</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) Monitor and Speaker</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) Printer and Monitor</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) Speaker and Printer</div>
+                </div>
+            </div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.5</span> <div>CPU चे पूर्ण रूप (Full Form) काय आहे?</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) Central Processing Unit</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) Computer Personal Unit</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) Central Printing Unit</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) Common Program Unit</div>
+                </div>
+            </div>
+
+            <div class="section-bar"><span>विभाग B — रिकाम्या जागा भरा</span><span class="sec-marks">३ गुण</span></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.6</span> <div>संगणक माहिती <span class="fill-blank-line"></span> म्हणून स्वीकारतो. [ Input / Output / Result ]</div></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.7</span> <div>संगणकाने दिलेल्या परिणामाला <span class="fill-blank-line"></span> म्हणतात. [ Output / Input / Data ]</div></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.8</span> <div>CPU माहितीवर <span class="fill-blank-line"></span> करते. [ Processing / Painting / Washing ]</div></div></div>
+
+            <div class="section-bar"><span>विभाग C — चूक की बरोबर</span><span class="sec-marks">३ गुण</span></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.9</span> <div>संगणकाचा उपयोग शिकण्यासाठी व अभ्यासासाठी होतो. उत्तर: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]</div></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.10</span> <div>माउसचा मुख्य उपयोग मोठी वाक्ये टाइप करण्यासाठी होतो. उत्तर: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]</div></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.11</span> <div>मॉनिटर माहिती आणि निकाल दाखवतो. उत्तर: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]</div></div></div>
+
+            <div class="section-bar"><span>विभाग D — जोड्या जुळवा</span><span class="sec-marks">४ गुण</span></div>
+            <table class="match-grid">
+                <tr><td>१. Input (इनपुट)</td><td>A. Typing (टायपिंग)</td></tr>
+                <tr><td>२. Output (आउटपुट)</td><td>B. संगणकाला दिलेली माहिती</td></tr>
+                <tr><td>३. Keyboard (कीबोर्ड)</td><td>C. संगणकाने दाखवलेला निकाल</td></tr>
+                <tr><td>४. Monitor (मॉनिटर)</td><td>D. Display (माहिती दाखवणे)</td></tr>
+            </table>
+            <div class="ans-inputs"><span>१ — [ &nbsp;&nbsp; ]</span><span>२ — [ &nbsp;&nbsp; ]</span><span>३ — [ &nbsp;&nbsp; ]</span><span>४ — [ &nbsp;&nbsp; ]</span></div>
+
+            <div class="section-bar"><span>विभाग E — थोडक्यात उत्तरे लिहा</span><span class="sec-marks">५ गुण</span></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.16</span> <div>संगणकाचे कोणतेही चार मुख्य भाग लिहा.</div></div><div class="write-line"></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.17</span> <div>Input आणि Output मधील मुख्य फरक लिहा.</div></div><div class="write-line"></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.18</span> <div>CPU चे मुख्य कार्य काय आहे?</div></div><div class="write-line"></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.19</span> <div>माउसचा उपयोग लिहा.</div></div><div class="write-line"></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.20</span> <div>कीबोर्डचा उपयोग लिहा.</div></div><div class="write-line"></div></div>
+        </article>
+
+        <!-- ======================================================= -->
+        <!-- STD. 5 QUESTION PAPER -->
+        <!-- ======================================================= -->
+        <article class="paper-sheet class-paper" id="paper-std-5" style="display:none;">
+            <header class="paper-header">
+                <div class="school-title-mr">शासकीय माध्यमिक व उच्च माध्यमिक आश्रमशाळा</div>
+                <div class="school-title-en">Government Secondary & Higher Secondary Ashram School</div>
+                <div class="exam-badge">सत्र परीक्षा प्रश्नपत्रिका : २०२६–२७ | Examination Question Paper</div>
+            </header>
+
+            <div class="student-info-box">
+                <div class="info-row"><span class="info-label">विद्यार्थ्याचे नाव (Name):</span><span class="info-line"></span></div>
+                <div class="info-row"><span class="info-label">हजेरी क्र. (Roll No.):</span><span class="info-line"></span></div>
+                <div class="info-row"><span class="info-label">इयत्ता (Std):</span><strong>५ वी (Std. 5)</strong></div>
+            </div>
+
+            <div class="meta-chips">
+                <span>विषय: संगणक व मूलभूत AI (Computer & Intro to AI)</span>
+                <span>वेळ: १ तास (1 Hour)</span>
+                <span>एकूण गुण: ३० (Max Marks: 30)</span>
+            </div>
+
+            <div class="section-bar"><span>विभाग A — बहुपर्यायी प्रश्न (MCQs)</span><span class="sec-marks">८ गुण</span></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.1</span> <div>संगणक म्हणजे काय?</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) माहितीवर प्रक्रिया करणारे इलेक्ट्रॉनिक साधन</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) फक्त खेळण्याचे साधन</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) फक्त टायपिंग मशीन</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) फक्त स्क्रीन</div>
+                </div>
+            </div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.2</span> <div>आपल्याला संगणकाची गरज का असते?</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) काम जलद करण्यासाठी</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) माहिती साठवण्यासाठी</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) शिकण्यासाठी</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) वरील सर्व — All of above</div>
+                </div>
+            </div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.3</span> <div>संगणकाला दिलेल्या कच्च्या माहितीला काय म्हणतात?</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) Input — इनपुट</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) Output — आउटपुट</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) Result — निकाल</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) Storage — संचयन</div>
+                </div>
+            </div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.4</span> <div>संगणकाने प्रक्रियेनंतर दिलेल्या निष्कर्षाला काय म्हणतात?</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) Output — आउटपुट</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) Input — इनपुट</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) Data — डेटा</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) Icon — आयकॉन</div>
+                </div>
+            </div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.5</span> <div>AI म्हणजे काय? (What is AI?)</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) Artificial Intelligence (कृत्रिम बुद्धिमत्ता)</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) Automatic Input</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) Advanced Internet</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) Automatic Information</div>
+                </div>
+            </div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.6</span> <div>संगणक सुरू करण्यासाठी कोणते बटण दाबतात?</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) Power Button</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) Shift Button</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) Space Button</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) Delete Button</div>
+                </div>
+            </div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.7</span> <div>मॉनिटरचा मुख्य उपयोग काय आहे?</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) माहिती व चित्रे दाखवणे</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) टायपिंग करणे</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) क्लिक करणे</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) आवाज रेकॉर्ड करणे</div>
+                </div>
+            </div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.8</span> <div>कीबोर्डचा मुख्य उपयोग काय आहे?</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) अक्षरे व संख्या टाईप करणे</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) स्क्रीन पाहणे</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) क्लिक करणे</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) प्रिंट करणे</div>
+                </div>
+            </div>
+
+            <div class="section-bar"><span>विभाग B — रिकाम्या जागा भरा</span><span class="sec-marks">४ गुण</span></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.9</span> <div>संगणक माहिती <span class="fill-blank-line"></span> म्हणून स्वीकारतो. [ Input / Output / Result ]</div></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.10</span> <div>प्रक्रियेनंतर तयार झालेल्या निष्कर्षाला <span class="fill-blank-line"></span> म्हणतात. [ Output / Input / Cable ]</div></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.11</span> <div>टाईप करण्यासाठी <span class="fill-blank-line"></span> वापरतात. [ Keyboard / Monitor / Mouse ]</div></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.12</span> <div>क्लिक व निवड करण्यासाठी <span class="fill-blank-line"></span> वापरतात. [ Mouse / Keyboard / Speaker ]</div></div></div>
+
+            <div class="section-bar"><span>विभाग C — चूक की बरोबर</span><span class="sec-marks">३ गुण</span></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.13</span> <div>AI विविध क्षेत्रांमध्ये मानवाला मदत करू शकते. उत्तर: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]</div></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.14</span> <div>मॉनिटरचा मुख्य उपयोग टायपिंग करण्यासाठी होतो. उत्तर: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]</div></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.15</span> <div>कीबोर्ड हे एक इनपुट (Input) उपकरण आहे. उत्तर: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]</div></div></div>
+
+            <div class="section-bar"><span>विभाग D — जोड्या जुळवा</span><span class="sec-marks">५ गुण</span></div>
+            <table class="match-grid">
+                <tr><td>१. Monitor</td><td>A. Clicking (क्लिक करणे)</td></tr>
+                <tr><td>२. Keyboard</td><td>B. Processing (प्रक्रिया)</td></tr>
+                <tr><td>३. Mouse</td><td>C. Display (माहिती दाखवणे)</td></tr>
+                <tr><td>४. CPU</td><td>D. Typing (टायपिंग)</td></tr>
+                <tr><td>५. AI</td><td>E. Intelligent Technology (बुद्धिमान तंत्रज्ञान)</td></tr>
+            </table>
+            <div class="ans-inputs"><span>१ — [ &nbsp;&nbsp; ]</span><span>२ — [ &nbsp;&nbsp; ]</span><span>३ — [ &nbsp;&nbsp; ]</span><span>४ — [ &nbsp;&nbsp; ]</span><span>५ — [ &nbsp;&nbsp; ]</span></div>
+
+            <div class="section-bar"><span>विभाग E — थोडक्यात उत्तरे द्या</span><span class="sec-marks">१० गुण</span></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.21</span> <div>संगणकाची आपल्याला गरज का आहे? दोन कारणे लिहा.</div></div><div class="write-line"></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.22</span> <div>Input आणि Output म्हणजे काय?</div></div><div class="write-line"></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.23</span> <div>AI म्हणजे काय?</div></div><div class="write-line"></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.24</span> <div>माउसचा उपयोग काय आहे?</div></div><div class="write-line"></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.25</span> <div>संगणक योग्य पद्धतीने बंद (Shut Down) कसा करावा?</div></div><div class="write-line"></div></div>
+        </article>
+
+        <!-- ======================================================= -->
+        <!-- STD. 6 QUESTION PAPER -->
+        <!-- ======================================================= -->
+        <article class="paper-sheet class-paper" id="paper-std-6" style="display:none;">
+            <header class="paper-header">
+                <div class="school-title-mr">शासकीय माध्यमिक व उच्च माध्यमिक आश्रमशाळा</div>
+                <div class="school-title-en">Government Secondary & Higher Secondary Ashram School</div>
+                <div class="exam-badge">सत्र परीक्षा प्रश्नपत्रिका : २०२६–२७ | Examination Question Paper</div>
+            </header>
+
+            <div class="student-info-box">
+                <div class="info-row"><span class="info-label">विद्यार्थ्याचे नाव (Name):</span><span class="info-line"></span></div>
+                <div class="info-row"><span class="info-label">हजेरी क्र. (Roll No.):</span><span class="info-line"></span></div>
+                <div class="info-row"><span class="info-label">इयत्ता (Std):</span><strong>६ वी (Std. 6)</strong></div>
+            </div>
+
+            <div class="meta-chips">
+                <span>विषय: संगणक व AI ओळख (Computer Functions & AI)</span>
+                <span>वेळ: १ तास (1 Hour)</span>
+                <span>एकूण गुण: ३० (Max Marks: 30)</span>
+            </div>
+
+            <div class="section-bar"><span>विभाग A — बहुपर्यायी प्रश्न (MCQs)</span><span class="sec-marks">८ गुण</span></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.1</span> <div>संगणकाचे मुख्य कार्य कोणते आहे?</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) Input घेणे, प्रक्रिया करणे आणि Output देणे</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) फक्त गेम खेळणे</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) फक्त चित्र दाखवणे</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) फक्त टायपिंग करणे</div>
+                </div>
+            </div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.2</span> <div>संगणकाचा उपयोग शिक्षणात कसा होतो?</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) माहिती शोधण्यासाठी</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) अभ्यास व प्रोजेक्टसाठी</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) शैक्षणिक ॲप्स वापरण्यासाठी</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) वरील सर्व — All of above</div>
+                </div>
+            </div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.3</span> <div>खालीलपैकी Output device कोणते आहे?</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) Monitor — मॉनिटर</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) Keyboard — कीबोर्ड</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) Mouse — माउस</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) Microphone — मायक्रोफोन</div>
+                </div>
+            </div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.4</span> <div>CPU ला संगणकाचा ________ म्हटले जाते.</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) Brain — मेंदू</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) Eye — डोळा</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) Hand — हात</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) Ear — कान</div>
+                </div>
+            </div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.5</span> <div>Icon म्हणजे काय?</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) प्रोग्राम दर्शवणारे छोटे चित्र/चिन्ह</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) कीबोर्ड बटण</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) संगणकाची वायर</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) संगणकाचे टेबल</div>
+                </div>
+            </div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.6</span> <div>संगणकावर YouTube कसे उघडाल?</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) त्याच्या Icon वर Double-Click करून</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) मॉनिटर बंद करून</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) CPU हालवून</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) कीबोर्ड काढून</div>
+                </div>
+            </div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.7</span> <div>संगणक सुरू करण्यासाठी कोणते बटण दाबतात?</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) Power button</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) Space button</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) Enter button</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) Tab button</div>
+                </div>
+            </div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.8</span> <div>AI चा उपयोग कशासाठी केला जाऊ शकतो?</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) माहितीचे विश्लेषण करण्यासाठी</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) शिकण्यास मदत करण्यासाठी</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) समस्या सोडवण्यासाठी</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) वरील सर्व — All of above</div>
+                </div>
+            </div>
+
+            <div class="section-bar"><span>विभाग B — रिकाम्या जागा भरा</span><span class="sec-marks">४ गुण</span></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.9</span> <div>माउस हे एक <span class="fill-blank-line"></span> उपकरण आहे. [ Input / Output / Storage ]</div></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.10</span> <div>मॉनिटर हे एक <span class="fill-blank-line"></span> उपकरण आहे. [ Output / Input / Processing ]</div></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.11</span> <div>AI चा पूर्ण अर्थ <span class="fill-blank-line"></span> आहे. [ Artificial Intelligence / Auto Internet ]</div></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.12</span> <div>ॲप्लिकेशनचे प्रतिनिधित्व करणाऱ्या चिन्हाला <span class="fill-blank-line"></span> म्हणतात. [ Icon / CPU / USB ]</div></div></div>
+
+            <div class="section-bar"><span>विभाग C — चूक की बरोबर</span><span class="sec-marks">३ गुण</span></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.13</span> <div>AI ने दिलेली महत्त्वाची माहिती पडताळून पाहणे आवश्यक आहे. उत्तर: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]</div></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.14</span> <div>संगणकाचा उपयोग फक्त गेम खेळण्यासाठीच होतो. उत्तर: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]</div></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.15</span> <div>संगणक नेहमी योग्य पद्धतीने Shut Down करावा. उत्तर: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]</div></div></div>
+
+            <div class="section-bar"><span>विभाग D — जोड्या जुळवा</span><span class="sec-marks">५ गुण</span></div>
+            <table class="match-grid">
+                <tr><td>१. CPU</td><td>A. स्क्रीनवर माहिती दाखवणे</td></tr>
+                <tr><td>२. Monitor</td><td>B. संगणकाचा मेंदू</td></tr>
+                <tr><td>३. Icon</td><td>C. पॉइंटिंग व क्लिकिंग उपकरण</td></tr>
+                <tr><td>४. Mouse</td><td>D. प्रोग्रॅमचे छोटे चित्र</td></tr>
+                <tr><td>५. AI</td><td>E. बुद्धिमान तंत्रज्ञान</td></tr>
+            </table>
+            <div class="ans-inputs"><span>१ — [ &nbsp;&nbsp; ]</span><span>२ — [ &nbsp;&nbsp; ]</span><span>३ — [ &nbsp;&nbsp; ]</span><span>४ — [ &nbsp;&nbsp; ]</span><span>५ — [ &nbsp;&nbsp; ]</span></div>
+
+            <div class="section-bar"><span>विभाग E — थोडक्यात उत्तरे द्या</span><span class="sec-marks">१० गुण</span></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.20</span> <div>संगणकाची गरज का आहे? दोन कारणे लिहा.</div></div><div class="write-line"></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.21</span> <div>Input आणि Output म्हणजे काय?</div></div><div class="write-line"></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.22</span> <div>Monitor चा उपयोग लिहा.</div></div><div class="write-line"></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.23</span> <div>Icon म्हणजे काय?</div></div><div class="write-line"></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.24</span> <div>संगणकावर एखादा Program किंवा Application कसे उघडाल?</div></div><div class="write-line"></div></div>
+        </article>
+
+        <!-- ======================================================= -->
+        <!-- STD. 7 QUESTION PAPER -->
+        <!-- ======================================================= -->
+        <article class="paper-sheet class-paper" id="paper-std-7" style="display:none;">
+            <header class="paper-header">
+                <div class="school-title-mr">शासकीय माध्यमिक व उच्च माध्यमिक आश्रमशाळा</div>
+                <div class="school-title-en">Government Secondary & Higher Secondary Ashram School</div>
+                <div class="exam-badge">सत्र परीक्षा प्रश्नपत्रिका : २०२६–२७ | Examination Question Paper</div>
+            </header>
+
+            <div class="student-info-box">
+                <div class="info-row"><span class="info-label">विद्यार्थ्याचे नाव (Name):</span><span class="info-line"></span></div>
+                <div class="info-row"><span class="info-label">हजेरी क्र. (Roll No.):</span><span class="info-line"></span></div>
+                <div class="info-row"><span class="info-label">इयत्ता (Std):</span><strong>७ वी (Std. 7)</strong></div>
+            </div>
+
+            <div class="meta-chips">
+                <span>विषय: संगणक व AI जबाबदार वापर (Computer & Responsible AI)</span>
+                <span>वेळ: १ तास (1 Hour)</span>
+                <span>एकूण गुण: ३० (Max Marks: 30)</span>
+            </div>
+
+            <div class="section-bar"><span>विभाग A — बहुपर्यायी प्रश्न (MCQs)</span><span class="sec-marks">८ गुण</span></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.1</span> <div>संगणकाचा उपयोग कोणत्या कामांसाठी होतो?</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) माहिती तयार करणे</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) माहिती साठवणे</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) माहितीवर प्रक्रिया करणे</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) वरील सर्व — All of above</div>
+                </div>
+            </div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.2</span> <div>Input device चे योग्य उदाहरण कोणते?</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) Keyboard — कीबोर्ड</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) Monitor — मॉनिटर</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) Speaker — स्पीकर</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) Projector — प्रोजेक्टर</div>
+                </div>
+            </div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.3</span> <div>Output device चे योग्य उदाहरण कोणते?</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) Monitor — मॉनिटर</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) Mouse — माउस</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) Keyboard — कीबोर्ड</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) Microphone — मायक्रोफोन</div>
+                </div>
+            </div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.4</span> <div>CPU चे मुख्य कार्य कोणते?</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) Processing — प्रक्रिया करणे</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) Typing — टायपिंग करणे</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) Clicking — क्लिक करणे</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) Display — स्क्रीन दाखवणे</div>
+                </div>
+            </div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.5</span> <div>संगणक वापरण्याचा एक महत्त्वाचा फायदा कोणता?</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) कामाची कार्यक्षमता वाढवणे</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) काम कठीण करणे</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) माहिती नष्ट करणे</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) वेळ वाया घालवणे</div>
+                </div>
+            </div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.6</span> <div>AI चा वापर करताना काय लक्षात ठेवावे?</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) AI ने दिलेली माहिती पडताळून पाहावी</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) प्रत्येक उत्तर आंधळेपणाने खरे मानावे</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) कोणतीही माहिती तपासू नये</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) शिक्षकांना विचारू नये</div>
+                </div>
+            </div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.7</span> <div>Application उघडण्यासाठी काय केले जाते?</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) त्याच्या Icon वर Click/Double-click</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) Monitor बंद करणे</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) CPU बंद करणे</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) वायर काढणे</div>
+                </div>
+            </div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.8</span> <div>AI चा पूर्ण अर्थ काय आहे?</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) Artificial Intelligence (कृत्रिम बुद्धिमत्ता)</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) Automatic Information</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) Advanced Internet</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) Artificial Input</div>
+                </div>
+            </div>
+
+            <div class="section-bar"><span>विभाग B — रिकाम्या जागा भरा</span><span class="sec-marks">३ गुण</span></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.9</span> <div>संगणकाला दिलेल्या डेटाला <span class="fill-blank-line"></span> म्हणतात. [ Input / Output / Result ]</div></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.10</span> <div>प्रक्रियेनंतर मिळणाऱ्या परिणामाला <span class="fill-blank-line"></span> म्हणतात. [ Output / Input / Cable ]</div></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.11</span> <div>स्क्रीनवरील वस्तू निवडण्यासाठी <span class="fill-blank-line"></span> वापरतात. [ Mouse / Monitor / CPU ]</div></div></div>
+
+            <div class="section-bar"><span>विभाग C — चूक की बरोबर</span><span class="sec-marks">३ गुण</span></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.12</span> <div>AI लोकांना मदत करू शकते, पण तिचा जबाबदारीने वापर करावा. उत्तर: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]</div></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.13</span> <div>संगणक माहिती साठवून ठेवू शकत नाही. उत्तर: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]</div></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.14</span> <div>कीबोर्डचा उपयोग माहिती संगणकात प्रविष्ट करण्यासाठी होतो. उत्तर: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]</div></div></div>
+
+            <div class="section-bar"><span>विभाग D — जोड्या जुळवा</span><span class="sec-marks">४ गुण</span></div>
+            <table class="match-grid">
+                <tr><td>१. CPU</td><td>A. Typing (टायपिंग)</td></tr>
+                <tr><td>२. Mouse</td><td>B. Processing (प्रक्रिया करणे)</td></tr>
+                <tr><td>३. Monitor</td><td>C. Display (माहिती दाखवणे)</td></tr>
+                <tr><td>४. Keyboard</td><td>D. Selecting (निवड करणे)</td></tr>
+            </table>
+            <div class="ans-inputs"><span>१ — [ &nbsp;&nbsp; ]</span><span>२ — [ &nbsp;&nbsp; ]</span><span>३ — [ &nbsp;&nbsp; ]</span><span>४ — [ &nbsp;&nbsp; ]</span></div>
+
+            <div class="section-bar"><span>विभाग E — थोडक्यात उत्तरे द्या</span><span class="sec-marks">१२ गुण</span></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.19</span> <div>संगणकाचा वापर करण्याचे कोणतेही दोन महत्त्वाचे फायदे लिहा.</div></div><div class="write-line"></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.20</span> <div>Input आणि Output मधील फरक स्पष्ट करा.</div></div><div class="write-line"></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.21</span> <div>CPU म्हणजे काय व त्याचे मुख्य कार्य काय आहे?</div></div><div class="write-line"></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.22</span> <div>Icon म्हणजे काय?</div></div><div class="write-line"></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.23</span> <div>YouTube सारखे application संगणकावर कसे उघडाल? पायऱ्या लिहा.</div></div><div class="write-line"></div></div>
+        </article>
+
+        <!-- ======================================================= -->
+        <!-- STD. 8 QUESTION PAPER -->
+        <!-- ======================================================= -->
+        <article class="paper-sheet class-paper" id="paper-std-8" style="display:none;">
+            <header class="paper-header">
+                <div class="school-title-mr">शासकीय माध्यमिक व उच्च माध्यमिक आश्रमशाळा</div>
+                <div class="school-title-en">Government Secondary & Higher Secondary Ashram School</div>
+                <div class="exam-badge">सत्र परीक्षा प्रश्नपत्रिका : २०२६–२७ | Examination Question Paper</div>
+            </header>
+
+            <div class="student-info-box">
+                <div class="info-row"><span class="info-label">विद्यार्थ्याचे नाव (Name):</span><span class="info-line"></span></div>
+                <div class="info-row"><span class="info-label">हजेरी क्र. (Roll No.):</span><span class="info-line"></span></div>
+                <div class="info-row"><span class="info-label">इयत्ता (Std):</span><strong>८ वी (Std. 8)</strong></div>
+            </div>
+
+            <div class="meta-chips">
+                <span>विषय: संगणक व AI प्रणाली (Input-Process-Output & AI)</span>
+                <span>वेळ: १ तास १५ मि. (1 Hr 15 Min)</span>
+                <span>एकूण गुण: ३० (Max Marks: 30)</span>
+            </div>
+
+            <div class="section-bar"><span>विभाग A — बहुपर्यायी प्रश्न (MCQs)</span><span class="sec-marks">७ गुण</span></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.1</span> <div>संगणकाची मूलभूत कार्यप्रक्रिया कोणत्या क्रमाने होते?</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) Input → Processing → Output</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) Output → Input → Processing</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) Processing → Output → Input</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) Input → Output → Processing</div>
+                </div>
+            </div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.2</span> <div>संगणकाचा वापर करण्याचे योग्य कारण कोणते आहे?</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) काम जलद आणि सोपे करण्यासाठी</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) माहिती नष्ट करण्यासाठी</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) वेळ वाया घालवण्यासाठी</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) फक्त गेम खेळण्यासाठी</div>
+                </div>
+            </div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.3</span> <div>AI म्हणजे काय?</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) मशीनला बुद्धिमान कार्ये करण्यास सक्षम करणारे तंत्रज्ञान</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) संगणकाचा एक छोटा भाग</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) Keyboard</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) Monitor</div>
+                </div>
+            </div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.4</span> <div>AI चा उपयोग शिक्षणामध्ये कसा होऊ शकतो?</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) वैयक्तिक शिक्षण सहाय्य देणे</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) माहितीचे विश्लेषण करणे</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) प्रश्नांची उत्तरे समजून घेण्यास मदत</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) वरील सर्व — All of above</div>
+                </div>
+            </div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.5</span> <div>AI ने दिलेले उत्तर प्रत्यक्ष वापरण्यापूर्वी काय करावे?</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) महत्त्वाची माहिती तपासावी व पडताळावी</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) लगेच आंधळेपणाने स्वीकारावे</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) कधीही तपासणी करू नये</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) कोणालाही विचारू नये</div>
+                </div>
+            </div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.6</span> <div>Icon चा मुख्य उपयोग काय आहे?</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) Program ओळखण्यास व उघडण्यास मदत करणे</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) संगणक बंद करणे</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) वीज तयार करणे</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) कीबोर्ड स्वच्छ करणे</div>
+                </div>
+            </div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.7</span> <div>संगणक बंद करताना कोणती पद्धत योग्य आहे?</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) Start मेनूमधील 'Shut Down' वापरणे</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) थेट विजेची वायर ओढणे</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) CPU वर पाणी टाकणे</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) मॉनिटर फोडणे</div>
+                </div>
+            </div>
+
+            <div class="section-bar"><span>विभाग B — रिकाम्या जागा भरा</span><span class="sec-marks">३ गुण</span></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.8</span> <div>Keyboard आणि Mouse ही <span class="fill-blank-line"></span> उपकरणांची उदाहरणे आहेत. [ Input / Output / Display ]</div></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.9</span> <div>Monitor चा उपयोग माहिती <span class="fill-blank-line"></span> करण्यासाठी होतो. [ Display / Type / Click ]</div></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.10</span> <div>AI चा पूर्ण अर्थ <span class="fill-blank-line"></span> आहे. [ Artificial Intelligence / Automatic Internet ]</div></div></div>
+
+            <div class="section-bar"><span>विभाग C — चूक की बरोबर</span><span class="sec-marks">३ गुण</span></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.11</span> <div>AI चा वापर आरोग्यसेवा आणि शेतीमध्ये करता येतो. उत्तर: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]</div></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.12</span> <div>AI नेहमी १००% अचूक आणि परिपूर्ण माहिती देते. उत्तर: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]</div></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.13</span> <div>Input म्हणजे संगणकाला दिलेली कच्ची माहिती. उत्तर: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]</div></div></div>
+
+            <div class="section-bar"><span>विभाग D — जोड्या जुळवा</span><span class="sec-marks">४ गुण</span></div>
+            <table class="match-grid">
+                <tr><td>१. Input</td><td>A. Program चे छोटे चिन्ह</td></tr>
+                <tr><td>२. Output</td><td>B. कृत्रिम बुद्धिमत्ता</td></tr>
+                <tr><td>३. AI</td><td>C. संगणकाला दिलेली माहिती</td></tr>
+                <tr><td>४. Icon</td><td>D. प्रक्रियेनंतर मिळालेला निकाल</td></tr>
+            </table>
+            <div class="ans-inputs"><span>१ — [ &nbsp;&nbsp; ]</span><span>२ — [ &nbsp;&nbsp; ]</span><span>३ — [ &nbsp;&nbsp; ]</span><span>४ — [ &nbsp;&nbsp; ]</span></div>
+
+            <div class="section-bar"><span>विभाग E — थोडक्यात उत्तरे द्या</span><span class="sec-marks">१३ गुण</span></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.18</span> <div>संगणकाची गरज का आहे? कोणतीही दोन कारणे लिहा.</div></div><div class="write-line"></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.19</span> <div>Input आणि Output उदाहरणासह स्पष्ट करा.</div></div><div class="write-line"></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.20</span> <div>AI म्हणजे काय?</div></div><div class="write-line"></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.21</span> <div>AI चा कोणत्याही दोन क्षेत्रांतील उपयुक्त वापर लिहा.</div></div><div class="write-line"></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.22</span> <div>संगणकावर YouTube उघडून व्हिडिओ कसा पाहाल?</div></div><div class="write-line"></div></div>
+        </article>
+
+        <!-- ======================================================= -->
+        <!-- STD. 9 QUESTION PAPER -->
+        <!-- ======================================================= -->
+        <article class="paper-sheet class-paper" id="paper-std-9" style="display:none;">
+            <header class="paper-header">
+                <div class="school-title-mr">शासकीय माध्यमिक व उच्च माध्यमिक आश्रमशाळा</div>
+                <div class="school-title-en">Government Secondary & Higher Secondary Ashram School</div>
+                <div class="exam-badge">सत्र परीक्षा प्रश्नपत्रिका : २०२६–२७ | Examination Question Paper</div>
+            </header>
+
+            <div class="student-info-box">
+                <div class="info-row"><span class="info-label">विद्यार्थ्याचे नाव (Name):</span><span class="info-line"></span></div>
+                <div class="info-row"><span class="info-label">हजेरी क्र. (Roll No.):</span><span class="info-line"></span></div>
+                <div class="info-row"><span class="info-label">इयत्ता (Std):</span><strong>९ वी (Std. 9)</strong></div>
+            </div>
+
+            <div class="meta-chips">
+                <span>विषय: संगणक व AI उपयोजन (Computer & AI Applications)</span>
+                <span>वेळ: १ तास ३० मिनिटे (1 Hr 30 Min)</span>
+                <span>एकूण गुण: ४० (Max Marks: 40)</span>
+            </div>
+
+            <div class="section-bar"><span>विभाग A — बहुपर्यायी प्रश्न (MCQs)</span><span class="sec-marks">८ गुण</span></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.1</span> <div>संगणकाची अचूक व सर्वसमावेशक व्याख्या कोणती?</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) डेटा स्वीकारून त्यावर प्रक्रिया करून उपयुक्त निकाल देणारे इलेक्ट्रॉनिक साधन</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) फक्त माहिती दाखवणारे साधन</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) फक्त टायपिंग करणारे साधन</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) फक्त गेम खेळण्याचे साधन</div>
+                </div>
+            </div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.2</span> <div>संगणकाचा वापर करण्याचे मुख्य कारण कोणते आहे?</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) काम जलद, अचूक आणि कार्यक्षम करण्यासाठी</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) काम कठीण करण्यासाठी</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) माहिती नष्ट करण्यासाठी</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) फक्त मनोरंजनासाठी</div>
+                </div>
+            </div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.3</span> <div>Input चे सर्वात योग्य उदाहरण कोणते?</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) कीबोर्डने टाईप केलेले नाव किंवा संख्या</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) मॉनिटरवर दिसणारे उत्तर</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) प्रिंटरने काढलेली प्रिंट</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) स्पीकरचा आवाज</div>
+                </div>
+            </div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.4</span> <div>Output चे योग्य उदाहरण कोणते?</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) स्क्रीनवर दिसणारा निकाल</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) कीबोर्डचे बटण दापणे</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) माउस क्लिक</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) मायक्रोफोनमधील आवाज</div>
+                </div>
+            </div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.5</span> <div>CPU चे मुख्य कार्य काय आहे?</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) सूचनांवर आणि डेटावर प्रक्रिया करणे</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) फक्त स्क्रीन दाखवणे</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) फक्त टायपिंग करणे</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) फक्त क्लिक करणे</div>
+                </div>
+            </div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.6</span> <div>AI चा वापर प्रामुख्याने का केला जातो?</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) समस्या सोडवण्यास आणि कठीण कार्ये स्वयंचलित करण्यास</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) संगणकाचा आकार वाढवण्यासाठी</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) कीबोर्ड बदलण्यासाठी</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) मॉनिटर बंद करण्यासाठी</div>
+                </div>
+            </div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.7</span> <div>AI चा वापर करणाऱ्या व्यक्तीने कोणती नैतिक जबाबदारी पाळली पाहिजे?</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) महत्त्वाच्या माहितीची सत्यता पडताळावी</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) AI चे प्रत्येक उत्तर आंधळेपणाने खरे मानावे</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) खोटी माहिती पसरवावी</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) स्रोत तपासू नयेत</div>
+                </div>
+            </div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.8</span> <div>खालीलपैकी AI चा योग्य उपयोग कोणता?</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) भाषांतर (Translation)</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) डेटा विश्लेषण (Data Analysis)</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) शिक्षण सहाय्य (Learning Support)</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) वरील सर्व — All of above</div>
+                </div>
+            </div>
+
+            <div class="section-bar"><span>विभाग B — रिकाम्या जागा भरा</span><span class="sec-marks">४ गुण</span></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.9</span> <div>संगणकाला दिलेल्या माहितीला <span class="fill-blank-line"></span> म्हणतात. [ Input / Output / Processing ]</div></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.10</span> <div>प्रक्रियेनंतर मिळणाऱ्या परिणामाला <span class="fill-blank-line"></span> म्हणतात. [ Output / Input / Entry ]</div></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.11</span> <div>प्रोग्राम दर्शविणाऱ्या छोट्या चिन्हाला <span class="fill-blank-line"></span> म्हणतात. [ Icon / CPU / Output ]</div></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.12</span> <div>AI चा पूर्ण अर्थ <span class="fill-blank-line"></span> आहे. [ Artificial Intelligence / Auto Input ]</div></div></div>
+
+            <div class="section-bar"><span>विभाग C — चूक की बरोबर</span><span class="sec-marks">४ गुण</span></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.13</span> <div>संगणकाचा उपयोग शिक्षण, बँकिंग आणि संवादासाठी होतो. उत्तर: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]</div></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.14</span> <div>AI वर कोणतीही पडताळणी न करता नेहमी १००% विश्वास ठेवावा. उत्तर: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]</div></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.15</span> <div>माउसचा मुख्य उपयोग पॉइंटिंग, क्लिकिंग आणि निवड करण्यासाठी होतो. उत्तर: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]</div></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.16</span> <div>योग्य Shut Down मुळे संगणक सुरक्षितपणे बंद होतो. उत्तर: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]</div></div></div>
+
+            <div class="section-bar"><span>विभाग D — जोड्या जुळवा</span><span class="sec-marks">५ गुण</span></div>
+            <table class="match-grid">
+                <tr><td>१. CPU</td><td>A. Typing (टायपिंग)</td></tr>
+                <tr><td>२. Monitor</td><td>B. Intelligent Technology</td></tr>
+                <tr><td>३. Keyboard</td><td>C. Processing (प्रक्रिया करणे)</td></tr>
+                <tr><td>४. Mouse</td><td>D. Display (माहिती दाखवणे)</td></tr>
+                <tr><td>५. AI</td><td>E. Pointing and Selecting</td></tr>
+            </table>
+            <div class="ans-inputs"><span>१ — [ &nbsp;&nbsp; ]</span><span>२ — [ &nbsp;&nbsp; ]</span><span>३ — [ &nbsp;&nbsp; ]</span><span>४ — [ &nbsp;&nbsp; ]</span><span>५ — [ &nbsp;&nbsp; ]</span></div>
+
+            <div class="section-bar"><span>विभाग E — थोडक्यात उत्तरे द्या</span><span class="sec-marks">१० गुण</span></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.22</span> <div>संगणक म्हणजे काय?</div></div><div class="write-line"></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.23</span> <div>संगणकाची आपल्याला गरज का आहे? कोणतीही तीन कारणे लिहा.</div></div><div class="write-line"></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.24</span> <div>Input आणि Output उदाहरणासह स्पष्ट करा.</div></div><div class="write-line"></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.25</span> <div>CPU चे कार्य स्पष्ट करा.</div></div><div class="write-line"></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.26</span> <div>Monitor आणि Keyboard यांचे उपयोग स्पष्ट करा.</div></div><div class="write-line"></div></div>
+
+            <div class="section-bar"><span>विभाग F — उपयोजनात्मक प्रश्न (Application Questions)</span><span class="sec-marks">९ गुण</span></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.27</span> <div>तुम्हाला संगणकावर YouTube उघडून एखादा शैक्षणिक व्हिडिओ पाहायचा आहे. तुम्ही कोणत्या क्रमाने कृती कराल? (पायऱ्या लिहा)</div></div>
+                <div class="write-line"></div><div class="write-line"></div>
+            </div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.28</span> <div>AI ने तुम्हाला एखादे उत्तर दिले आणि ते चुकीचे असण्याची शक्यता आहे. तुम्ही काय खबरदारी घ्याल? स्पष्ट करा.</div></div>
+                <div class="write-line"></div><div class="write-line"></div>
+            </div>
+        </article>
+
+        <!-- ======================================================= -->
+        <!-- STD. 10 QUESTION PAPER (Full Master Paper) -->
+        <!-- ======================================================= -->
+        <article class="paper-sheet class-paper" id="paper-std-10" style="display:none;">
+            <header class="paper-header">
+                <div class="school-title-mr">शासकीय माध्यमिक व उच्च माध्यमिक आश्रमशाळा</div>
+                <div class="school-title-en">Government Secondary & Higher Secondary Ashram School</div>
+                <div class="exam-badge">सत्र परीक्षा प्रश्नपत्रिका : २०२६–२७ | Examination Question Paper</div>
+            </header>
+
+            <div class="student-info-box">
+                <div class="info-row"><span class="info-label">विद्यार्थ्याचे नाव (Name):</span><span class="info-line"></span></div>
+                <div class="info-row"><span class="info-label">हजेरी क्र. (Roll No.):</span><span class="info-line"></span></div>
+                <div class="info-row"><span class="info-label">इयत्ता (Std):</span><strong>१० वी (Std. 10)</strong></div>
+            </div>
+
+            <div class="meta-chips">
+                <span>विषय: संगणक व कृत्रिम बुद्धिमत्ता (Computer & AI)</span>
+                <span>वेळ: १ तास ३० मिनिटे (1 Hr 30 Min)</span>
+                <span>एकूण गुण: ४० (Max Marks: 40)</span>
+            </div>
+
+            <div class="section-bar"><span>विभाग A — बहुपर्यायी प्रश्न (MCQs)</span><span class="sec-marks">१० गुण</span></div>
+
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.1</span> <div>संगणकाची कार्यपद्धती कोणत्या क्रमाने होते?</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) Input → Processing → Output</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) Output → Input → Processing</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) Processing → Input → Output</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) Output → Processing → Input</div>
+                </div>
+            </div>
+
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.2</span> <div>संगणकाचा वापर करण्यामागील योग्य कारणांचा संच कोणता?</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) वेळ वाचवणे (Saving time)</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) माहिती साठवणे (Storing info)</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) कामाची कार्यक्षमता वाढवणे</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) वरील सर्व — All of above</div>
+                </div>
+            </div>
+
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.3</span> <div>खालीलपैकी Input device चा योग्य संच कोणता?</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) Keyboard, Mouse</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) Monitor, Speaker</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) Printer, Monitor</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) Speaker, Projector</div>
+                </div>
+            </div>
+
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.4</span> <div>Output device चा योग्य संच कोणता?</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) Monitor, Speaker</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) Keyboard, Mouse</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) Keyboard, Microphone</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) Mouse, Scanner</div>
+                </div>
+            </div>
+
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.5</span> <div>CPU ला संगणकाचा मेंदू का म्हटले जाते?</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) कारण ते सर्व सूचना आणि डेटावर प्रक्रिया करते</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) कारण ते स्क्रीन दाखवते</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) कारण त्यावर आपण टाईप करतो</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) कारण ते माउस चालवते</div>
+                </div>
+            </div>
+
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.6</span> <div>AI बद्दल खालीलपैकी योग्य विधान कोणते?</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) मानवी बुद्धिमत्ता आवश्यक असणारी कार्ये करण्यास मशीनला सक्षम करणारे तंत्रज्ञान</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) AI म्हणजे फक्त कीबोर्ड</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) AI म्हणजे फक्त इंटरनेट</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) AI फक्त खेळासाठी असते</div>
+                </div>
+            </div>
+
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.7</span> <div>AI चा जबाबदारीने वापर करण्यासाठी काय करणे आवश्यक आहे?</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) महत्त्वाची माहिती पडताळून पाहणे (Verification)</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) गोपनीय माहिती कोणालाही देणे</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) प्रत्येक AI उत्तर खरे मानणे</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) खोटी माहिती पसरवणे</div>
+                </div>
+            </div>
+
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.8</span> <div>खालीलपैकी AI चा उपयोग कोणत्या क्षेत्रात होऊ शकतो?</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) Healthcare — आरोग्यसेवा</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) Agriculture — शेती</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) Education — शिक्षण</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) वरील सर्व — All of above</div>
+                </div>
+            </div>
+
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.9</span> <div>एखादे application उघडण्यासाठी खालीलपैकी योग्य कृती कोणती?</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) संबंधित Icon वर Double-click करणे</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) वीज बंद करणे</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) मॉनिटर बंद करणे</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) CPU बंद करणे</div>
+                </div>
+            </div>
+
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.10</span> <div>संगणक सुरक्षितपणे बंद करण्याची योग्य पद्धत कोणती?</div></div>
+                <div class="options-list">
+                    <div class="option-item"><span class="checkbox-box"></span> A) Start मेनूमधून 'Shut Down' पर्याय वापरणे</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) थेट स्वीच बंद करणे</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) वायर ओढणे</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) CPU वरील बटण वारंवार दाबणे</div>
+                </div>
+            </div>
+
+            <div class="section-bar"><span>विभाग B — रिकाम्या जागा भरा</span><span class="sec-marks">४ गुण</span></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.11</span> <div>संगणकाला दिलेल्या डेटाला <span class="fill-blank-line"></span> म्हणतात. [ Input / Output / Result ]</div></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.12</span> <div>प्रक्रियेनंतर तयार झालेल्या परिणामाला <span class="fill-blank-line"></span> म्हणतात. [ Output / Input / Command ]</div></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.13</span> <div>Program चे छोटे चित्रात्मक चिन्ह <span class="fill-blank-line"></span> म्हणून ओळखले जाते. [ Icon / CPU / Data ]</div></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.14</span> <div>AI चा पूर्ण अर्थ <span class="fill-blank-line"></span> आहे. [ Artificial Intelligence / Advanced Info ]</div></div></div>
+
+            <div class="section-bar"><span>विभाग C — चूक की बरोबर</span><span class="sec-marks">४ गुण</span></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.15</span> <div>संगणकामुळे लोकांना काम अधिक कार्यक्षमतेने करण्यास मदत होते. उत्तर: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]</div></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.16</span> <div>AI चा उपयोग शिक्षण, आरोग्य आणि शेतीमध्ये प्रभावीपणे होतो. उत्तर: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]</div></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.17</span> <div>AI ने दिलेले प्रत्येक उत्तर नेहमी १००% अचूक असते. उत्तर: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]</div></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.18</span> <div>AI द्वारे मिळालेली महत्त्वाची माहिती नेहमी तपासली पाहिजे. उत्तर: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]</div></div></div>
+
+            <div class="section-bar"><span>विभाग D — जोड्या जुळवा</span><span class="sec-marks">५ गुण</span></div>
+            <table class="match-grid">
+                <tr><td>१. Input (इनपुट)</td><td>A. माहिती दाखवणे (Display)</td></tr>
+                <tr><td>२. Output (आउटपुट)</td><td>B. संगणकाला दिलेली माहिती</td></tr>
+                <tr><td>३. Monitor (मॉनिटर)</td><td>C. डेटावर प्रक्रिया करणे (Processing)</td></tr>
+                <tr><td>४. CPU (सीपीयू)</td><td>D. तयार झालेला अंतिम निकाल</td></tr>
+                <tr><td>५. Mouse (माउस)</td><td>E. वस्तू निवडणे (Selecting)</td></tr>
+            </table>
+            <div class="ans-inputs"><span>१ — [ &nbsp;&nbsp; ]</span><span>२ — [ &nbsp;&nbsp; ]</span><span>३ — [ &nbsp;&nbsp; ]</span><span>४ — [ &nbsp;&nbsp; ]</span><span>५ — [ &nbsp;&nbsp; ]</span></div>
+
+            <div class="section-bar"><span>विभाग E — थोडक्यात उत्तरे द्या</span><span class="sec-marks">६ गुण</span></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.24</span> <div>Input आणि Output म्हणजे काय? प्रत्येकी एक उदाहरण द्या.</div></div><div class="write-line"></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.25</span> <div>Monitor, Keyboard, Mouse आणि CPU यांचे उपयोग थोडक्यात लिहा.</div></div><div class="write-line"></div></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.26</span> <div>Icon म्हणजे काय आणि संगणकावर एखादे application कसे उघडतात?</div></div><div class="write-line"></div></div>
+
+            <div class="section-bar"><span>विभाग F — कृत्रिम बुद्धिमत्ता व उपयोजनात्मक प्रश्न</span><span class="sec-marks">११ गुण</span></div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.27</span> <div>Artificial Intelligence म्हणजे काय? आपण AI चा वापर का करावा? कोणतीही दोन कारणे लिहा. [३ गुण]</div></div>
+                <div class="write-line"></div><div class="write-line"></div>
+            </div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.28</span> <div>AI ने दिलेली माहिती वापरण्यापूर्वी तिची पडताळणी (Verification) करणे का गरजेचे आहे? [२ गुण]</div></div>
+                <div class="write-line"></div><div class="write-line"></div>
+            </div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.29</span> <div>तुम्हाला संगणकावर YouTube उघडून एखादा शैक्षणिक व्हिडिओ पाहायचा आहे. तुम्ही कोणत्या क्रमाने कृती कराल? [३ गुण]</div></div>
+                <div class="write-line"></div><div class="write-line"></div>
+            </div>
+            <div class="q-item"><div class="q-title"><span class="q-no">Q.30</span> <div>शाळेत विद्यार्थ्यांच्या गरजेनुसार शिक्षणाला मदत करण्यासाठी AI चा वापर वैयक्तिकृत शिक्षण (Personalized Learning) म्हणून करणे का योग्य आहे? आपले मत स्पष्ट करा. [३ गुण]</div></div>
+                <div class="write-line"></div><div class="write-line"></div>
+            </div>
+        </article>
+
+    </main>
+
+    <script>
+        let showingAll = false;
+
+        function showClass(stdNumber, tabElement) {
+            showingAll = false;
+            // Hide all papers
+            const papers = document.querySelectorAll('.class-paper');
+            papers.forEach(p => p.style.display = 'none');
+
+            // Show selected paper
+            const targetPaper = document.getElementById('paper-std-' + stdNumber);
+            if (targetPaper) {
+                targetPaper.style.display = 'block';
+            }
+
+            // Update tab active classes
+            const tabs = document.querySelectorAll('.tab-btn');
+            tabs.forEach(t => t.classList.remove('active'));
+            if (tabElement) {
+                tabElement.classList.add('active');
+            }
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function toggleAllView() {
+            showingAll = !showingAll;
+            const papers = document.querySelectorAll('.class-paper');
+            papers.forEach(p => p.style.display = 'block');
+
+            const tabs = document.querySelectorAll('.tab-btn');
+            tabs.forEach(t => t.classList.remove('active'));
+
+            alert("सर्व १० इयत्तांच्या प्रश्नपत्रिका एकाच पानावर लोड झाल्या आहेत. आपण थेट Print बटनावर क्लिक करून सर्व किंवा आवश्यक पाने प्रिंट करू शकता.");
+        }
+    </script>
+</body>
+</html>
