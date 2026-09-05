@@ -41,6 +41,19 @@
 
 ---
 
+## 🌐 Render वर थेट उपयोजन (Deploy to Render)
+
+एका क्लिकवर Render वर मोफत होस्ट करण्यासाठी खालील बटनावर क्लिक करा:
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/Dikshu143644/ashram-school-exam-papers)
+
+किंवा Render Dashboard मध्ये:
+1. **New +** वर क्लिक करून **Static Site** निवडा.
+2. तुमचे GitHub Repository (`Dikshu143644/ashram-school-exam-papers`) कनेक्ट करा.
+3. **Publish Directory:** `.` ठेवा आणि **Create Static Site** वर क्लिक करा.
+
+---
+
 ## 📜 परवाना (License)
 
 शासकीय आश्रमशाळांच्या शैक्षणिक वापरासाठी समर्पित.
