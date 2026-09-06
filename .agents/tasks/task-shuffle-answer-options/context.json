@@ -1,0 +1,22 @@
+{
+  "project_type": "Pure static HTML website (no build system). Bilingual Marathi/English government ashram school exam papers for Computer & AI, grades 1 to 10.",
+  "language": "HTML + inline CSS; content data also mirrored in Markdown files.",
+  "build_system": "None. No package.json, no bundler, no dev server. Files are served as-is from repo root.",
+  "test_framework": "None. Verification is by HTML structure inspection and validity, plus internal consistency cross-checks between the HTML papers, the Markdown papers, and the answer key.",
+  "build_command": "N/A (no build). Optional syntax sanity check: python3 -c \"import html.parser, pathlib; ...\" or open index.html in a browser.",
+  "test_command": "N/A. Use consistency checks: verify option label sequences (A/B/C/D or [A]/[B]/[C]) are sequential per question, and that the AI answer key positions match the displayed AI HTML/MD option order.",
+  "verification_instructions": "1) Confirm every options-list / options-grid block still has sequential labels starting at A (or [A]) with no gaps or duplicates. 2) Confirm each correct answer's TEXT still exists exactly once per question (only its position moved). 3) For the AI paper, confirm AI_Exam_Model_Answer_Key.md letters now match the shuffled positions in BOTH AI_Exam_Question_Paper.html and AI_Exam_Question_Paper.md. 4) Confirm the per-paper A/B/C/D distribution of correct answers is spread out (not all A) and not a trivially guessable repeating pattern. 5) Confirm index.html Std-1 and Std-2 stay consistent with the same papers in Computer_Std_1_to_10_Question_Papers.md. 6) Open index.html and AI_Exam_Question_Paper.html in a browser (or inspect) to confirm no markup breakage.",
+  "snapshot_or_generated_files": null,
+  "setup_instructions": "No dependencies to install. git checkout origin/main and create a fresh branch off it (do NOT branch off add-vercel-deploy). Edit files directly.",
+  "environment_constraints": "No external network/service auth required. The current checkout is on branch add-vercel-deploy (an unrelated Vercel PR). This task's work MUST be based on origin/main so the two changes stay independent. Do NOT push or open a PR; the orchestrator publishes.",
+  "contribution_requirements": "Preserve ALL Marathi/English bilingual text, HTML structure, CSS classes (options-list, option-item, checkbox-box, options-grid, opt-item, opt-check, match-grid, match-table, ans-inputs, match-ans-box), and styling exactly. Only option ORDER, option LABELS (re-lettered), match column-B ordering, and recorded answer-key letters may change. Never change WHICH answer is correct, only its position.",
+  "key_patterns": "index.html: 10 papers in <article id='paper-std-1..10'>. MCQ blocks use <div class='options-list'> with <div class='option-item'><span class='checkbox-box'></span> A) text</div> (labels A/B/C/D). Fill-in-the-blank blocks use <div class='option-item'>[A] text</div> (no checkbox-box). Match sections use <table class='match-grid'> with column A items (१./२./...) and column B targets (A./B./...), followed by an ans-inputs row. index.html has NO embedded answer key: correct answer is the FIRST option and must be identified by domain knowledge then moved. AI_Exam_Question_Paper.html: MCQ uses <div class='options-grid'> / <div class='opt-item'><span class='opt-check'></span> A) text</div>; fill-in uses <div class='opt-item'>[A] text</div>; match uses <table class='match-table'>. AI_Exam_Question_Paper.md mirrors the AI HTML with checkbox list '- [ ] **A)** text' and inline fill-in option lists '[ A) ... | B) ... ]'. AI_Exam_Model_Answer_Key.md is the authoritative correct-answer record for the AI paper (MCQ table, fill-in list, match answer code).",
+  "relevant_files": [
+    "index.html",
+    "AI_Exam_Question_Paper.html",
+    "AI_Exam_Question_Paper.md",
+    "AI_Exam_Model_Answer_Key.md",
+    "Computer_Std_1_to_10_Question_Papers.md"
+  ],
+  "directory_structure": "Repo root contains all content files directly: index.html (master viewer, 10 papers), AI_Exam_Question_Paper.html/.md (Std 9/10 AI paper), AI_Exam_Model_Answer_Key.md (AI answer key), Computer_Std_1_to_10_Question_Papers.md (markdown papers, Std 1 & 2 detailed). Also render.yaml, vercel.json (deploy config, unrelated). No src/ or tests/."
+}

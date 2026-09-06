@@ -1,0 +1,7 @@
+{
+  "task_id": "task-shuffle-answer-options",
+  "task_description": "Shuffle the answer options across every exam paper (all 10 standards in index.html, the AI exam paper, and the Match-the-following sections) so the correct answer is no longer almost always the first option (A). Preserve each correct answer's identity exactly, re-letter options after reordering, break the straight-line pairing in match sections, update the AI model answer key to the new positions, and keep the Markdown representations consistent with the HTML. Work on a fresh branch based off origin/main (independent of the add-vercel-deploy branch). Do not push or open a PR.",
+  "status": "in_progress",
+  "feature_order": ["FEAT-001", "FEAT-002", "FEAT-003"],
+  "blocked_reason": null
+}

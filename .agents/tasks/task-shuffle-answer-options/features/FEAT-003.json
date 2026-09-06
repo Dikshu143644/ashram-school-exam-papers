@@ -1,0 +1,31 @@
+{
+  "id": "FEAT-003",
+  "type": "fix",
+  "description": "Shuffle answer positions across all 10 papers in index.html (MCQ, fill-in-the-blank, and Match-the-following sections) so the correct answer is no longer consistently the first option, and keep the Std 1 and Std 2 papers in Computer_Std_1_to_10_Question_Papers.md consistent with the corresponding index.html papers. index.html has no embedded answer key, so the correct answer is identified as the current first option (position A/[A]) and moved; the change is position-only and self-consistent. Depends on the audit-map produced in FEAT-001.",
+  "status": "pending",
+  "steps": [
+    "Read .agents/tasks/task-shuffle-answer-options/audit-map.md for the correct-answer text and planned new position of every index.html block.",
+    "For EACH paper article (paper-std-1 through paper-std-10) in index.html: for every MCQ <div class='options-list'> block, reorder the <div class='option-item'><span class='checkbox-box'></span> LABEL) text</div> children so the correct answer (the one identified in FEAT-001 as the current first option) moves to its planned new position, then re-letter A) B) C) D) to match the new physical order. Keep each <span class='checkbox-box'></span> and the Marathi/English text intact.",
+    "For every fill-in-the-blank options block in index.html (option-item divs WITHOUT checkbox-box, using [A]/[B]/[C]): reorder so the correct answer moves to its planned position and re-letter [A]/[B]/[C] sequentially. Most fill-in blocks have 3 options.",
+    "For every <table class='match-grid'> in index.html (10 total): reorder the column-B cells (A./B./C./... targets) so the straight-line 1->A,2->B,3->C,4->D pairing is broken, re-letter the B-column prefixes sequentially by new physical row order, and keep each column-A item semantically paired with its correct target. The ans-inputs row below stays as blank input placeholders (unchanged).",
+    "Distribute the new correct positions per paper so they are spread across A/B/C/D (roughly even, avoid all-A and avoid a guessable repeating sequence). Vary the pattern between papers.",
+    "Update Computer_Std_1_to_10_Question_Papers.md for Std 1 and Std 2 so its MCQ option order/letters, fill-in option order/letters, and match column-B order/letters EXACTLY match the shuffled index.html paper-std-1 and paper-std-2. (These are the only two fully-detailed papers in that markdown file.) Preserve all other content.",
+    "Record in the feature 'findings' a per-paper summary table: for each paper (Std 1-10 and the Std1/Std2 markdown mirror) list each question's correct-answer new position, plus the per-paper A/B/C/D distribution. This summary is for the PR description."
+  ],
+  "acceptance_criteria": [
+    "In each of the 10 index.html papers, correct answers (as identified in FEAT-001) are spread across positions A/B/C/D rather than concentrated at A, and no paper uses a trivially guessable repeating pattern.",
+    "Every options block in index.html has sequential labels (A,B,C,D for MCQ; [A],[B],[C] for 3-option fill-in) with no gaps or duplicates, in reading order.",
+    "Each correct-answer TEXT still appears exactly once per question; only its position changed.",
+    "Every match-grid column-B ordering breaks the 1->A,2->B,3->C,4->D straight line while keeping semantic pairings correct.",
+    "Computer_Std_1_to_10_Question_Papers.md Std 1 and Std 2 option/letter/match orderings are identical to the corresponding shuffled index.html papers.",
+    "All Marathi/English text, CSS classes (options-list, option-item, checkbox-box, match-grid, ans-inputs), article ids, display:none attributes, and surrounding markup are unchanged except for reordering and re-lettering."
+  ],
+  "verification": [
+    "Programmatically or by inspection, for each options block in index.html confirm the labels read A,B,C,D (or [A],[B],[C]) in order with no gaps.",
+    "For paper-std-1 and paper-std-2, diff the MCQ/fill-in/match option ordering against Computer_Std_1_to_10_Question_Papers.md Std 1/Std 2 and confirm they match.",
+    "Tally correct-answer positions per paper from the findings summary and confirm a spread distribution (not all A).",
+    "Open index.html in a browser (or inspect) and click through the Std 1-10 tabs to confirm no markup breakage and options still render two-per-row as before."
+  ],
+  "blocked_reason": null,
+  "findings": ""
+}
