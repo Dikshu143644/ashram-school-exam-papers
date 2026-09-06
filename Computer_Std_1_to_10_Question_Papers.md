@@ -28,26 +28,26 @@
 
 ### विभाग A — योग्य पर्याय निवडा (५ गुण)
 - **Q.1 संगणक पाहण्यासाठी आपण कोणते उपकरण वापरतो?**  
-  A) मॉनिटर (Monitor) &nbsp;&nbsp; B) माउस (Mouse) &nbsp;&nbsp; C) कीबोर्ड (Keyboard) &nbsp;&nbsp; D) CPU
+  A) माउस (Mouse) &nbsp;&nbsp; B) मॉनिटर (Monitor) &nbsp;&nbsp; C) कीबोर्ड (Keyboard) &nbsp;&nbsp; D) CPU
 - **Q.2 टायपिंग करण्यासाठी कोणते उपकरण वापरतात?**  
-  A) मॉनिटर &nbsp;&nbsp; B) कीबोर्ड &nbsp;&nbsp; C) माउस &nbsp;&nbsp; D) स्पीकर
+  A) मॉनिटर &nbsp;&nbsp; B) माउस &nbsp;&nbsp; C) स्पीकर &nbsp;&nbsp; D) कीबोर्ड
 - **Q.3 स्क्रीनवर वस्तू निवडण्यासाठी कोणते उपकरण वापरतात?**  
-  A) माउस &nbsp;&nbsp; B) कीबोर्ड &nbsp;&nbsp; C) मॉनिटर &nbsp;&nbsp; D) CPU
+  A) कीबोर्ड &nbsp;&nbsp; B) मॉनिटर &nbsp;&nbsp; C) माउस &nbsp;&nbsp; D) CPU
 - **Q.4 संगणकाचा मुख्य भाग कोणता?**  
   A) CPU &nbsp;&nbsp; B) माउस &nbsp;&nbsp; C) कीबोर्ड &nbsp;&nbsp; D) स्पीकर
 - **Q.5 खालीलपैकी कोणते संगणकाचे उपकरण आहे?**  
-  A) कीबोर्ड &nbsp;&nbsp; B) पुस्तक &nbsp;&nbsp; C) पेन &nbsp;&nbsp; D) पाण्याची बाटली
+  A) पुस्तक &nbsp;&nbsp; B) पेन &nbsp;&nbsp; C) कीबोर्ड &nbsp;&nbsp; D) पाण्याची बाटली
 
 ### विभाग B — रिकाम्या जागा भरा (३ गुण)
-- **Q.6 संगणकावर चित्र पाहण्यासाठी ________ वापरतात.** [ A) Monitor &nbsp; B) Mouse &nbsp; C) Keyboard ]
-- **Q.7 टाईप करण्यासाठी ________ वापरतात.** [ A) Keyboard &nbsp; B) Monitor &nbsp; C) Mouse ]
-- **Q.8 स्क्रीनवरील वस्तू निवडण्यासाठी ________ वापरतात.** [ A) Mouse &nbsp; B) CPU &nbsp; C) Monitor ]
+- **Q.6 संगणकावर चित्र पाहण्यासाठी ________ वापरतात.** [ A) Mouse &nbsp; B) Keyboard &nbsp; C) Monitor ]
+- **Q.7 टाईप करण्यासाठी ________ वापरतात.** [ A) Monitor &nbsp; B) Keyboard &nbsp; C) Mouse ]
+- **Q.8 स्क्रीनवरील वस्तू निवडण्यासाठी ________ वापरतात.** [ A) CPU &nbsp; B) Monitor &nbsp; C) Mouse ]
 
 ### विभाग C — जोड्या जुळवा (४ गुण)
-1. Monitor &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A. Typing (टायपिंग)  
-2. Keyboard &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; B. Seeing screen (स्क्रीन पाहणे)  
-3. Mouse &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C. Selecting (निवड करणे)  
-4. CPU &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; D. Processing (प्रक्रिया करणे)  
+1. Monitor &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A. Processing (प्रक्रिया करणे)  
+2. Keyboard &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; B. Selecting (निवड करणे)  
+3. Mouse &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C. Seeing screen (स्क्रीन पाहणे)  
+4. CPU &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; D. Typing (टायपिंग)  
 
 ### विभाग D — ओळखा व सांगा (३ गुण)
 - **Q.13 संगणकावर आपण लिहिण्यासाठी कोणते उपकरण वापरतो?** उत्तर: __________________
@@ -66,15 +66,15 @@
 
 ### Section A — योग्य पर्याय निवडा (५ गुण)
 - **Q.1 संगणकावर अक्षरे लिहिण्यासाठी काय वापरतो?**  
-  A) Keyboard &nbsp;&nbsp; B) Monitor &nbsp;&nbsp; C) Mouse &nbsp;&nbsp; D) CPU
+  A) Monitor &nbsp;&nbsp; B) Mouse &nbsp;&nbsp; C) Keyboard &nbsp;&nbsp; D) CPU
 - **Q.2 माउसचा उपयोग कशासाठी होतो?**  
   A) Clicking and selecting &nbsp;&nbsp; B) Typing &nbsp;&nbsp; C) Seeing &nbsp;&nbsp; D) Printing
 - **Q.3 मॉनिटरचा उपयोग काय आहे?**  
-  A) To see information &nbsp;&nbsp; B) To type &nbsp;&nbsp; C) To click &nbsp;&nbsp; D) To print
+  A) To type &nbsp;&nbsp; B) To click &nbsp;&nbsp; C) To print &nbsp;&nbsp; D) To see information
 - **Q.4 CPU मध्ये माहितीवर काय होते?**  
-  A) Processing &nbsp;&nbsp; B) Washing &nbsp;&nbsp; C) Drawing &nbsp;&nbsp; D) Printing
+  A) Washing &nbsp;&nbsp; B) Processing &nbsp;&nbsp; C) Drawing &nbsp;&nbsp; D) Printing
 - **Q.5 खालीलपैकी Input device कोणते आहे?**  
-  A) Keyboard &nbsp;&nbsp; B) Monitor &nbsp;&nbsp; C) Speaker &nbsp;&nbsp; D) Printer
+  A) Monitor &nbsp;&nbsp; B) Speaker &nbsp;&nbsp; C) Keyboard &nbsp;&nbsp; D) Printer
 
 ### Section B — Fill in the Blanks (३ गुण)
 - **Q.6 Keyboard is used for ________.** [ A) Typing &nbsp; B) Seeing &nbsp; C) Listening ]
@@ -87,10 +87,10 @@
 - **Q.11 Monitor displays information.** ( ________ )
 
 ### Section D — Match the following (४ गुण)
-1. Keyboard &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A. Screen  
-2. Mouse &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; B. Typing  
-3. Monitor &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C. Processing  
-4. CPU &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; D. Clicking  
+1. Keyboard &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A. Clicking  
+2. Mouse &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; B. Screen  
+3. Monitor &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C. Typing  
+4. CPU &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; D. Processing  
 
 ### Section E — एका वाक्यात उत्तरे लिहा (५ गुण)
 - **Q.16 संगणक म्हणजे काय?** उत्तर: __________________________________________________
