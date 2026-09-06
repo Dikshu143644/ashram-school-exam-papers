@@ -29,23 +29,23 @@
 
 #### **Q.1 खालीलपैकी कोणते विधान कृत्रिम बुद्धिमत्तेचे (AI) योग्य वर्णन करते?**  
 *(Which of the following statements best describes Artificial Intelligence?)*  
-- [ ] **A)** मानवाच्या बुद्धिमत्तेच्या काही पैलूंची आवश्यकता असलेली कार्ये मशीनद्वारे करण्यास सक्षम करणारे तंत्रज्ञान  
+- [ ] **A)** फक्त फाइल साठवण्यासाठी वापरले जाणारे उपकरण *(A device used only for storing files)*  
+- [ ] **B)** संगणकाला विजेशी जोडण्याची पद्धत *(A method of connecting a computer to electricity)*  
+- [ ] **C)** मानवाच्या बुद्धिमत्तेच्या काही पैलूंची आवश्यकता असलेली कार्ये मशीनद्वारे करण्यास सक्षम करणारे तंत्रज्ञान  
 *(Technology enabling machines to perform tasks requiring human intelligence)*  
-- [ ] **B)** फक्त फाइल साठवण्यासाठी वापरले जाणारे उपकरण *(A device used only for storing files)*  
-- [ ] **C)** संगणकाला विजेशी जोडण्याची पद्धत *(A method of connecting a computer to electricity)*  
 - [ ] **D)** संगणकाच्या कीबोर्डचा एक प्रकार *(A type of computer keyboard)*  
 
 #### **Q.2 “AI” या संक्षिप्त रूपाचा पूर्ण अर्थ (Full Form) काय आहे?**  
 *(What is the full form of the abbreviation "AI"?)*  
 - [ ] **A)** Automated Internet — स्वयंचलित इंटरनेट  
-- [ ] **B)** Artificial Intelligence — कृत्रिम बुद्धिमत्ता  
-- [ ] **C)** Advanced Information — प्रगत माहिती  
-- [ ] **D)** Automatic Input — स्वयंचलित इनपुट  
+- [ ] **B)** Advanced Information — प्रगत माहिती  
+- [ ] **C)** Automatic Input — स्वयंचलित इनपुट  
+- [ ] **D)** Artificial Intelligence — कृत्रिम बुद्धिमत्ता  
 
 #### **Q.3 आधुनिक प्रणालींमध्ये कृत्रिम बुद्धिमत्तेचा वापर प्रामुख्याने का केला जातो?**  
 *(Why is Artificial Intelligence used in modern systems?)*  
-- [ ] **A)** समस्या जलद सोडवण्यास आणि कठीण कार्ये करण्यास मदत करण्यासाठी *(To solve problems and assist with tasks)*  
-- [ ] **B)** संगणकाचा भौतिक आकार वाढवण्यासाठी *(To increase the physical size of computers)*  
+- [ ] **A)** संगणकाचा भौतिक आकार वाढवण्यासाठी *(To increase the physical size of computers)*  
+- [ ] **B)** समस्या जलद सोडवण्यास आणि कठीण कार्ये करण्यास मदत करण्यासाठी *(To solve problems and assist with tasks)*  
 - [ ] **C)** सर्व संगणक हार्डवेअर पूर्णपणे बदलण्यासाठी *(To replace all computer hardware)*  
 - [ ] **D)** संगणकाला माहितीवर प्रक्रिया करण्यापासून थांबवण्यासाठी *(To stop computers from processing data)*  
 
@@ -58,24 +58,24 @@
 
 #### **Q.5 नमुने (Patterns) ओळखण्यासाठी आणि अचूक अंदाज करण्यासाठी AI प्रणालीला सामान्यतः कशाची आवश्यकता असते?**  
 *(What does an AI system primarily require to recognize patterns and make predictions?)*  
-- [ ] **A)** Data — डेटा / माहिती  
-- [ ] **B)** Furniture — फर्निचर  
-- [ ] **C)** Paper clips — कागदाच्या क्लिप  
+- [ ] **A)** Furniture — फर्निचर  
+- [ ] **B)** Paper clips — कागदाच्या क्लिप  
+- [ ] **C)** Data — डेटा / माहिती  
 - [ ] **D)** Water — पाणी  
 
 #### **Q.6 मूलभूत AI प्रणालीमध्ये “Input” (इनपुट) म्हणजे काय?**  
 *(What is "Input" in a basic AI system?)*  
-- [ ] **A)** प्रणालीला विश्लेषणासाठी दिलेली माहिती किंवा डेटा *(Information/data fed into the system)*  
-- [ ] **B)** प्रणालीने तयार केलेला अंतिम परिणाम *(Final result produced by the system)*  
+- [ ] **A)** प्रणालीने तयार केलेला अंतिम परिणाम *(Final result produced by the system)*  
+- [ ] **B)** प्रणालीला विश्लेषणासाठी दिलेली माहिती किंवा डेटा *(Information/data fed into the system)*  
 - [ ] **C)** संगणकाचे बाह्य आवरण *(Outer casing of a computer)*  
 - [ ] **D)** इमारतीला दिलेला विद्युत पुरवठा *(Electric power given to a building)*  
 
 #### **Q.7 AI प्रणालीचा “Output” (आउटपुट) म्हणजे काय?**  
 *(What is meant by the "Output" of an AI system?)*  
-- [ ] **A)** माहितीवर प्रक्रिया करून प्रणालीने तयार केलेला निकाल किंवा परिणाम *(Result produced after processing)*  
-- [ ] **B)** वापरकर्त्याने दिलेली कच्ची माहिती *(Raw data provided by user)*  
-- [ ] **C)** संगणकाची मुख्य वीज जोडणी *(Computer power cord)*  
-- [ ] **D)** वापरकर्त्याने वापरलेला कीबोर्ड *(Keyboard used by user)*  
+- [ ] **A)** वापरकर्त्याने दिलेली कच्ची माहिती *(Raw data provided by user)*  
+- [ ] **B)** संगणकाची मुख्य वीज जोडणी *(Computer power cord)*  
+- [ ] **C)** वापरकर्त्याने वापरलेला कीबोर्ड *(Keyboard used by user)*  
+- [ ] **D)** माहितीवर प्रक्रिया करून प्रणालीने तयार केलेला निकाल किंवा परिणाम *(Result produced after processing)*  
 
 #### **Q.8 खालीलपैकी कोणत्या क्षेत्राला AI च्या वापराचा सर्वाधिक फायदा होऊ शकतो?**  
 *(Which of the following sectors can benefit from the use of AI?)*  
@@ -93,9 +93,9 @@
 
 #### **Q.10 डेटामधून नमुने शिकण्याशी (Learning patterns from data) खालीलपैकी कोणती संकल्पना सर्वाधिक संबंधित आहे?**  
 *(Which concept is most closely related to learning patterns from data?)*  
-- [ ] **A)** Machine Learning — मशीन लर्निंग  
-- [ ] **B)** File Printing — फाइल प्रिंटिंग  
-- [ ] **C)** Screen Brightness — स्क्रीन ब्राइटनेस  
+- [ ] **A)** File Printing — फाइल प्रिंटिंग  
+- [ ] **B)** Screen Brightness — स्क्रीन ब्राइटनेस  
+- [ ] **C)** Machine Learning — मशीन लर्निंग  
 - [ ] **D)** Computer Assembly — संगणक जोडणी  
 
 ---
@@ -106,27 +106,27 @@
 
 #### **Q.11 कृत्रिम बुद्धिमत्तेला संक्षिप्त इंग्रजी स्वरूपात ________________ असे म्हणतात.**  
 *(Artificial Intelligence is called ________________ in abbreviated form.)*  
-**पर्याय:** [ A) AI — एआय &nbsp;|&nbsp; B) CPU — सीपीयू &nbsp;|&nbsp; C) RAM — रॅम &nbsp;|&nbsp; D) USB — यूएसबी ]  
+**पर्याय:** [ A) CPU — सीपीयू &nbsp;|&nbsp; B) RAM — रॅम &nbsp;|&nbsp; C) AI — एआय &nbsp;|&nbsp; D) USB — यूएसबी ]  
 **उत्तर:** ______________________
 
 #### **Q.12 AI प्रणालीला अभ्यासासाठी दिलेल्या माहितीला ________________ म्हणतात.**  
 *(The data or information given to an AI system is called ________________.)*  
-**पर्याय:** [ A) Input — इनपुट &nbsp;|&nbsp; B) Output — आउटपुट &nbsp;|&nbsp; C) Result — निकाल &nbsp;|&nbsp; D) Display — डिस्प्ले ]  
+**पर्याय:** [ A) Output — आउटपुट &nbsp;|&nbsp; B) Input — इनपुट &nbsp;|&nbsp; C) Result — निकाल &nbsp;|&nbsp; D) Display — डिस्प्ले ]  
 **उत्तर:** ______________________
 
 #### **Q.13 माहितीवर प्रक्रिया केल्यानंतर प्रणालीने तयार केलेल्या निष्कर्षाला ________________ म्हणतात.**  
 *(The result produced after processing information is called ________________.)*  
-**पर्याय:** [ A) Input — इनपुट &nbsp;|&nbsp; B) Output — आउटपुट &nbsp;|&nbsp; C) Data Entry — डेटा एंट्री &nbsp;|&nbsp; D) Storage — संचयन ]  
+**पर्याय:** [ A) Output — आउटपुट &nbsp;|&nbsp; B) Input — इनपुट &nbsp;|&nbsp; C) Data Entry — डेटा एंट्री &nbsp;|&nbsp; D) Storage — संचयन ]  
 **उत्तर:** ______________________
 
 #### **Q.14 AI प्रणालीच्या विश्लेषणासाठी व प्रशिक्षणासाठी वापरल्या जाणाऱ्या मोठ्या माहितीच्या संग्रहाला ________________ म्हणतात.**  
 *(A large collection of data used for training and analyzing an AI system is called a ________________.)*  
-**पर्याय:** [ A) Dataset — डेटासेट &nbsp;|&nbsp; B) Keyboard — कीबोर्ड &nbsp;|&nbsp; C) Monitor — मॉनिटर &nbsp;|&nbsp; D) Printer — प्रिंटर ]  
+**पर्याय:** [ A) Keyboard — कीबोर्ड &nbsp;|&nbsp; B) Monitor — मॉनिटर &nbsp;|&nbsp; C) Printer — प्रिंटर &nbsp;|&nbsp; D) Dataset — डेटासेट ]  
 **उत्तर:** ______________________
 
 #### **Q.15 AI प्रणाली डेटामधील ________________ ओळखून त्यांचा उपयोग उपयुक्त परिणाम तयार करण्यासाठी करू शकतात.**  
 *(AI systems identify ________________ in data to produce meaningful outcomes.)*  
-**पर्याय:** [ A) Patterns — नमुने &nbsp;|&nbsp; B) Wires — तारा &nbsp;|&nbsp; C) Buttons — बटणे &nbsp;|&nbsp; D) Cables — केबल्स ]  
+**पर्याय:** [ A) Wires — तारा &nbsp;|&nbsp; B) Patterns — नमुने &nbsp;|&nbsp; C) Buttons — बटणे &nbsp;|&nbsp; D) Cables — केबल्स ]  
 **उत्तर:** ______________________
 
 ---
@@ -161,10 +161,10 @@
 
 | स्तंभ 'अ' / Column A | स्तंभ 'ब' / Column B |
 | :--- | :--- |
-| **१. कृत्रिम बुद्धिमत्ता (Artificial Intelligence)** | **A.** प्रणालीला अभ्यासासाठी दिलेली माहिती *(Data given to system)* |
-| **२. इनपुट (Input)** | **B.** डेटामधून नमुने शिकणे *(Learning patterns from data)* |
-| **३. मशीन लर्निंग (Machine Learning)** | **C.** बुद्धिमान मशीनच्या कार्याशी संबंधित तंत्रज्ञान *(Smart technology)* |
-| **४. आउटपुट (Output)** | **D.** प्रणालीने तयार केलेला अंतिम परिणाम *(Result produced by system)* |
+| **१. कृत्रिम बुद्धिमत्ता (Artificial Intelligence)** | **A.** बुद्धिमान मशीनच्या कार्याशी संबंधित तंत्रज्ञान *(Smart technology)* |
+| **२. इनपुट (Input)** | **B.** प्रणालीने तयार केलेला अंतिम परिणाम *(Result produced by system)* |
+| **३. मशीन लर्निंग (Machine Learning)** | **C.** प्रणालीला अभ्यासासाठी दिलेली माहिती *(Data given to system)* |
+| **४. आउटपुट (Output)** | **D.** डेटामधून नमुने शिकणे *(Learning patterns from data)* |
 
 **उत्तर / Answers:**  
 - **१ —** [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]  

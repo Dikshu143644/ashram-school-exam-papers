@@ -1,0 +1,27 @@
+{
+  "id": "FEAT-001",
+  "type": "chore",
+  "description": "Set up a fresh working branch based on origin/main (NOT off add-vercel-deploy) and produce a complete audit map of every shufflable answer block across all content files. This map is the source of truth the later features edit against. It records, for each question, the exact correct-answer TEXT and its current position, so shuffling never loses track of which answer is correct.",
+  "status": "completed",
+  "steps": [
+    "Run `git fetch origin` then create and check out a new branch off origin/main: `git checkout -b shuffle-answer-options origin/main`. Confirm with `git log --oneline -1` that HEAD is the main tip (commit fb2f3ee 'feat: Ashram School Computer & AI Examination...'), NOT the vercel commits. The working tree must NOT contain vercel.json or render.yaml changes from add-vercel-deploy.",
+    "Create a working notes file at .agents/tasks/task-shuffle-answer-options/audit-map.md (this file is scratch/audit only, keep it in the repo for the reviewer).",
+    "AI paper: from AI_Exam_Model_Answer_Key.md read the authoritative correct answers: MCQ Q1-Q10 = A,B,A,A,A,A,A,D,B,A; Fill-in Q11-Q15 = A,A,B,A,A; Match code 1->C,2->A,3->B,4->D. For each, record the correct answer's full TEXT (from AI_Exam_Question_Paper.html option list) so the identity is captured independent of letter.",
+    "index.html: for EACH of the 10 papers (article id=paper-std-1 .. paper-std-10), enumerate every <div class='options-list'> MCQ block and every fill-in-the-blank options block. index.html has NO answer key, so the correct answer is the CURRENT FIRST option (position A / [A]) per the confirmed pattern; capture that first-option TEXT as the correct answer for each question. Also enumerate every <table class='match-grid'> and record the semantically correct pairing (column A item -> the column B target that is actually its correct match, by meaning, e.g. Monitor -> 'Seeing screen').",
+    "Computer_Std_1_to_10_Question_Papers.md: this file details Std 1 and Std 2 only, with the SAME questions as index.html paper-std-1 and paper-std-2. Record its MCQ/fill-in/match blocks and note that they must end up consistent with the corresponding index.html papers after shuffling.",
+    "In audit-map.md, for every question list: file, paper/std, question number, correct-answer TEXT, current position, and a PLANNED new position chosen so that per paper the correct answers are spread across A/B/C/D (roughly even, no single letter dominating, no trivially guessable repeating pattern like all-B or A,B,C,D,A,B,C,D). For fill-in blocks with only 3 options use A/B/C. For match sections, plan a column-B ordering so the naive straight-line 1->A,2->B,3->C,4->D pairing is NOT correct while the semantic pairings remain intact."
+  ],
+  "acceptance_criteria": [
+    "A new branch `shuffle-answer-options` exists and its HEAD is origin/main's tip; `git diff origin/main --stat` shows no changes yet except the new .agents task files.",
+    "The working tree does not include the add-vercel-deploy changes (no modified vercel.json/render.yaml beyond what exists on main).",
+    ".agents/tasks/task-shuffle-answer-options/audit-map.md exists and lists, for every shufflable block in all 5 content files, the correct-answer text, current position, and planned new position.",
+    "The planned new positions give a spread-out distribution per paper (not all one letter) and match-section plans break the straight-line pairing."
+  ],
+  "verification": [
+    "Run `git rev-parse --abbrev-ref HEAD` and confirm it prints `shuffle-answer-options`.",
+    "Run `git merge-base --is-ancestor origin/main HEAD && echo BASED_ON_MAIN` and confirm the branch descends from origin/main.",
+    "Confirm audit-map.md covers all 72 index.html options-list blocks, all fill-in blocks, all 10 index.html match-grid tables, the AI paper (10 MCQ + 5 fill-in + 1 match), and the Std 1/2 blocks in the Computer markdown."
+  ],
+  "blocked_reason": null,
+  "findings": "Branch `shuffle-answer-options` created off origin/main. NOTE: origin/main's tip is now 1bb2748 (docs: render badge), which already includes the render.yaml commits (9b6435e ci: render blueprint, on top of fb2f3ee). The briefing expected fb2f3ee, but remote main has since advanced; render.yaml is part of main, NOT the add-vercel-deploy PR. Confirmed vercel.json is ABSENT from the working tree and `git diff origin/main HEAD` is clean (only untracked .agents/). Branch descends from origin/main (BASED_ON_MAIN verified). audit-map.md written at .agents/tasks/task-shuffle-answer-options/audit-map.md covering: all 72 index.html options-list blocks (69 MCQ 4-opt + 3 fill-in 3-opt in Std1) + 10 match-grid tables; AI paper 10 MCQ + 5 fill-in + 1 match (from AI_Exam_Model_Answer_Key.md); Std1/2 in Computer markdown (mirror index.html). Per-paper options-list counts verified: Std1=8,2=5,3=5,4=5,5=8,6=8,7=8,8=7,9=8,10=10. Planned positions give spread A/B/C/D distributions per paper and all match sections break the 1->A,2->B,3->C,4->D straight line while preserving semantic pairings. Genuine 'All of above' answers already at D were kept at D. No exam content files modified in this feature (analysis + branch setup only). No push/PR performed."
+}

@@ -11,31 +11,31 @@
 
 | प्रश्न क्र. | बरोबर पर्याय | अचूक उत्तर (मराठी) | Correct Answer (English) | गुण |
 | :---: | :---: | :--- | :--- | :---: |
-| **Q.1** | **A** | मानवाच्या बुद्धिमत्तेच्या काही पैलूंची आवश्यकता असलेली कार्ये मशीनद्वारे करण्यास सक्षम करणारे तंत्रज्ञान | Technology enabling machines to perform tasks requiring aspects of human intelligence | **१** |
-| **Q.2** | **B** | Artificial Intelligence — कृत्रिम बुद्धिमत्ता | Artificial Intelligence | **१** |
-| **Q.3** | **A** | समस्या सोडवण्यास आणि कार्ये करण्यास मदत करण्यासाठी | To help solve problems and perform tasks | **१** |
+| **Q.1** | **C** | मानवाच्या बुद्धिमत्तेच्या काही पैलूंची आवश्यकता असलेली कार्ये मशीनद्वारे करण्यास सक्षम करणारे तंत्रज्ञान | Technology enabling machines to perform tasks requiring aspects of human intelligence | **१** |
+| **Q.2** | **D** | Artificial Intelligence — कृत्रिम बुद्धिमत्ता | Artificial Intelligence | **१** |
+| **Q.3** | **B** | समस्या सोडवण्यास आणि कार्ये करण्यास मदत करण्यासाठी | To help solve problems and perform tasks | **१** |
 | **Q.4** | **A** | डिजिटल असिस्टंटमधील आवाज ओळखण्याची सुविधा (उदा. Google Assistant, Alexa) | Voice recognition in digital assistants | **१** |
-| **Q.5** | **A** | Data — डेटा / माहिती | Data | **१** |
-| **Q.6** | **A** | प्रणालीला दिलेली माहिती | Information fed into the system | **१** |
-| **Q.7** | **A** | प्रणालीने तयार केलेली माहिती किंवा परिणाम (निकाल) | Information or result produced by the system | **१** |
+| **Q.5** | **C** | Data — डेटा / माहिती | Data | **१** |
+| **Q.6** | **B** | प्रणालीला दिलेली माहिती | Information fed into the system | **१** |
+| **Q.7** | **D** | प्रणालीने तयार केलेली माहिती किंवा परिणाम (निकाल) | Information or result produced by the system | **१** |
 | **Q.8** | **D** | All of the above — वरील सर्व (आरोग्य, शिक्षण व शेती) | All of the above (Healthcare, Education, Agriculture) | **१** |
 | **Q.9** | **B** | तिची मानवाकडून पडताळणी करणे आवश्यक असू शकते | It may require verification by humans | **१** |
-| **Q.10** | **A** | Machine Learning — मशीन लर्निंग | Machine Learning | **१** |
+| **Q.10** | **C** | Machine Learning — मशीन लर्निंग | Machine Learning | **१** |
 
 ---
 
 ### **विभाग B — रिकाम्या जागा भरा [एकूण गुण: ५]**
 *(प्रत्येक योग्य उत्तराला १ गुण)*
 
-- **Q.11 :** **A) AI — एआय**  
+- **Q.11 :** **C) AI — एआय**  
   *स्पष्टीकरण:* Artificial Intelligence चे संक्षिप्त रूप AI आहे.
-- **Q.12 :** **A) Input — इनपुट**  
+- **Q.12 :** **B) Input — इनपुट**  
   *स्पष्टीकरण:* संगणक किंवा AI प्रणालीला पुरवलेल्या कच्च्या माहितीला Input म्हणतात.
-- **Q.13 :** **B) Output — आउटपुट**  
+- **Q.13 :** **A) Output — आउटपुट**  
   *स्पष्टीकरण:* प्रक्रियेनंतर प्रणालीने दिलेल्या अंतिम निष्कर्षाला Output म्हणतात.
-- **Q.14 :** **A) Dataset — डेटासेट**  
+- **Q.14 :** **D) Dataset — डेटासेट**  
   *स्पष्टीकरण:* AI ला शिकवण्यासाठी व ट्रेन करण्यासाठी वापरल्या जाणाऱ्या माहितीच्या मोठ्या संग्रहाला Dataset म्हणतात.
-- **Q.15 :** **A) Patterns — नमुने**  
+- **Q.15 :** **B) Patterns — नमुने**  
   *स्पष्टीकरण:* AI मॉडेल्स डेटामधील नमुने (Patterns) ओळखून अंदाज लावतात.
 
 ---
@@ -61,16 +61,16 @@
 
 | स्तंभ 'अ' (Column A) | स्तंभ 'ब' (Column B) मधील योग्य पर्याय |
 | :--- | :--- |
-| **१. कृत्रिम बुद्धिमत्ता (Artificial Intelligence)** | **C.** बुद्धिमान मशीनच्या कार्याशी संबंधित तंत्रज्ञान |
-| **२. इनपुट (Input)** | **A.** प्रणालीला दिलेली माहिती |
-| **३. मशीन लर्निंग (Machine Learning)** | **B.** डेटामधून नमुने शिकणे |
-| **४. आउटपुट (Output)** | **D.** प्रणालीने तयार केलेला परिणाम |
+| **१. कृत्रिम बुद्धिमत्ता (Artificial Intelligence)** | **A.** बुद्धिमान मशीनच्या कार्याशी संबंधित तंत्रज्ञान |
+| **२. इनपुट (Input)** | **C.** प्रणालीला दिलेली माहिती |
+| **३. मशीन लर्निंग (Machine Learning)** | **D.** डेटामधून नमुने शिकणे |
+| **४. आउटपुट (Output)** | **B.** प्रणालीने तयार केलेला परिणाम |
 
 **उत्तर की (Answer Code):**  
-- **१ — C**  
-- **२ — A**  
-- **३ — B**  
-- **४ — D**  
+- **१ — A**  
+- **२ — C**  
+- **३ — D**  
+- **४ — B**  
 
 ---
 
