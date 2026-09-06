@@ -2,7 +2,7 @@
   "id": "FEAT-002",
   "type": "fix",
   "description": "Shuffle the answer positions for the AI exam paper across its THREE representations so they stay mutually consistent: AI_Exam_Question_Paper.html, AI_Exam_Question_Paper.md, and AI_Exam_Model_Answer_Key.md. The correct answer identity must be preserved exactly; only its position among options changes, labels are re-lettered, and the answer key is updated to the new positions. Depends on the audit-map produced in FEAT-001.",
-  "status": "pending",
+  "status": "completed",
   "steps": [
     "Read .agents/tasks/task-shuffle-answer-options/audit-map.md for the planned new positions of the AI paper.",
     "AI MCQ (Q1-Q10): the correct-answer TEXTS are currently at A,B,A,A,A,A,A,D,B,A. For each question in AI_Exam_Question_Paper.html (<div class='options-grid'> with <div class='opt-item'><span class='opt-check'></span> LABEL) text</div>), reorder the four opt-item divs so the correct answer lands at its planned new position, then re-letter all four labels A) B) C) D) to match the new physical order. Keep the <span class='opt-check'></span> and Marathi/English text of each option intact. Target a spread like Q1->C, Q2->A, Q3->D, Q4->B, Q5->C, Q6->D, Q7->B, Q8->A, Q9->C, Q10->D (or any per-audit-map spread that is roughly even across A/B/C/D and not a guessable pattern).",
@@ -28,5 +28,5 @@
     "Open AI_Exam_Question_Paper.html in a browser (or inspect the DOM) and confirm no structural breakage."
   ],
   "blocked_reason": null,
-  "findings": ""
+  "findings": "AI paper shuffled across all three files (HTML, MD, answer key) per audit-map Section 2. Correct-answer TEXT preserved exactly; only positions moved and labels re-lettered sequentially.\n\nMCQ Section A (old -> new letter): Q1 A->C, Q2 B->D, Q3 A->B, Q4 A->A (unchanged), Q5 A->C, Q6 A->B, Q7 A->D, Q8 D->D (unchanged, genuine 'All of the above'), Q9 B->B (unchanged), Q10 A->C. Resulting letters: C,D,B,A,C,B,D,D,B,C.\n\nFill-in Section B (old -> new letter): Q11 A->C, Q12 A->B, Q13 B->A, Q14 A->D, Q15 A->B. Resulting letters: C,B,A,D,B.\n\nMatch Section D: Column B reordered to A=Intelligent-tech, B=Result, C=Input-data, D=Learning-patterns. Semantic pairs intact -> answer code AI(1)->A, Input(2)->C, MachineLearning(3)->D, Output(4)->B (old code was 1->C,2->A,3->B,4->D). New code A,C,D,B is not the straight-line 1->A,2->B,3->C,4->D.\n\nDistribution of Q1-Q15 correct letters: A x2, B x5, C x4, D x4 (MCQ: A1/B3/C3/D3; fill-in: A1/B2/C1/D1). Spread across all four positions, no trivially guessable repeating pattern.\n\nQ30(i) application single-answer MCQ left unchanged (correct stays A) because audit-map Section 2 planned no move for it; noted per FEAT-002 step 7.\n\nVerification: HTML MCQ correct-answer letters (C,D,B,A,C,B,D,D,B,C) == MD == answer key. HTML/MD fill-in option orders identical. Match Column B ordering identical between HTML, MD, and answer key. All 16 option blocks (10 MCQ + 5 fill-in + Q30(i)) have sequential A/B/C/D labels with no gaps or duplicates. HTML parsed cleanly via python html.parser."
 }
