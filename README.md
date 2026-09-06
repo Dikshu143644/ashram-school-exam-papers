@@ -54,6 +54,18 @@
 
 ---
 
+## ▲ Deploying to Vercel
+
+This is a pure static site, so no build step is required. A `vercel.json` at the repo root serves the files directly from the repository root and sets a `Cache-Control: public, max-age=3600` header.
+
+1. Go to [vercel.com/new](https://vercel.com/new) and import the GitHub repository (`Dikshu143644/ashram-school-exam-papers`).
+2. When prompted for the framework preset, choose **Other** (no framework).
+3. Leave the **Build Command** empty (no build is needed).
+4. Set the **Output Directory** / **Root Directory** to the repository root (`.`).
+5. Click **Deploy**. `index.html` will be served at the root path (`/`).
+
+---
+
 ## 📜 परवाना (License)
 
 शासकीय आश्रमशाळांच्या शैक्षणिक वापरासाठी समर्पित.
