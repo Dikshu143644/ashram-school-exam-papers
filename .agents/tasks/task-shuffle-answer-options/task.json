@@ -1,7 +1,14 @@
 {
   "task_id": "task-shuffle-answer-options",
   "task_description": "Shuffle the answer options across every exam paper (all 10 standards in index.html, the AI exam paper, and the Match-the-following sections) so the correct answer is no longer almost always the first option (A). Preserve each correct answer's identity exactly, re-letter options after reordering, break the straight-line pairing in match sections, update the AI model answer key to the new positions, and keep the Markdown representations consistent with the HTML. Work on a fresh branch based off origin/main (independent of the add-vercel-deploy branch). Do not push or open a PR.",
-  "status": "in_progress",
+  "status": "completed",
   "feature_order": ["FEAT-001", "FEAT-002", "FEAT-003"],
-  "blocked_reason": null
+  "blocked_reason": null,
+  "verification": {
+    "build": "n/a",
+    "tests": "n/a",
+    "test_quality": "pass",
+    "docker_build": "skipped",
+    "summary": "Pure static site with no build/test system; verification done by structural inspection and consistency checks. Both index.html and AI_Exam_Question_Paper.html parse cleanly via Python html.parser. All 72 index.html options-list blocks have sequential labels (A-D MCQ, [A]-[C] fill-in) with no gaps/dupes. All 10 match-grid tables have sequential Column-B labels and break the straight-line 1->A,2->B,3->C,4->D pairing. AI answer key letters (MCQ C,D,B,A,C,B,D,D,B,C; fill-in C,B,A,D,B; match 1A,2C,3D,4B) match the plan AND spot-checked to point at the correct-answer TEXT at its new position in the HTML. AI_Exam_Question_Paper.html and .md have identical option orderings per question (pre-existing minor Marathi wording variance only, not ordering differences). index.html Std-1 and Std-2 MCQ orderings are byte-consistent with Computer_Std_1_to_10_Question_Papers.md, and correct-answer positions match the plan (Std1 B,D,C,A,C; Std2 C,A,D,B,C). Correct answers are spread across A/B/C/D per paper (no all-A, no guessable repeating pattern). Genuine 'All of the above' answers already at D were kept at D."
+  }
 }
