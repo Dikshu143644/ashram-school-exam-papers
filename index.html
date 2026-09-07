@@ -601,6 +601,55 @@
             flex-shrink: 0;
         }
 
+        .diagram-card img {
+            width: 130px;
+            height: 95px;
+            object-fit: contain;
+            border-radius: 4px;
+            border: 1px solid #e2e8f0;
+            background: #ffffff;
+            padding: 2px;
+        }
+
+        .setup-diagram-wrap {
+            text-align: center;
+            margin: 10px auto;
+            padding: 10px;
+            background: #ffffff;
+            border: 1.5px solid #cbd5e1;
+            border-radius: 6px;
+            max-width: 620px;
+        }
+
+        .setup-diagram-wrap img {
+            width: 100%;
+            max-height: 270px;
+            object-fit: contain;
+            border-radius: 4px;
+        }
+
+        .label-pointers-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+            text-align: left;
+        }
+
+        .label-pointer-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .label-blank-box {
+            flex-grow: 1;
+            border-bottom: 1.5px dashed #334155;
+            height: 22px;
+        }
+
         .diagram-card-title {
             font-size: 12.5px;
             font-weight: 700;
@@ -828,28 +877,22 @@
             <div class="general-instructions">
                 <strong>बालमित्रांसाठी सोप्या सूचना:</strong>
                 <ol>
-                    <li>सर्व प्रश्न सोपे आहेत, काळजीपूर्वक वाचा.</li>
-                    <li>चित्रे पहा आणि योग्य पर्यायासमोरील <strong>गोल ( )</strong> किंवा <strong>चौकट [ ]</strong> मध्ये पेन्सिलने खूण करा.</li>
-                    <li>कोणत्याही प्रश्नाचे उत्तर आधीच दिलेले नाही, स्वतः विचार करून उत्तरे नोंदवा.</li>
+                    <li>सर्व प्रश्न काळजीपूर्वक पहा व वाचा.</li>
+                    <li>प्रत्येक प्रश्नाखाली योग्य पर्यायासमोरील <strong>गोल ( )</strong> किंवा <strong>चौकट [ ]</strong> मध्ये पेन्सिलने खूण करा.</li>
+                    <li>आकृती ओळखून दिलेले भाग दिलेल्या जागेवर स्पष्ट अक्षरात लिहा.</li>
                 </ol>
             </div>
         
             <!-- प्रश्न १: ४ गुण -->
             <div class="section-bar">
-                <span>प्रश्न १. चित्रे ओळखा व योग्य पर्यायासमोरील वर्तुळात ( ) अशी पेन्सिलने खूण करा</span>
+                <span>प्रश्न १. दिलेली खरी चित्रे ओळखा व योग्य पर्यायासमोरील वर्तुळात ( ) खूण करा</span>
                 <span class="sec-marks">४ गुण [प्रत्येकी १ गुण]</span>
             </div>
 
             <div class="diagram-grid" style="grid-template-columns: repeat(2, 1fr);">
                 <div class="diagram-card" style="padding: 10px;">
-                    <svg viewBox="0 0 120 90" width="100" height="75" xmlns="http://www.w3.org/2000/svg">
-        <rect x="15" y="10" width="90" height="60" rx="4" fill="#f8fafc" stroke="#1e293b" stroke-width="2.5"/>
-        <rect x="22" y="17" width="76" height="46" rx="2" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
-        <rect x="53" y="70" width="14" height="12" fill="#64748b"/>
-        <rect x="38" y="82" width="44" height="4" rx="2" fill="#1e293b"/>
-        <circle cx="60" cy="67" r="1.5" fill="#22c55e"/>
-    </svg>
-                    <span class="diagram-card-title">(१) हे चित्र कशाचे आहे?</span>
+                    <img src="images/monitor.jpg" alt="Monitor Image">
+                    <span class="diagram-card-title">(१) संगणक पाहण्यासाठी आपण कोणते उपकरण वापरतो?</span>
                     <div style="display: flex; gap: 8px; margin-top: 6px;">
                         <span class="opt-pill-neutral"><span class="opt-circle"></span> (अ) माउस</span>
                         <span class="opt-pill-neutral"><span class="opt-circle"></span> (ब) मॉनिटर</span>
@@ -857,13 +900,8 @@
                 </div>
 
                 <div class="diagram-card" style="padding: 10px;">
-                    <svg viewBox="0 0 100 90" width="100" height="75" xmlns="http://www.w3.org/2000/svg">
-        <path d="M30,35 C30,16 70,16 70,35 L70,55 C70,74 30,74 30,55 Z" fill="#f8fafc" stroke="#1e293b" stroke-width="2.5"/>
-        <line x1="50" y1="18" x2="50" y2="42" stroke="#1e293b" stroke-width="2"/>
-        <ellipse cx="50" cy="30" rx="3.5" ry="6" fill="#2563eb"/>
-        <path d="M50,18 C50,8 55,2 62,2" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round"/>
-    </svg>
-                    <span class="diagram-card-title">(२) हे चित्र कशाचे आहे?</span>
+                    <img src="images/mouse.jpg" alt="Mouse Image">
+                    <span class="diagram-card-title">(२) स्क्रीनवर वस्तू निवडण्यासाठी कोणते उपकरण वापरतात?</span>
                     <div style="display: flex; gap: 8px; margin-top: 6px;">
                         <span class="opt-pill-neutral"><span class="opt-circle"></span> (अ) माउस</span>
                         <span class="opt-pill-neutral"><span class="opt-circle"></span> (ब) कीबोर्ड</span>
@@ -871,21 +909,8 @@
                 </div>
 
                 <div class="diagram-card" style="padding: 10px;">
-                    <svg viewBox="0 0 120 70" width="100" height="65" xmlns="http://www.w3.org/2000/svg">
-        <rect x="10" y="10" width="100" height="50" rx="4" fill="#f8fafc" stroke="#1e293b" stroke-width="2.5"/>
-        <rect x="18" y="18" width="12" height="8" rx="1.5" fill="#e2e8f0" stroke="#64748b"/>
-        <rect x="34" y="18" width="12" height="8" rx="1.5" fill="#e2e8f0" stroke="#64748b"/>
-        <rect x="50" y="18" width="12" height="8" rx="1.5" fill="#e2e8f0" stroke="#64748b"/>
-        <rect x="66" y="18" width="12" height="8" rx="1.5" fill="#e2e8f0" stroke="#64748b"/>
-        <rect x="82" y="18" width="20" height="8" rx="1.5" fill="#93c5fd" stroke="#2563eb"/>
-        <rect x="18" y="30" width="16" height="8" rx="1.5" fill="#cbd5e1"/>
-        <rect x="38" y="30" width="12" height="8" rx="1.5" fill="#e2e8f0"/>
-        <rect x="54" y="30" width="12" height="8" rx="1.5" fill="#e2e8f0"/>
-        <rect x="70" y="30" width="12" height="8" rx="1.5" fill="#e2e8f0"/>
-        <rect x="86" y="30" width="16" height="8" rx="1.5" fill="#60a5fa" stroke="#2563eb"/>
-        <rect x="34" y="42" width="52" height="8" rx="2" fill="#bfdbfe" stroke="#3b82f6"/>
-    </svg>
-                    <span class="diagram-card-title">(३) अनेक बटणे असलेले हे साधन कोणते?</span>
+                    <img src="images/keyboard.jpg" alt="Keyboard Image">
+                    <span class="diagram-card-title">(३) टायपिंग करण्यासाठी कोणते उपकरण वापरतात?</span>
                     <div style="display: flex; gap: 8px; margin-top: 6px;">
                         <span class="opt-pill-neutral"><span class="opt-circle"></span> (अ) सीपीयू</span>
                         <span class="opt-pill-neutral"><span class="opt-circle"></span> (ब) कीबोर्ड</span>
@@ -893,17 +918,8 @@
                 </div>
 
                 <div class="diagram-card" style="padding: 10px;">
-                    <svg viewBox="0 0 80 100" width="70" height="85" xmlns="http://www.w3.org/2000/svg">
-        <rect x="15" y="8" width="50" height="84" rx="3" fill="#f8fafc" stroke="#1e293b" stroke-width="2.5"/>
-        <rect x="23" y="16" width="34" height="8" fill="#e2e8f0" stroke="#64748b"/>
-        <rect x="23" y="28" width="34" height="8" fill="#e2e8f0" stroke="#64748b"/>
-        <circle cx="40" cy="48" r="5" fill="#2563eb" stroke="#1e3a8a"/>
-        <line x1="28" y1="62" x2="36" y2="62" stroke="#1e293b" stroke-width="2"/>
-        <line x1="44" y1="62" x2="52" y2="62" stroke="#1e293b" stroke-width="2"/>
-        <line x1="25" y1="75" x2="55" y2="75" stroke="#94a3b8" stroke-width="1.5"/>
-        <line x1="25" y1="80" x2="55" y2="80" stroke="#94a3b8" stroke-width="1.5"/>
-    </svg>
-                    <span class="diagram-card-title">(४) संगणकाचा हा मोठा बॉक्स कोणता?</span>
+                    <img src="images/cpu.jpg" alt="CPU Tower Image">
+                    <span class="diagram-card-title">(४) संगणकाचा मुख्य मेंदू असणारा भाग कोणता आहे?</span>
                     <div style="display: flex; gap: 8px; margin-top: 6px;">
                         <span class="opt-pill-neutral"><span class="opt-circle"></span> (अ) सीपीयू (CPU)</span>
                         <span class="opt-pill-neutral"><span class="opt-circle"></span> (ब) मॉनिटर</span>
@@ -913,7 +929,7 @@
 
             <!-- प्रश्न २: ३ गुण -->
             <div class="section-bar">
-                <span>प्रश्न २. चित्र व कार्य यांच्या योग्य जोड्या लावा</span>
+                <span>प्रश्न २. साधन व कार्य यांच्या योग्य जोड्या लावा</span>
                 <span class="sec-marks">३ गुण [प्रत्येकी १ गुण]</span>
             </div>
 
@@ -926,16 +942,16 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><strong>१. मॉनिटर (स्क्रीन)</strong></td>
-                        <td>A. अक्षरे व आकडे लिहिणे (कीबोर्ड)</td>
+                        <td><strong>१. मॉनिटर (Screen)</strong></td>
+                        <td>A. अक्षरे व आकडे टाईप करणे</td>
                     </tr>
                     <tr>
-                        <td><strong>२. कीबोर्ड (बटणे)</strong></td>
-                        <td>B. स्क्रीनवरील वस्तू क्लिक करणे (माउस)</td>
+                        <td><strong>२. कीबोर्ड (Keyboard)</strong></td>
+                        <td>B. स्क्रीनवरील वस्तू क्लिक करणे</td>
                     </tr>
                     <tr>
-                        <td><strong>३. माउस (उंदरासारखा भाग)</strong></td>
-                        <td>C. चित्र व कार्टून पाहणे (मॉनिटर)</td>
+                        <td><strong>३. माउस (Mouse)</strong></td>
+                        <td>C. चित्र व निकाल पाहणे</td>
                     </tr>
                 </tbody>
             </table>
@@ -947,33 +963,30 @@
                 <span>(३) → [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]</span>
             </div>
 
-            <!-- प्रश्न ३: ३ गुण -->
+            <!-- प्रश्न ३: ३ गुण - Visual Diagram Labeling -->
             <div class="section-bar">
-                <span>प्रश्न ३. चूक की बरोबर ओळखा (योग्य चौकोनात [✓] अशी खूण करा)</span>
+                <span>प्रश्न ३. खालील संगणक संचाची खरी आकृती पहा व विचारलेल्या भागांची नावे लिहा</span>
                 <span class="sec-marks">३ गुण [प्रत्येकी १ गुण]</span>
             </div>
 
-            <div class="q-item" style="margin-left: 10px;">
-                <div class="q-title"><span class="q-no">(१)</span> <div>संगणक विजेवर चालणारे आधुनिक यंत्र आहे.</div></div>
-                <div style="margin-left: 32px; margin-top: 4px; font-size: 13px;">
-                    <span class="opt-pill-neutral"><span class="opt-box"></span> बरोबर</span> &nbsp;&nbsp;&nbsp;&nbsp;
-                    <span class="opt-pill-neutral"><span class="opt-box"></span> चूक</span>
+            <div class="setup-diagram-wrap">
+                <img src="images/computer_setup.jpg" alt="Computer Setup Diagram">
+                <div class="word-bank-box" style="margin-top: 8px;">
+                    कंसातील योग्य शब्द: [ मॉनिटर • कीबोर्ड • माउस • सीपीयू (CPU) ]
                 </div>
-            </div>
-
-            <div class="q-item" style="margin-left: 10px;">
-                <div class="q-title"><span class="q-no">(२)</span> <div>माउसने आपण पाणी किंवा चहा पितो.</div></div>
-                <div style="margin-left: 32px; margin-top: 4px; font-size: 13px;">
-                    <span class="opt-pill-neutral"><span class="opt-box"></span> बरोबर</span> &nbsp;&nbsp;&nbsp;&nbsp;
-                    <span class="opt-pill-neutral"><span class="opt-box"></span> चूक</span>
-                </div>
-            </div>
-
-            <div class="q-item" style="margin-left: 10px;">
-                <div class="q-title"><span class="q-no">(३)</span> <div>कीबोर्डवर अनेक अक्षरांची व आकड्यांची बटणे असतात.</div></div>
-                <div style="margin-left: 32px; margin-top: 4px; font-size: 13px;">
-                    <span class="opt-pill-neutral"><span class="opt-box"></span> बरोबर</span> &nbsp;&nbsp;&nbsp;&nbsp;
-                    <span class="opt-pill-neutral"><span class="opt-box"></span> चूक</span>
+                <div class="label-pointers-grid">
+                    <div class="label-pointer-item">
+                        <span>(१) स्क्रीन दाखवणारा मुख्य भाग:</span>
+                        <span class="label-blank-box"></span>
+                    </div>
+                    <div class="label-pointer-item">
+                        <span>(२) अक्षरे टाईप करणारा सपाट भाग:</span>
+                        <span class="label-blank-box"></span>
+                    </div>
+                    <div class="label-pointer-item" style="grid-column: span 2;">
+                        <span>(३) संगणकाचा मेंदू असणारा मोठा उभा बॉक्स:</span>
+                        <span class="label-blank-box"></span>
+                    </div>
                 </div>
             </div>
         </article>
@@ -1026,29 +1039,22 @@
             <div class="general-instructions">
                 <strong>बालमित्रांसाठी सोप्या सूचना:</strong>
                 <ol>
-                    <li>सर्व प्रश्न सोपे आहेत, काळजीपूर्वक वाचा.</li>
-                    <li>चित्रे पहा आणि योग्य पर्यायासमोरील <strong>गोल ( )</strong> किंवा <strong>चौकट [ ]</strong> मध्ये पेन्सिलने खूण करा.</li>
-                    <li>कोणत्याही प्रश्नाचे उत्तर आधीच दिलेले नाही, स्वतः विचार करून उत्तरे नोंदवा.</li>
+                    <li>सर्व प्रश्न काळजीपूर्वक पहा व वाचा.</li>
+                    <li>प्रत्येक प्रश्नाखाली योग्य पर्यायासमोरील <strong>गोल ( )</strong> किंवा <strong>चौकट [ ]</strong> मध्ये पेन्सिलने खूण करा.</li>
+                    <li>आकृती ओळखून दिलेले भाग दिलेल्या जागेवर स्पष्ट अक्षरात लिहा.</li>
                 </ol>
             </div>
         
             <!-- प्रश्न १: ४ गुण -->
             <div class="section-bar">
-                <span>प्रश्न १. चित्रे ओळखा व योग्य पर्यायासमोरील चौकोनात [✓] अशी खूण करा</span>
+                <span>प्रश्न १. खरी चित्रे ओळखा व योग्य पर्यायासमोरील चौकोनात [✓] अशी खूण करा</span>
                 <span class="sec-marks">४ गुण [प्रत्येकी १ गुण]</span>
             </div>
 
             <div class="diagram-grid" style="grid-template-columns: repeat(2, 1fr);">
                 <div class="diagram-card" style="padding: 10px;">
-                    <svg viewBox="0 0 110 85" width="95" height="75" xmlns="http://www.w3.org/2000/svg">
-        <rect x="15" y="30" width="80" height="40" rx="4" fill="#f8fafc" stroke="#1e293b" stroke-width="2.5"/>
-        <rect x="30" y="10" width="50" height="22" fill="#ffffff" stroke="#64748b" stroke-width="1.5"/>
-        <rect x="25" y="55" width="60" height="20" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
-        <line x1="32" y1="62" x2="78" y2="62" stroke="#94a3b8"/>
-        <line x1="32" y1="67" x2="68" y2="67" stroke="#94a3b8"/>
-        <circle cx="82" cy="42" r="3" fill="#22c55e"/>
-    </svg>
-                    <span class="diagram-card-title">(१) कागदावर छपाई करणारे हे साधन कोणते?</span>
+                    <img src="images/printer.jpg" alt="Printer Image">
+                    <span class="diagram-card-title">(१) कागदावर चित्र किंवा माहिती छापणारे साधन कोणते?</span>
                     <div style="display: flex; gap: 8px; margin-top: 6px;">
                         <span class="opt-pill-neutral"><span class="opt-box"></span> (अ) माउस</span>
                         <span class="opt-pill-neutral"><span class="opt-box"></span> (ब) प्रिंटर (Printer)</span>
@@ -1056,13 +1062,8 @@
                 </div>
 
                 <div class="diagram-card" style="padding: 10px;">
-                    <svg viewBox="0 0 80 95" width="75" height="85" xmlns="http://www.w3.org/2000/svg">
-        <rect x="15" y="10" width="50" height="75" rx="4" fill="#f8fafc" stroke="#1e293b" stroke-width="2.5"/>
-        <circle cx="40" cy="30" r="8" fill="#e2e8f0" stroke="#64748b"/>
-        <circle cx="40" cy="60" r="16" fill="#e2e8f0" stroke="#1e3a8a" stroke-width="2"/>
-        <circle cx="40" cy="60" r="7" fill="#3b82f6"/>
-    </svg>
-                    <span class="diagram-card-title">(२) गाणी व कविता ऐकण्यासाठी काय वापरतात?</span>
+                    <img src="images/speaker.jpg" alt="Speaker Image">
+                    <span class="diagram-card-title">(२) संगणकावरून गाणी व आवाज ऐकण्यासाठी काय वापरतात?</span>
                     <div style="display: flex; gap: 8px; margin-top: 6px;">
                         <span class="opt-pill-neutral"><span class="opt-box"></span> (अ) स्पीकर (Speaker)</span>
                         <span class="opt-pill-neutral"><span class="opt-box"></span> (ब) कीबोर्ड</span>
@@ -1070,11 +1071,7 @@
                 </div>
 
                 <div class="diagram-card" style="padding: 10px;">
-                    <svg viewBox="0 0 90 90" width="80" height="75" xmlns="http://www.w3.org/2000/svg">
-        <path d="M18,52 A32,32 0 0,1 72,52" fill="none" stroke="#1e293b" stroke-width="4" stroke-linecap="round"/>
-        <rect x="12" y="48" width="14" height="24" rx="5" fill="#2563eb" stroke="#1e3a8a" stroke-width="2"/>
-        <rect x="64" y="48" width="14" height="24" rx="5" fill="#2563eb" stroke="#1e3a8a" stroke-width="2"/>
-    </svg>
+                    <img src="images/headphones.jpg" alt="Headphones Image">
                     <span class="diagram-card-title">(३) कानात लावून आवाज ऐकण्याचे साधन कोणते?</span>
                     <div style="display: flex; gap: 8px; margin-top: 6px;">
                         <span class="opt-pill-neutral"><span class="opt-box"></span> (अ) सीपीयू बॉक्स</span>
@@ -1083,15 +1080,8 @@
                 </div>
 
                 <div class="diagram-card" style="padding: 10px;">
-                    <svg viewBox="0 0 90 90" width="85" height="75" xmlns="http://www.w3.org/2000/svg">
-        <rect x="38" y="55" width="14" height="20" fill="#64748b"/>
-        <ellipse cx="45" cy="78" rx="25" ry="6" fill="#1e293b"/>
-        <circle cx="45" cy="35" r="24" fill="#f8fafc" stroke="#1e293b" stroke-width="2.5"/>
-        <circle cx="45" cy="35" r="15" fill="#1e3a8a"/>
-        <circle cx="45" cy="35" r="7" fill="#60a5fa"/>
-        <circle cx="50" cy="30" r="2.5" fill="#ffffff"/>
-    </svg>
-                    <span class="diagram-card-title">(४) संगणकावर फोटो किंवा व्हिडिओ घेणारे साधन?</span>
+                    <img src="images/webcam.jpg" alt="Webcam Image">
+                    <span class="diagram-card-title">(४) संगणकावर फोटो किंवा व्हिडिओ घेणारे साधन कोणते?</span>
                     <div style="display: flex; gap: 8px; margin-top: 6px;">
                         <span class="opt-pill-neutral"><span class="opt-box"></span> (अ) वेबकॅम (Webcam)</span>
                         <span class="opt-pill-neutral"><span class="opt-box"></span> (ब) मॉनिटर</span>
@@ -1101,68 +1091,57 @@
 
             <!-- प्रश्न २: ३ गुण -->
             <div class="section-bar">
-                <span>प्रश्न २. कीबोर्डवरील बटणे ओळखा (योग्य पर्यायासमोरील वर्तुळात रंग भरा)</span>
+                <span>प्रश्न २. रिकाम्या जागा भरा (कंसातील योग्य शब्द निवडून लिहा)</span>
                 <span class="sec-marks">३ गुण [प्रत्येकी १ गुण]</span>
             </div>
 
-            <div class="q-item" style="margin-left: 10px;">
-                <div class="q-title"><span class="q-no">(१)</span> <div>कीबोर्डवरील सर्वात लांब (मोठे) बटण कोणते असते?</div></div>
-                <div style="margin-left: 32px; margin-top: 4px; font-size: 13px;">
-                    <span class="opt-pill-neutral"><span class="opt-circle"></span> (अ) एंटर की (Enter)</span> &nbsp;&nbsp;&nbsp;&nbsp;
-                    <span class="opt-pill-neutral"><span class="opt-circle"></span> (ब) स्पेसबार की (Spacebar)</span>
-                </div>
+            <div class="word-bank-box" style="margin-bottom: 8px;">
+                कंसातील शब्द: [ माहिती • क्लिक (Click) • टाईप (Type) ]
             </div>
 
             <div class="q-item" style="margin-left: 10px;">
-                <div class="q-title"><span class="q-no">(२)</span> <div>नवीन ओळीवर खाली जाण्यासाठी कोणते बटण दाबतात?</div></div>
-                <div style="margin-left: 32px; margin-top: 4px; font-size: 13px;">
-                    <span class="opt-pill-neutral"><span class="opt-circle"></span> (अ) एंटर की (Enter)</span> &nbsp;&nbsp;&nbsp;&nbsp;
-                    <span class="opt-pill-neutral"><span class="opt-circle"></span> (ब) स्पेसबार की</span>
-                </div>
+                <div class="q-title"><span class="q-no">(१)</span> <div>मॉनिटरवर आपल्याला संगणकाची ________ दिसते.</div></div>
+                <div class="single-ans-line"><span>उत्तर:</span> <span class="fill-blank-line"></span></div>
             </div>
 
             <div class="q-item" style="margin-left: 10px;">
-                <div class="q-title"><span class="q-no">(३)</span> <div>स्क्रीनवरील बाण वर, खाली, डावीकडे, उजवीकडे नेण्यासाठी कोणती बटणे वापरतात?</div></div>
-                <div style="margin-left: 32px; margin-top: 4px; font-size: 13px;">
-                    <span class="opt-pill-neutral"><span class="opt-circle"></span> (अ) नंबर कीज्</span> &nbsp;&nbsp;&nbsp;&nbsp;
-                    <span class="opt-pill-neutral"><span class="opt-circle"></span> (ब) ॲरो कीज् (बाण)</span>
-                </div>
+                <div class="q-title"><span class="q-no">(२)</span> <div>माउसचा उपयोग स्क्रीनवर वस्तू ________ करण्यासाठी होतो.</div></div>
+                <div class="single-ans-line"><span>उत्तर:</span> <span class="fill-blank-line"></span></div>
+            </div>
+
+            <div class="q-item" style="margin-left: 10px;">
+                <div class="q-title"><span class="q-no">(३)</span> <div>कीबोर्डचा उपयोग अक्षरे आणि आकडे ________ करण्यासाठी होतो.</div></div>
+                <div class="single-ans-line"><span>उत्तर:</span> <span class="fill-blank-line"></span></div>
             </div>
 
             <!-- प्रश्न ३: ३ गुण -->
             <div class="section-bar">
-                <span>प्रश्न ३. जोड्या लावा</span>
+                <span>प्रश्न ३. चूक की बरोबर ओळखा (योग्य चौकोनात [✓] अशी खूण करा)</span>
                 <span class="sec-marks">३ गुण [प्रत्येकी १ गुण]</span>
             </div>
 
-            <table class="match-grid">
-                <thead>
-                    <tr>
-                        <th style="width: 50%;">स्तंभ 'अ' (साधन)</th>
-                        <th style="width: 50%;">स्तंभ 'ब' (काम)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>१. प्रिंटर (Printer)</strong></td>
-                        <td>A. गाणी व कविता ऐकणे</td>
-                    </tr>
-                    <tr>
-                        <td><strong>२. स्पीकर (Speaker)</strong></td>
-                        <td>B. अक्षरे व आकडे टाईप करणे</td>
-                    </tr>
-                    <tr>
-                        <td><strong>३. कीबोर्ड (Keyboard)</strong></td>
-                        <td>C. कागदावर चित्र किंवा माहिती छापणे</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="q-item" style="margin-left: 10px;">
+                <div class="q-title"><span class="q-no">(१)</span> <div>कीबोर्डचा उपयोग टायपिंग करण्यासाठी होतो.</div></div>
+                <div style="margin-left: 32px; margin-top: 4px; font-size: 13px;">
+                    <span class="opt-pill-neutral"><span class="opt-box"></span> बरोबर</span> &nbsp;&nbsp;&nbsp;&nbsp;
+                    <span class="opt-pill-neutral"><span class="opt-box"></span> चूक</span>
+                </div>
+            </div>
 
-            <div class="ans-inputs">
-                <span><strong>उत्तरे:</strong></span>
-                <span>(१) → [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]</span>
-                <span>(२) → [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]</span>
-                <span>(३) → [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]</span>
+            <div class="q-item" style="margin-left: 10px;">
+                <div class="q-title"><span class="q-no">(२)</span> <div>माउसचा उपयोग पाणी पिण्यासाठी होतो.</div></div>
+                <div style="margin-left: 32px; margin-top: 4px; font-size: 13px;">
+                    <span class="opt-pill-neutral"><span class="opt-box"></span> बरोबर</span> &nbsp;&nbsp;&nbsp;&nbsp;
+                    <span class="opt-pill-neutral"><span class="opt-box"></span> चूक</span>
+                </div>
+            </div>
+
+            <div class="q-item" style="margin-left: 10px;">
+                <div class="q-title"><span class="q-no">(३)</span> <div>मॉनिटर माहिती आणि चित्र दाखवण्याचे काम करतो.</div></div>
+                <div style="margin-left: 32px; margin-top: 4px; font-size: 13px;">
+                    <span class="opt-pill-neutral"><span class="opt-box"></span> बरोबर</span> &nbsp;&nbsp;&nbsp;&nbsp;
+                    <span class="opt-pill-neutral"><span class="opt-box"></span> चूक</span>
+                </div>
             </div>
         </article>
     
@@ -1206,113 +1185,86 @@
             </div>
 
             <div class="meta-chips">
-                <span>विषय: संगणक भाग व मेमरी साधने</span>
-                <span>वेळ: ४५ मिनिटे</span>
+                <span>विषय: संगणक कार्य व मेमरी साधने</span>
+                <span>वेळ: ३० मिनिटे</span>
                 <span>एकूण गुण: १०</span>
             </div>
     
             <div class="general-instructions">
                 <strong>बालमित्रांसाठी सोप्या सूचना:</strong>
                 <ol>
-                    <li>सर्व प्रश्न सोपे आहेत, काळजीपूर्वक वाचा.</li>
-                    <li>चित्रे पहा आणि योग्य पर्यायासमोरील <strong>गोल ( )</strong> किंवा <strong>चौकट [ ]</strong> मध्ये पेन्सिलने खूण करा.</li>
-                    <li>कोणत्याही प्रश्नाचे उत्तर आधीच दिलेले नाही, स्वतः विचार करून उत्तरे नोंदवा.</li>
+                    <li>सर्व प्रश्न काळजीपूर्वक पहा व वाचा.</li>
+                    <li>प्रत्येक प्रश्नाखाली योग्य पर्यायासमोरील <strong>गोल ( )</strong> किंवा <strong>चौकट [ ]</strong> मध्ये पेन्सिलने खूण करा.</li>
+                    <li>आकृती ओळखून दिलेले भाग दिलेल्या जागेवर स्पष्ट अक्षरात लिहा.</li>
                 </ol>
             </div>
         
             <!-- प्रश्न १: ४ गुण -->
             <div class="section-bar">
-                <span>प्रश्न १. चित्रे ओळखा व योग्य पर्यायासमोरील वर्तुळात ( ) खूण करा</span>
+                <span>प्रश्न १. खरी चित्रे ओळखा व योग्य पर्यायासमोरील वर्तुळात ( ) खूण करा</span>
                 <span class="sec-marks">४ गुण [प्रत्येकी १ गुण]</span>
             </div>
 
             <div class="diagram-grid" style="grid-template-columns: repeat(2, 1fr);">
                 <div class="diagram-card" style="padding: 10px;">
-                    <svg viewBox="0 0 100 80" width="90" height="70" xmlns="http://www.w3.org/2000/svg">
-        <rect x="12" y="28" width="26" height="24" fill="#cbd5e1" stroke="#475569" stroke-width="2"/>
-        <line x1="20" y1="36" x2="28" y2="36" stroke="#1e293b" stroke-width="2"/>
-        <line x1="20" y1="44" x2="28" y2="44" stroke="#1e293b" stroke-width="2"/>
-        <rect x="36" y="22" width="52" height="36" rx="4" fill="#2563eb" stroke="#1e3a8a" stroke-width="2.5"/>
-        <circle cx="76" cy="40" r="4" fill="#ffffff"/>
-    </svg>
-                    <span class="diagram-card-title">(१) खिशात सहज नेता येणारे मेमरी साधन</span>
+                    <img src="images/pendrive.jpg" alt="Pendrive Image">
+                    <span class="diagram-card-title">(१) खिशात सहज नेता येणारे डेटा साठवणूक साधन कोणते?</span>
                     <div style="display: flex; gap: 8px; margin-top: 6px;">
                         <span class="opt-pill-neutral"><span class="opt-circle"></span> (अ) माउस</span>
-                        <span class="opt-pill-neutral"><span class="opt-circle"></span> (ब) पेनड्राईव्ह</span>
+                        <span class="opt-pill-neutral"><span class="opt-circle"></span> (ब) पेनड्राईव्ह (Pendrive)</span>
                     </div>
                 </div>
 
                 <div class="diagram-card" style="padding: 10px;">
-                    <svg viewBox="0 0 80 100" width="70" height="85" xmlns="http://www.w3.org/2000/svg">
-        <rect x="15" y="8" width="50" height="84" rx="3" fill="#f8fafc" stroke="#1e293b" stroke-width="2.5"/>
-        <rect x="23" y="16" width="34" height="8" fill="#e2e8f0" stroke="#64748b"/>
-        <rect x="23" y="28" width="34" height="8" fill="#e2e8f0" stroke="#64748b"/>
-        <circle cx="40" cy="48" r="5" fill="#2563eb" stroke="#1e3a8a"/>
-        <line x1="28" y1="62" x2="36" y2="62" stroke="#1e293b" stroke-width="2"/>
-        <line x1="44" y1="62" x2="52" y2="62" stroke="#1e293b" stroke-width="2"/>
-        <line x1="25" y1="75" x2="55" y2="75" stroke="#94a3b8" stroke-width="1.5"/>
-        <line x1="25" y1="80" x2="55" y2="80" stroke="#94a3b8" stroke-width="1.5"/>
-    </svg>
-                    <span class="diagram-card-title">(२) संगणकाचा मेंदू असणारा मुख्य भाग</span>
+                    <img src="images/cpu.jpg" alt="CPU Image">
+                    <span class="diagram-card-title">(२) संगणकाचा मुख्य मेंदू व प्रक्रिया केंद्र कोणते आहे?</span>
                     <div style="display: flex; gap: 8px; margin-top: 6px;">
                         <span class="opt-pill-neutral"><span class="opt-circle"></span> (अ) सीपीयू (CPU)</span>
-                        <span class="opt-pill-neutral"><span class="opt-circle"></span> (ब) मॉनिटर</span>
+                        <span class="opt-pill-neutral"><span class="opt-circle"></span> (ब) स्पीकर</span>
                     </div>
                 </div>
 
                 <div class="diagram-card" style="padding: 10px;">
-                    <svg viewBox="0 0 100 80" width="90" height="70" xmlns="http://www.w3.org/2000/svg">
-        <rect x="15" y="12" width="70" height="56" rx="4" fill="#f8fafc" stroke="#1e293b" stroke-width="2.5"/>
-        <circle cx="50" cy="38" r="20" fill="#e2e8f0" stroke="#64748b" stroke-width="2"/>
-        <circle cx="50" cy="38" r="6" fill="#1e3a8a"/>
-        <line x1="50" y1="38" x2="68" y2="24" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round"/>
-    </svg>
-                    <span class="diagram-card-title">(३) संगणकातील मोठी माहिती साठवणूक डिस्क</span>
+                    <img src="images/harddisk.jpg" alt="Hard Disk Image">
+                    <span class="diagram-card-title">(३) संगणकातील मोठी माहिती साठवून ठेवणारे मुख्य साधन कोणते?</span>
                     <div style="display: flex; gap: 8px; margin-top: 6px;">
                         <span class="opt-pill-neutral"><span class="opt-circle"></span> (अ) कीबोर्ड</span>
-                        <span class="opt-pill-neutral"><span class="opt-circle"></span> (ब) हार्ड डिस्क</span>
+                        <span class="opt-pill-neutral"><span class="opt-circle"></span> (ब) हार्ड डिस्क (Hard Disk)</span>
                     </div>
                 </div>
 
                 <div class="diagram-card" style="padding: 10px;">
-                    <svg viewBox="0 0 90 90" width="85" height="75" xmlns="http://www.w3.org/2000/svg">
-        <rect x="38" y="55" width="14" height="20" fill="#64748b"/>
-        <ellipse cx="45" cy="78" rx="25" ry="6" fill="#1e293b"/>
-        <circle cx="45" cy="35" r="24" fill="#f8fafc" stroke="#1e293b" stroke-width="2.5"/>
-        <circle cx="45" cy="35" r="15" fill="#1e3a8a"/>
-        <circle cx="45" cy="35" r="7" fill="#60a5fa"/>
-        <circle cx="50" cy="30" r="2.5" fill="#ffffff"/>
-    </svg>
-                    <span class="diagram-card-title">(४) संगणकावरील छोटा कॅमेरा</span>
+                    <img src="images/webcam.jpg" alt="Webcam Image">
+                    <span class="diagram-card-title">(४) संगणकामध्ये थेट व्हिडिओ पाठवणारे इनपुट साधन कोणते?</span>
                     <div style="display: flex; gap: 8px; margin-top: 6px;">
-                        <span class="opt-pill-neutral"><span class="opt-circle"></span> (अ) वेबकॅम</span>
-                        <span class="opt-pill-neutral"><span class="opt-circle"></span> (ब) स्पीकर</span>
+                        <span class="opt-pill-neutral"><span class="opt-circle"></span> (अ) वेबकॅम (Webcam)</span>
+                        <span class="opt-pill-neutral"><span class="opt-circle"></span> (ब) प्रिंटर</span>
                     </div>
                 </div>
             </div>
 
             <!-- प्रश्न २: ३ गुण -->
             <div class="section-bar">
-                <span>प्रश्न २. रिकाम्या जागा भरा (कंसातील योग्य शब्द निवडा)</span>
+                <span>प्रश्न २. रिकाम्या जागा भरा (कंसातील योग्य शब्द निवडून लिहा)</span>
                 <span class="sec-marks">३ गुण [प्रत्येकी १ गुण]</span>
             </div>
 
             <div class="word-bank-box" style="margin-bottom: 8px;">
-                कंसातील शब्द: [ मेंदू • कीबोर्ड • शट डाऊन (Shut Down) ]
+                कंसातील शब्द: [ इलेक्ट्रॉनिक (Electronic) • इनपुट (Input) • आउटपुट (Output) ]
             </div>
 
             <div class="q-item" style="margin-left: 10px;">
-                <div class="q-title"><span class="q-no">(१)</span> <div>संगणकावर अक्षरे आणि आकडे लिहिण्यासाठी ________ वापरतात.</div></div>
+                <div class="q-title"><span class="q-no">(१)</span> <div>संगणक (Computer) हे विजेवर चालणारे एक ________ मशीन आहे.</div></div>
                 <div class="single-ans-line"><span>उत्तर:</span> <span class="fill-blank-line"></span></div>
             </div>
 
             <div class="q-item" style="margin-left: 10px;">
-                <div class="q-title"><span class="q-no">(२)</span> <div>सीपीयू (CPU) ला संगणकाचा ________ म्हणतात.</div></div>
+                <div class="q-title"><span class="q-no">(२)</span> <div>माहिती संगणकात पाठवणारा कीबोर्ड (Keyboard) हे ________ उपकरण आहे.</div></div>
                 <div class="single-ans-line"><span>उत्तर:</span> <span class="fill-blank-line"></span></div>
             </div>
 
             <div class="q-item" style="margin-left: 10px;">
-                <div class="q-title"><span class="q-no">(३)</span> <div>संगणक सुरक्षितपणे बंद करण्याच्या प्रक्रियेला ________ म्हणतात.</div></div>
+                <div class="q-title"><span class="q-no">(३)</span> <div>माहिती स्क्रीनवर दाखवणारा मॉनिटर (Monitor) हे ________ उपकरण आहे.</div></div>
                 <div class="single-ans-line"><span>उत्तर:</span> <span class="fill-blank-line"></span></div>
             </div>
 
@@ -1323,7 +1275,7 @@
             </div>
 
             <div class="q-item" style="margin-left: 10px;">
-                <div class="q-title"><span class="q-no">(१)</span> <div>संगणकाजवळ पाणी किंवा खाऊ सांडू नये.</div></div>
+                <div class="q-title"><span class="q-no">(१)</span> <div>संगणक खूप मोठी माहिती सुरक्षित साठवून ठेवू शकतो.</div></div>
                 <div style="margin-left: 32px; margin-top: 4px; font-size: 13px;">
                     <span class="opt-pill-neutral"><span class="opt-box"></span> बरोबर</span> &nbsp;&nbsp;&nbsp;&nbsp;
                     <span class="opt-pill-neutral"><span class="opt-box"></span> चूक</span>
@@ -1331,7 +1283,7 @@
             </div>
 
             <div class="q-item" style="margin-left: 10px;">
-                <div class="q-title"><span class="q-no">(२)</span> <div>संगणक माणसापेक्षा खूप हळू आणि चुकून काम करतो.</div></div>
+                <div class="q-title"><span class="q-no">(२)</span> <div>कीबोर्ड हे आउटपुट (Output) उपकरण आहे.</div></div>
                 <div style="margin-left: 32px; margin-top: 4px; font-size: 13px;">
                     <span class="opt-pill-neutral"><span class="opt-box"></span> बरोबर</span> &nbsp;&nbsp;&nbsp;&nbsp;
                     <span class="opt-pill-neutral"><span class="opt-box"></span> चूक</span>
@@ -1339,7 +1291,7 @@
             </div>
 
             <div class="q-item" style="margin-left: 10px;">
-                <div class="q-title"><span class="q-no">(३)</span> <div>कीबोर्डची बटणे हलक्या हाताने दाबावीत, जोरात आपटू नये.</div></div>
+                <div class="q-title"><span class="q-no">(३)</span> <div>माउसमुळे स्क्रीनवरील वस्तू निवडणे आणि क्लिक करणे सोपे जाते.</div></div>
                 <div style="margin-left: 32px; margin-top: 4px; font-size: 13px;">
                     <span class="opt-pill-neutral"><span class="opt-box"></span> बरोबर</span> &nbsp;&nbsp;&nbsp;&nbsp;
                     <span class="opt-pill-neutral"><span class="opt-box"></span> चूक</span>
@@ -1387,150 +1339,114 @@
             </div>
 
             <div class="meta-chips">
-                <span>विषय: स्मार्ट उपकरणे, इंटरनेट व सुरक्षा</span>
-                <span>वेळ: ४५ मिनिटे</span>
+                <span>विषय: इनपुट, आउटपुट व प्रोसेसिंग साधने</span>
+                <span>वेळ: ३० मिनिटे</span>
                 <span>एकूण गुण: १०</span>
             </div>
     
             <div class="general-instructions">
                 <strong>बालमित्रांसाठी सोप्या सूचना:</strong>
                 <ol>
-                    <li>सर्व प्रश्न सोपे आहेत, काळजीपूर्वक वाचा.</li>
-                    <li>चित्रे पहा आणि योग्य पर्यायासमोरील <strong>गोल ( )</strong> किंवा <strong>चौकट [ ]</strong> मध्ये पेन्सिलने खूण करा.</li>
-                    <li>कोणत्याही प्रश्नाचे उत्तर आधीच दिलेले नाही, स्वतः विचार करून उत्तरे नोंदवा.</li>
+                    <li>सर्व प्रश्न काळजीपूर्वक पहा व वाचा.</li>
+                    <li>प्रत्येक प्रश्नाखाली योग्य पर्यायासमोरील <strong>गोल ( )</strong> किंवा <strong>चौकट [ ]</strong> मध्ये पेन्सिलने खूण करा.</li>
+                    <li>आकृती ओळखून दिलेले भाग दिलेल्या जागेवर स्पष्ट अक्षरात लिहा.</li>
                 </ol>
             </div>
         
             <!-- प्रश्न १: ४ गुण -->
             <div class="section-bar">
-                <span>प्रश्न १. खालील स्मार्ट साधने ओळखा व योग्य पर्यायासमोरील चौकोनात [✓] अशी खूण करा</span>
+                <span>प्रश्न १. खरी चित्रे ओळखा व योग्य पर्यायासमोरील चौकोनात [✓] अशी खूण करा</span>
                 <span class="sec-marks">४ गुण [प्रत्येकी १ गुण]</span>
             </div>
 
             <div class="diagram-grid" style="grid-template-columns: repeat(2, 1fr);">
                 <div class="diagram-card" style="padding: 10px;">
-                    <svg viewBox="0 0 80 95" width="75" height="85" xmlns="http://www.w3.org/2000/svg">
-        <rect x="28" y="6" width="24" height="83" rx="4" fill="#64748b"/>
-        <rect x="18" y="24" width="44" height="47" rx="8" fill="#0f172a" stroke="#1e293b" stroke-width="2"/>
-        <rect x="23" y="29" width="34" height="37" rx="4" fill="#1e3a8a"/>
-        <text x="27" y="52" fill="#38bdf8" font-size="11" font-weight="bold">10:45</text>
-        <circle cx="40" cy="59" r="2" fill="#ef4444"/>
-    </svg>
-                    <span class="diagram-card-title">(१) वेळ व हृदयाचे ठोके दाखवणारे स्मार्ट घड्याळ</span>
+                    <img src="images/monitor.jpg" alt="Monitor Image">
+                    <span class="diagram-card-title">(१) माहिती व निकाल बाहेर दाखवणारे आउटपुट (Output) साधन कोणते?</span>
                     <div style="display: flex; gap: 8px; margin-top: 6px;">
-                        <span class="opt-pill-neutral"><span class="opt-box"></span> (अ) भिंतीवरील घड्याळ</span>
-                        <span class="opt-pill-neutral"><span class="opt-box"></span> (ब) स्मार्ट वॉच</span>
+                        <span class="opt-pill-neutral"><span class="opt-box"></span> (अ) कीबोर्ड</span>
+                        <span class="opt-pill-neutral"><span class="opt-box"></span> (ब) मॉनिटर (Monitor)</span>
                     </div>
                 </div>
 
                 <div class="diagram-card" style="padding: 10px;">
-                    <svg viewBox="0 0 90 95" width="80" height="85" xmlns="http://www.w3.org/2000/svg">
-        <line x1="45" y1="18" x2="45" y2="8" stroke="#1e293b" stroke-width="2.5"/>
-        <circle cx="45" cy="7" r="3.5" fill="#ef4444"/>
-        <rect x="22" y="18" width="46" height="36" rx="6" fill="#f8fafc" stroke="#1e293b" stroke-width="2.5"/>
-        <circle cx="34" cy="32" r="5" fill="#2563eb"/>
-        <circle cx="56" cy="32" r="5" fill="#2563eb"/>
-        <line x1="32" y1="45" x2="58" y2="45" stroke="#1e293b" stroke-width="2"/>
-        <rect x="26" y="58" width="38" height="30" rx="4" fill="#e2e8f0" stroke="#1e293b" stroke-width="2.5"/>
-        <rect x="34" y="66" width="22" height="14" fill="#bfdbfe" stroke="#3b82f6"/>
-    </svg>
-                    <span class="diagram-card-title">(२) माणसासारखी कामे करणारा यंत्रमानव</span>
+                    <img src="images/cpu.jpg" alt="CPU Image">
+                    <span class="diagram-card-title">(२) माहितीवर प्रक्रिया (Processing) करणारा मुख्य घटक कोणता?</span>
                     <div style="display: flex; gap: 8px; margin-top: 6px;">
-                        <span class="opt-pill-neutral"><span class="opt-box"></span> (अ) रोबोट (Robot)</span>
-                        <span class="opt-pill-neutral"><span class="opt-box"></span> (ब) साधे खेळणे</span>
+                        <span class="opt-pill-neutral"><span class="opt-box"></span> (अ) सीपीयू (CPU)</span>
+                        <span class="opt-pill-neutral"><span class="opt-box"></span> (ब) माउस</span>
                     </div>
                 </div>
 
                 <div class="diagram-card" style="padding: 10px;">
-                    <svg viewBox="0 0 110 80" width="95" height="70" xmlns="http://www.w3.org/2000/svg">
-        <line x1="30" y1="35" x2="20" y2="10" stroke="#1e293b" stroke-width="2.5"/>
-        <line x1="80" y1="35" x2="90" y2="10" stroke="#1e293b" stroke-width="2.5"/>
-        <rect x="15" y="35" width="80" height="26" rx="4" fill="#f8fafc" stroke="#1e293b" stroke-width="2.5"/>
-        <circle cx="32" cy="48" r="2.5" fill="#22c55e"/>
-        <circle cx="44" cy="48" r="2.5" fill="#22c55e"/>
-        <circle cx="56" cy="48" r="2.5" fill="#22c55e"/>
-        <circle cx="68" cy="48" r="2.5" fill="#3b82f6"/>
-        <path d="M45,20 A15,15 0 0,1 65,20" fill="none" stroke="#2563eb" stroke-width="2"/>
-        <path d="M40,14 A22,22 0 0,1 70,14" fill="none" stroke="#60a5fa" stroke-width="1.5"/>
-    </svg>
-                    <span class="diagram-card-title">(३) संगणकाला इंटरनेट जोडणारे बिनतारी साधन</span>
+                    <img src="images/keyboard.jpg" alt="Keyboard Image">
+                    <span class="diagram-card-title">(३) माहिती व आज्ञा संगणकात पाठवणारे इनपुट (Input) साधन कोणते?</span>
                     <div style="display: flex; gap: 8px; margin-top: 6px;">
-                        <span class="opt-pill-neutral"><span class="opt-box"></span> (अ) साऊंड स्पीकर</span>
-                        <span class="opt-pill-neutral"><span class="opt-box"></span> (ब) वाय-फाय राउटर</span>
+                        <span class="opt-pill-neutral"><span class="opt-box"></span> (अ) कीबोर्ड (Keyboard)</span>
+                        <span class="opt-pill-neutral"><span class="opt-box"></span> (ब) स्पीकर</span>
                     </div>
                 </div>
 
                 <div class="diagram-card" style="padding: 10px;">
-                    <svg viewBox="0 0 80 95" width="75" height="85" xmlns="http://www.w3.org/2000/svg">
-        <rect x="22" y="16" width="36" height="64" rx="18" fill="#334155" stroke="#1e293b" stroke-width="2.5"/>
-        <ellipse cx="40" cy="18" rx="16" ry="6" fill="#60a5fa"/>
-        <circle cx="40" cy="18" r="4" fill="#ffffff"/>
-        <line x1="28" y1="45" x2="52" y2="45" stroke="#64748b" stroke-width="1" stroke-dasharray="2 2"/>
-        <line x1="28" y1="55" x2="52" y2="55" stroke="#64748b" stroke-width="1" stroke-dasharray="2 2"/>
-    </svg>
-                    <span class="diagram-card-title">(४) आपल्या आवाजावरील आज्ञेने गाणी लावणारा स्पीकर</span>
+                    <img src="images/printer.jpg" alt="Printer Image">
+                    <span class="diagram-card-title">(४) संगणकातील कामाची कागदावर प्रिंट देणारे आउटपुट साधन कोणते?</span>
                     <div style="display: flex; gap: 8px; margin-top: 6px;">
-                        <span class="opt-pill-neutral"><span class="opt-box"></span> (अ) स्मार्ट स्पीकर (उदा. Alexa)</span>
-                        <span class="opt-pill-neutral"><span class="opt-box"></span> (ब) रेडिओ</span>
+                        <span class="opt-pill-neutral"><span class="opt-box"></span> (अ) प्रिंटर (Printer)</span>
+                        <span class="opt-pill-neutral"><span class="opt-box"></span> (ब) पेनड्राईव्ह</span>
                     </div>
                 </div>
             </div>
 
             <!-- प्रश्न २: ३ गुण -->
             <div class="section-bar">
-                <span>प्रश्न २. योग्य पर्याय निवडा (पर्यायासमोरील वर्तुळात खूण करा)</span>
+                <span>प्रश्न २. रिकाम्या जागा भरा (कंसातील योग्य पर्याय निवडा)</span>
                 <span class="sec-marks">३ गुण [प्रत्येकी १ गुण]</span>
             </div>
 
-            <div class="q-item" style="margin-left: 10px;">
-                <div class="q-title"><span class="q-no">(१)</span> <div>इंटरनेटवरून माहिती शोधण्यासाठी गुगल (Google) हे काय आहे?</div></div>
-                <div style="margin-left: 32px; margin-top: 4px; font-size: 13px;">
-                    <span class="opt-pill-neutral"><span class="opt-circle"></span> (अ) संगणक गेम</span> &nbsp;&nbsp;&nbsp;&nbsp;
-                    <span class="opt-pill-neutral"><span class="opt-circle"></span> (ब) सर्च इंजिन (माहिती शोधक)</span>
-                </div>
+            <div class="word-bank-box" style="margin-bottom: 8px;">
+                कंसातील शब्द: [ इनपुट (Input) • आउटपुट (Output) • प्रोसेसिंग (Processing) ]
             </div>
 
             <div class="q-item" style="margin-left: 10px;">
-                <div class="q-title"><span class="q-no">(२)</span> <div>आपल्या मोबाईल किंवा कॉम्प्युटरचा गुप्त पासवर्ड अनोळखी व्यक्तीला सांगावा का?</div></div>
-                <div style="margin-left: 32px; margin-top: 4px; font-size: 13px;">
-                    <span class="opt-pill-neutral"><span class="opt-circle"></span> (अ) नाही (कधीही सांगू नये)</span> &nbsp;&nbsp;&nbsp;&nbsp;
-                    <span class="opt-pill-neutral"><span class="opt-circle"></span> (ब) होय (सांगावा)</span>
-                </div>
+                <div class="q-title"><span class="q-no">(१)</span> <div>संगणक स्वीकारत असलेल्या कच्च्या माहितीला ________ म्हणतात.</div></div>
+                <div class="single-ans-line"><span>उत्तर:</span> <span class="fill-blank-line"></span></div>
             </div>
 
             <div class="q-item" style="margin-left: 10px;">
-                <div class="q-title"><span class="q-no">(३)</span> <div>रोबोट आणि स्मार्ट उपकरणांमध्ये मानवासारखा विचार करण्यासाठी काय वापरले जाते?</div></div>
-                <div style="margin-left: 32px; margin-top: 4px; font-size: 13px;">
-                    <span class="opt-pill-neutral"><span class="opt-circle"></span> (अ) डिझेल / पेट्रोल</span> &nbsp;&nbsp;&nbsp;&nbsp;
-                    <span class="opt-pill-neutral"><span class="opt-circle"></span> (ब) कृत्रिम बुद्धिमत्ता (AI)</span>
-                </div>
+                <div class="q-title"><span class="q-no">(२)</span> <div>संगणकाने प्रक्रियेनंतर दिलेल्या अंतिम परिणामाला ________ म्हणतात.</div></div>
+                <div class="single-ans-line"><span>उत्तर:</span> <span class="fill-blank-line"></span></div>
+            </div>
+
+            <div class="q-item" style="margin-left: 10px;">
+                <div class="q-title"><span class="q-no">(३)</span> <div>सीपीयू (CPU) माहितीवर ________ करण्याचे कार्य करतो.</div></div>
+                <div class="single-ans-line"><span>उत्तर:</span> <span class="fill-blank-line"></span></div>
             </div>
 
             <!-- प्रश्न ३: ३ गुण -->
             <div class="section-bar">
-                <span>प्रश्न ३. जोड्या लावा</span>
+                <span>प्रश्न ३. साधन व त्याचा प्रकार यांच्या योग्य जोड्या जुळवा</span>
                 <span class="sec-marks">३ गुण [प्रत्येकी १ गुण]</span>
             </div>
 
             <table class="match-grid">
                 <thead>
                     <tr>
-                        <th style="width: 50%;">स्तंभ 'अ'</th>
-                        <th style="width: 50%;">स्तंभ 'ब'</th>
+                        <th style="width: 50%;">स्तंभ 'अ' (साधन)</th>
+                        <th style="width: 50%;">स्तंभ 'ब' (प्रकार)</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><strong>१. स्मार्ट घड्याळ</strong></td>
-                        <td>A. जगभरातील माहिती एका क्लिकवर मिळवणे</td>
+                        <td><strong>१. कीबोर्ड व माउस</strong></td>
+                        <td>A. आउटपुट साधने (Output Devices)</td>
                     </tr>
                     <tr>
-                        <td><strong>२. इंटरनेट</strong></td>
-                        <td>B. कठीण कामे स्वयंचलित करणे</td>
+                        <td><strong>२. मॉनिटर व प्रिंटर</strong></td>
+                        <td>B. प्रक्रिया केंद्र (Processing Unit)</td>
                     </tr>
                     <tr>
-                        <td><strong>३. रोबोट (यंत्रमानव)</strong></td>
-                        <td>C. वेळ आणि शरीराचे ठोके मोजणे</td>
+                        <td><strong>३. सीपीयू (CPU)</strong></td>
+                        <td>C. इनपुट साधने (Input Devices)</td>
                     </tr>
                 </tbody>
             </table>
