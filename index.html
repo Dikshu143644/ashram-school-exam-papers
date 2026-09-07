@@ -425,6 +425,40 @@
             text-align: center;
         }
 
+        /* Unmarked Neutral Option Pills for Primary Papers */
+        .opt-pill-neutral {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 10px;
+            border: 1.5px solid #cbd5e1;
+            border-radius: 6px;
+            background-color: #f8fafc;
+            color: #1e293b;
+            font-weight: 600;
+            font-size: 13px;
+        }
+
+        .opt-circle {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 1.5px solid #64748b;
+            border-radius: 50%;
+            background: #ffffff;
+            flex-shrink: 0;
+        }
+
+        .opt-box {
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            border: 1.5px solid #64748b;
+            border-radius: 3px;
+            background: #ffffff;
+            flex-shrink: 0;
+        }
+
         /* Dedicated Ruled Writing Lines */
         .answer-space {
             margin-top: 5px;
@@ -669,6 +703,14 @@
             .ruled-line {
                 border-bottom: 1.5px dashed #64748b !important;
             }
+            .opt-pill-neutral {
+                background: #ffffff !important;
+                border: 1px solid #94a3b8 !important;
+            }
+            .opt-circle, .opt-box {
+                border-color: #000000 !important;
+                background: #ffffff !important;
+            }
         }
     </style>
 </head>
@@ -778,7 +820,7 @@
             </div>
 
             <div class="meta-chips">
-                <span>विषय: संगणक ओळख (खूप सोपे)</span>
+                <span>विषय: संगणक ओळख</span>
                 <span>वेळ: ३० मिनिटे</span>
                 <span>एकूण गुण: १०</span>
             </div>
@@ -786,15 +828,15 @@
             <div class="general-instructions">
                 <strong>बालमित्रांसाठी सोप्या सूचना:</strong>
                 <ol>
-                    <li>सर्व प्रश्न खूप सोपे आहेत, काळजीपूर्वक वाचा.</li>
-                    <li>चित्रे पहा आणि योग्य उत्तरासमोरील पर्यायाला <strong>गोल (⭕)</strong> करा किंवा <strong>टिक (✅)</strong> करा.</li>
-                    <li>उत्तरे दिलेल्या चौकटीतच लिहा.</li>
+                    <li>सर्व प्रश्न सोपे आहेत, काळजीपूर्वक वाचा.</li>
+                    <li>चित्रे पहा आणि योग्य पर्यायासमोरील <strong>गोल ( )</strong> किंवा <strong>चौकट [ ]</strong> मध्ये पेन्सिलने खूण करा.</li>
+                    <li>कोणत्याही प्रश्नाचे उत्तर आधीच दिलेले नाही, स्वतः विचार करून उत्तरे नोंदवा.</li>
                 </ol>
             </div>
         
             <!-- प्रश्न १: ४ गुण -->
             <div class="section-bar">
-                <span>प्रश्न १. चित्रे ओळखा व योग्य नावासमोरील पर्यायाला गोल (⭕) करा</span>
+                <span>प्रश्न १. चित्रे ओळखा व योग्य पर्यायासमोरील वर्तुळात ( ) अशी पेन्सिलने खूण करा</span>
                 <span class="sec-marks">४ गुण [प्रत्येकी १ गुण]</span>
             </div>
 
@@ -809,8 +851,8 @@
     </svg>
                     <span class="diagram-card-title">(१) हे चित्र कशाचे आहे?</span>
                     <div style="display: flex; gap: 8px; margin-top: 6px;">
-                        <span style="border: 1.5px solid #2563eb; padding: 4px 10px; border-radius: 15px; font-weight: bold; background: #eff6ff;">⭕ मॉनिटर</span>
-                        <span style="border: 1.5px solid #cbd5e1; padding: 4px 10px; border-radius: 15px; color: #64748b;">माउस</span>
+                        <span class="opt-pill-neutral"><span class="opt-circle"></span> (अ) माउस</span>
+                        <span class="opt-pill-neutral"><span class="opt-circle"></span> (ब) मॉनिटर</span>
                     </div>
                 </div>
 
@@ -823,8 +865,8 @@
     </svg>
                     <span class="diagram-card-title">(२) हे चित्र कशाचे आहे?</span>
                     <div style="display: flex; gap: 8px; margin-top: 6px;">
-                        <span style="border: 1.5px solid #cbd5e1; padding: 4px 10px; border-radius: 15px; color: #64748b;">कीबोर्ड</span>
-                        <span style="border: 1.5px solid #2563eb; padding: 4px 10px; border-radius: 15px; font-weight: bold; background: #eff6ff;">⭕ माउस</span>
+                        <span class="opt-pill-neutral"><span class="opt-circle"></span> (अ) माउस</span>
+                        <span class="opt-pill-neutral"><span class="opt-circle"></span> (ब) कीबोर्ड</span>
                     </div>
                 </div>
 
@@ -843,10 +885,10 @@
         <rect x="86" y="30" width="16" height="8" rx="1.5" fill="#60a5fa" stroke="#2563eb"/>
         <rect x="34" y="42" width="52" height="8" rx="2" fill="#bfdbfe" stroke="#3b82f6"/>
     </svg>
-                    <span class="diagram-card-title">(३) बटणे असलेले हे साधन कोणते?</span>
+                    <span class="diagram-card-title">(३) अनेक बटणे असलेले हे साधन कोणते?</span>
                     <div style="display: flex; gap: 8px; margin-top: 6px;">
-                        <span style="border: 1.5px solid #2563eb; padding: 4px 10px; border-radius: 15px; font-weight: bold; background: #eff6ff;">⭕ कीबोर्ड</span>
-                        <span style="border: 1.5px solid #cbd5e1; padding: 4px 10px; border-radius: 15px; color: #64748b;">सीपीयू</span>
+                        <span class="opt-pill-neutral"><span class="opt-circle"></span> (अ) सीपीयू</span>
+                        <span class="opt-pill-neutral"><span class="opt-circle"></span> (ब) कीबोर्ड</span>
                     </div>
                 </div>
 
@@ -863,15 +905,15 @@
     </svg>
                     <span class="diagram-card-title">(४) संगणकाचा हा मोठा बॉक्स कोणता?</span>
                     <div style="display: flex; gap: 8px; margin-top: 6px;">
-                        <span style="border: 1.5px solid #cbd5e1; padding: 4px 10px; border-radius: 15px; color: #64748b;">मॉनिटर</span>
-                        <span style="border: 1.5px solid #2563eb; padding: 4px 10px; border-radius: 15px; font-weight: bold; background: #eff6ff;">⭕ सीपीयू (CPU)</span>
+                        <span class="opt-pill-neutral"><span class="opt-circle"></span> (अ) सीपीयू (CPU)</span>
+                        <span class="opt-pill-neutral"><span class="opt-circle"></span> (ब) मॉनिटर</span>
                     </div>
                 </div>
             </div>
 
             <!-- प्रश्न २: ३ गुण -->
             <div class="section-bar">
-                <span>प्रश्न २. चित्र व कार्य यांच्या सोप्या जोड्या लावा</span>
+                <span>प्रश्न २. चित्र व कार्य यांच्या योग्य जोड्या लावा</span>
                 <span class="sec-marks">३ गुण [प्रत्येकी १ गुण]</span>
             </div>
 
@@ -885,15 +927,15 @@
                 <tbody>
                     <tr>
                         <td><strong>१. मॉनिटर (स्क्रीन)</strong></td>
-                        <td>A. क्लिक करणे (Click)</td>
+                        <td>A. अक्षरे व आकडे लिहिणे (कीबोर्ड)</td>
                     </tr>
                     <tr>
                         <td><strong>२. कीबोर्ड (बटणे)</strong></td>
-                        <td>B. चित्र व कार्टून पाहणे (Screen)</td>
+                        <td>B. स्क्रीनवरील वस्तू क्लिक करणे (माउस)</td>
                     </tr>
                     <tr>
                         <td><strong>३. माउस (उंदरासारखा भाग)</strong></td>
-                        <td>C. अक्षरे व आकडे लिहिणे (Type)</td>
+                        <td>C. चित्र व कार्टून पाहणे (मॉनिटर)</td>
                     </tr>
                 </tbody>
             </table>
@@ -907,28 +949,31 @@
 
             <!-- प्रश्न ३: ३ गुण -->
             <div class="section-bar">
-                <span>प्रश्न ३. चूक की बरोबर ओळखा (योग्य शब्दाला गोल करा)</span>
+                <span>प्रश्न ३. चूक की बरोबर ओळखा (योग्य चौकोनात [✓] अशी खूण करा)</span>
                 <span class="sec-marks">३ गुण [प्रत्येकी १ गुण]</span>
             </div>
 
             <div class="q-item" style="margin-left: 10px;">
                 <div class="q-title"><span class="q-no">(१)</span> <div>संगणक विजेवर चालणारे आधुनिक यंत्र आहे.</div></div>
                 <div style="margin-left: 32px; margin-top: 4px; font-size: 13px;">
-                    उत्तर: <strong>[ बरोबर &nbsp;&nbsp;/&nbsp;&nbsp; चूक ]</strong>
+                    <span class="opt-pill-neutral"><span class="opt-box"></span> बरोबर</span> &nbsp;&nbsp;&nbsp;&nbsp;
+                    <span class="opt-pill-neutral"><span class="opt-box"></span> चूक</span>
                 </div>
             </div>
 
             <div class="q-item" style="margin-left: 10px;">
                 <div class="q-title"><span class="q-no">(२)</span> <div>माउसने आपण पाणी किंवा चहा पितो.</div></div>
                 <div style="margin-left: 32px; margin-top: 4px; font-size: 13px;">
-                    उत्तर: <strong>[ बरोबर &nbsp;&nbsp;/&nbsp;&nbsp; चूक ]</strong>
+                    <span class="opt-pill-neutral"><span class="opt-box"></span> बरोबर</span> &nbsp;&nbsp;&nbsp;&nbsp;
+                    <span class="opt-pill-neutral"><span class="opt-box"></span> चूक</span>
                 </div>
             </div>
 
             <div class="q-item" style="margin-left: 10px;">
                 <div class="q-title"><span class="q-no">(३)</span> <div>कीबोर्डवर अनेक अक्षरांची व आकड्यांची बटणे असतात.</div></div>
                 <div style="margin-left: 32px; margin-top: 4px; font-size: 13px;">
-                    उत्तर: <strong>[ बरोबर &nbsp;&nbsp;/&nbsp;&nbsp; चूक ]</strong>
+                    <span class="opt-pill-neutral"><span class="opt-box"></span> बरोबर</span> &nbsp;&nbsp;&nbsp;&nbsp;
+                    <span class="opt-pill-neutral"><span class="opt-box"></span> चूक</span>
                 </div>
             </div>
         </article>
@@ -973,7 +1018,7 @@
             </div>
 
             <div class="meta-chips">
-                <span>विषय: संगणकाचे भाग व साधने (सोपे)</span>
+                <span>विषय: संगणकाचे भाग व साधने</span>
                 <span>वेळ: ३० मिनिटे</span>
                 <span>एकूण गुण: १०</span>
             </div>
@@ -981,15 +1026,15 @@
             <div class="general-instructions">
                 <strong>बालमित्रांसाठी सोप्या सूचना:</strong>
                 <ol>
-                    <li>सर्व प्रश्न खूप सोपे आहेत, काळजीपूर्वक वाचा.</li>
-                    <li>चित्रे पहा आणि योग्य उत्तरासमोरील पर्यायाला <strong>गोल (⭕)</strong> करा किंवा <strong>टिक (✅)</strong> करा.</li>
-                    <li>उत्तरे दिलेल्या चौकटीतच लिहा.</li>
+                    <li>सर्व प्रश्न सोपे आहेत, काळजीपूर्वक वाचा.</li>
+                    <li>चित्रे पहा आणि योग्य पर्यायासमोरील <strong>गोल ( )</strong> किंवा <strong>चौकट [ ]</strong> मध्ये पेन्सिलने खूण करा.</li>
+                    <li>कोणत्याही प्रश्नाचे उत्तर आधीच दिलेले नाही, स्वतः विचार करून उत्तरे नोंदवा.</li>
                 </ol>
             </div>
         
             <!-- प्रश्न १: ४ गुण -->
             <div class="section-bar">
-                <span>प्रश्न १. चित्रे ओळखा व योग्य पर्यायाला टिक (✅) करा</span>
+                <span>प्रश्न १. चित्रे ओळखा व योग्य पर्यायासमोरील चौकोनात [✓] अशी खूण करा</span>
                 <span class="sec-marks">४ गुण [प्रत्येकी १ गुण]</span>
             </div>
 
@@ -1005,8 +1050,8 @@
     </svg>
                     <span class="diagram-card-title">(१) कागदावर छपाई करणारे हे साधन कोणते?</span>
                     <div style="display: flex; gap: 8px; margin-top: 6px;">
-                        <span style="border: 1.5px solid #2563eb; padding: 4px 10px; border-radius: 15px; font-weight: bold; background: #eff6ff;">✅ प्रिंटर (Printer)</span>
-                        <span style="border: 1.5px solid #cbd5e1; padding: 4px 10px; border-radius: 15px; color: #64748b;">माउस</span>
+                        <span class="opt-pill-neutral"><span class="opt-box"></span> (अ) माउस</span>
+                        <span class="opt-pill-neutral"><span class="opt-box"></span> (ब) प्रिंटर (Printer)</span>
                     </div>
                 </div>
 
@@ -1019,8 +1064,8 @@
     </svg>
                     <span class="diagram-card-title">(२) गाणी व कविता ऐकण्यासाठी काय वापरतात?</span>
                     <div style="display: flex; gap: 8px; margin-top: 6px;">
-                        <span style="border: 1.5px solid #2563eb; padding: 4px 10px; border-radius: 15px; font-weight: bold; background: #eff6ff;">✅ स्पीकर (Speaker)</span>
-                        <span style="border: 1.5px solid #cbd5e1; padding: 4px 10px; border-radius: 15px; color: #64748b;">कीबोर्ड</span>
+                        <span class="opt-pill-neutral"><span class="opt-box"></span> (अ) स्पीकर (Speaker)</span>
+                        <span class="opt-pill-neutral"><span class="opt-box"></span> (ब) कीबोर्ड</span>
                     </div>
                 </div>
 
@@ -1032,8 +1077,8 @@
     </svg>
                     <span class="diagram-card-title">(३) कानात लावून आवाज ऐकण्याचे साधन कोणते?</span>
                     <div style="display: flex; gap: 8px; margin-top: 6px;">
-                        <span style="border: 1.5px solid #2563eb; padding: 4px 10px; border-radius: 15px; font-weight: bold; background: #eff6ff;">✅ हेडफोन (Headphone)</span>
-                        <span style="border: 1.5px solid #cbd5e1; padding: 4px 10px; border-radius: 15px; color: #64748b;">सीपीयू</span>
+                        <span class="opt-pill-neutral"><span class="opt-box"></span> (अ) सीपीयू बॉक्स</span>
+                        <span class="opt-pill-neutral"><span class="opt-box"></span> (ब) हेडफोन (Headphone)</span>
                     </div>
                 </div>
 
@@ -1048,36 +1093,39 @@
     </svg>
                     <span class="diagram-card-title">(४) संगणकावर फोटो किंवा व्हिडिओ घेणारे साधन?</span>
                     <div style="display: flex; gap: 8px; margin-top: 6px;">
-                        <span style="border: 1.5px solid #2563eb; padding: 4px 10px; border-radius: 15px; font-weight: bold; background: #eff6ff;">✅ वेबकॅम (कॅमेरा)</span>
-                        <span style="border: 1.5px solid #cbd5e1; padding: 4px 10px; border-radius: 15px; color: #64748b;">मॉनिटर</span>
+                        <span class="opt-pill-neutral"><span class="opt-box"></span> (अ) वेबकॅम (Webcam)</span>
+                        <span class="opt-pill-neutral"><span class="opt-box"></span> (ब) मॉनिटर</span>
                     </div>
                 </div>
             </div>
 
             <!-- प्रश्न २: ३ गुण -->
             <div class="section-bar">
-                <span>प्रश्न २. कीबोर्डवरील बटणे ओळखा (कंसातील योग्य पर्याय निवडा)</span>
+                <span>प्रश्न २. कीबोर्डवरील बटणे ओळखा (योग्य पर्यायासमोरील वर्तुळात रंग भरा)</span>
                 <span class="sec-marks">३ गुण [प्रत्येकी १ गुण]</span>
             </div>
 
             <div class="q-item" style="margin-left: 10px;">
                 <div class="q-title"><span class="q-no">(१)</span> <div>कीबोर्डवरील सर्वात लांब (मोठे) बटण कोणते असते?</div></div>
                 <div style="margin-left: 32px; margin-top: 4px; font-size: 13px;">
-                    पर्याय: <strong>[ स्पेसबार (Spacebar) &nbsp;&nbsp;/&nbsp;&nbsp; एंटर (Enter) ]</strong>
+                    <span class="opt-pill-neutral"><span class="opt-circle"></span> (अ) एंटर की (Enter)</span> &nbsp;&nbsp;&nbsp;&nbsp;
+                    <span class="opt-pill-neutral"><span class="opt-circle"></span> (ब) स्पेसबार की (Spacebar)</span>
                 </div>
             </div>
 
             <div class="q-item" style="margin-left: 10px;">
                 <div class="q-title"><span class="q-no">(२)</span> <div>नवीन ओळीवर खाली जाण्यासाठी कोणते बटण दाबतात?</div></div>
                 <div style="margin-left: 32px; margin-top: 4px; font-size: 13px;">
-                    पर्याय: <strong>[ एंटर की (Enter) &nbsp;&nbsp;/&nbsp;&nbsp; स्पेसबार ]</strong>
+                    <span class="opt-pill-neutral"><span class="opt-circle"></span> (अ) एंटर की (Enter)</span> &nbsp;&nbsp;&nbsp;&nbsp;
+                    <span class="opt-pill-neutral"><span class="opt-circle"></span> (ब) स्पेसबार की</span>
                 </div>
             </div>
 
             <div class="q-item" style="margin-left: 10px;">
                 <div class="q-title"><span class="q-no">(३)</span> <div>स्क्रीनवरील बाण वर, खाली, डावीकडे, उजवीकडे नेण्यासाठी कोणती बटणे वापरतात?</div></div>
                 <div style="margin-left: 32px; margin-top: 4px; font-size: 13px;">
-                    पर्याय: <strong>[ ॲरो कीज् (Arrow Keys) &nbsp;&nbsp;/&nbsp;&nbsp; नंबर कीज् ]</strong>
+                    <span class="opt-pill-neutral"><span class="opt-circle"></span> (अ) नंबर कीज्</span> &nbsp;&nbsp;&nbsp;&nbsp;
+                    <span class="opt-pill-neutral"><span class="opt-circle"></span> (ब) ॲरो कीज् (बाण)</span>
                 </div>
             </div>
 
@@ -1101,7 +1149,7 @@
                     </tr>
                     <tr>
                         <td><strong>२. स्पीकर (Speaker)</strong></td>
-                        <td>B. अक्षरे टाईप करणे</td>
+                        <td>B. अक्षरे व आकडे टाईप करणे</td>
                     </tr>
                     <tr>
                         <td><strong>३. कीबोर्ड (Keyboard)</strong></td>
@@ -1158,7 +1206,7 @@
             </div>
 
             <div class="meta-chips">
-                <span>विषय: संगणक भाग व मेमरी साधने (सोपे)</span>
+                <span>विषय: संगणक भाग व मेमरी साधने</span>
                 <span>वेळ: ४५ मिनिटे</span>
                 <span>एकूण गुण: १०</span>
             </div>
@@ -1166,20 +1214,16 @@
             <div class="general-instructions">
                 <strong>बालमित्रांसाठी सोप्या सूचना:</strong>
                 <ol>
-                    <li>सर्व प्रश्न खूप सोपे आहेत, काळजीपूर्वक वाचा.</li>
-                    <li>चित्रे पहा आणि योग्य उत्तरासमोरील पर्यायाला <strong>गोल (⭕)</strong> करा किंवा <strong>टिक (✅)</strong> करा.</li>
-                    <li>उत्तरे दिलेल्या चौकटीतच लिहा.</li>
+                    <li>सर्व प्रश्न सोपे आहेत, काळजीपूर्वक वाचा.</li>
+                    <li>चित्रे पहा आणि योग्य पर्यायासमोरील <strong>गोल ( )</strong> किंवा <strong>चौकट [ ]</strong> मध्ये पेन्सिलने खूण करा.</li>
+                    <li>कोणत्याही प्रश्नाचे उत्तर आधीच दिलेले नाही, स्वतः विचार करून उत्तरे नोंदवा.</li>
                 </ol>
             </div>
         
             <!-- प्रश्न १: ४ गुण -->
             <div class="section-bar">
-                <span>प्रश्न १. चित्रे ओळखा व कंसातील योग्य नाव निवडून लिहा</span>
+                <span>प्रश्न १. चित्रे ओळखा व योग्य पर्यायासमोरील वर्तुळात ( ) खूण करा</span>
                 <span class="sec-marks">४ गुण [प्रत्येकी १ गुण]</span>
-            </div>
-
-            <div class="word-bank-box" style="margin-bottom: 8px;">
-                शब्द निवडा: [ पेनड्राईव्ह • सीपीयू (CPU) • हार्ड डिस्क • वेबकॅम ]
             </div>
 
             <div class="diagram-grid" style="grid-template-columns: repeat(2, 1fr);">
@@ -1192,9 +1236,9 @@
         <circle cx="76" cy="40" r="4" fill="#ffffff"/>
     </svg>
                     <span class="diagram-card-title">(१) खिशात सहज नेता येणारे मेमरी साधन</span>
-                    <div class="single-ans-line" style="margin-left: 0; width: 100%;">
-                        <span>नाव:</span>
-                        <span class="fill-blank-line"></span>
+                    <div style="display: flex; gap: 8px; margin-top: 6px;">
+                        <span class="opt-pill-neutral"><span class="opt-circle"></span> (अ) माउस</span>
+                        <span class="opt-pill-neutral"><span class="opt-circle"></span> (ब) पेनड्राईव्ह</span>
                     </div>
                 </div>
 
@@ -1210,9 +1254,9 @@
         <line x1="25" y1="80" x2="55" y2="80" stroke="#94a3b8" stroke-width="1.5"/>
     </svg>
                     <span class="diagram-card-title">(२) संगणकाचा मेंदू असणारा मुख्य भाग</span>
-                    <div class="single-ans-line" style="margin-left: 0; width: 100%;">
-                        <span>नाव:</span>
-                        <span class="fill-blank-line"></span>
+                    <div style="display: flex; gap: 8px; margin-top: 6px;">
+                        <span class="opt-pill-neutral"><span class="opt-circle"></span> (अ) सीपीयू (CPU)</span>
+                        <span class="opt-pill-neutral"><span class="opt-circle"></span> (ब) मॉनिटर</span>
                     </div>
                 </div>
 
@@ -1224,9 +1268,9 @@
         <line x1="50" y1="38" x2="68" y2="24" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round"/>
     </svg>
                     <span class="diagram-card-title">(३) संगणकातील मोठी माहिती साठवणूक डिस्क</span>
-                    <div class="single-ans-line" style="margin-left: 0; width: 100%;">
-                        <span>नाव:</span>
-                        <span class="fill-blank-line"></span>
+                    <div style="display: flex; gap: 8px; margin-top: 6px;">
+                        <span class="opt-pill-neutral"><span class="opt-circle"></span> (अ) कीबोर्ड</span>
+                        <span class="opt-pill-neutral"><span class="opt-circle"></span> (ब) हार्ड डिस्क</span>
                     </div>
                 </div>
 
@@ -1240,9 +1284,9 @@
         <circle cx="50" cy="30" r="2.5" fill="#ffffff"/>
     </svg>
                     <span class="diagram-card-title">(४) संगणकावरील छोटा कॅमेरा</span>
-                    <div class="single-ans-line" style="margin-left: 0; width: 100%;">
-                        <span>नाव:</span>
-                        <span class="fill-blank-line"></span>
+                    <div style="display: flex; gap: 8px; margin-top: 6px;">
+                        <span class="opt-pill-neutral"><span class="opt-circle"></span> (अ) वेबकॅम</span>
+                        <span class="opt-pill-neutral"><span class="opt-circle"></span> (ब) स्पीकर</span>
                     </div>
                 </div>
             </div>
@@ -1254,16 +1298,16 @@
             </div>
 
             <div class="word-bank-box" style="margin-bottom: 8px;">
-                कंस: [ मेंदू • कीबोर्ड • शट डाऊन (Shut Down) ]
+                कंसातील शब्द: [ मेंदू • कीबोर्ड • शट डाऊन (Shut Down) ]
             </div>
 
             <div class="q-item" style="margin-left: 10px;">
-                <div class="q-title"><span class="q-no">(१)</span> <div>सीपीयू (CPU) ला संगणकाचा ________ म्हणतात.</div></div>
+                <div class="q-title"><span class="q-no">(१)</span> <div>संगणकावर अक्षरे आणि आकडे लिहिण्यासाठी ________ वापरतात.</div></div>
                 <div class="single-ans-line"><span>उत्तर:</span> <span class="fill-blank-line"></span></div>
             </div>
 
             <div class="q-item" style="margin-left: 10px;">
-                <div class="q-title"><span class="q-no">(२)</span> <div>संगणकावर अक्षरे आणि आकडे लिहिण्यासाठी ________ वापरतात.</div></div>
+                <div class="q-title"><span class="q-no">(२)</span> <div>सीपीयू (CPU) ला संगणकाचा ________ म्हणतात.</div></div>
                 <div class="single-ans-line"><span>उत्तर:</span> <span class="fill-blank-line"></span></div>
             </div>
 
@@ -1274,28 +1318,31 @@
 
             <!-- प्रश्न ३: ३ गुण -->
             <div class="section-bar">
-                <span>प्रश्न ३. चूक की बरोबर सांगा</span>
+                <span>प्रश्न ३. चूक की बरोबर सांगा (योग्य चौकोनात [✓] अशी खूण करा)</span>
                 <span class="sec-marks">३ गुण [प्रत्येकी १ गुण]</span>
             </div>
 
             <div class="q-item" style="margin-left: 10px;">
                 <div class="q-title"><span class="q-no">(१)</span> <div>संगणकाजवळ पाणी किंवा खाऊ सांडू नये.</div></div>
                 <div style="margin-left: 32px; margin-top: 4px; font-size: 13px;">
-                    उत्तर: <strong>[ बरोबर &nbsp;&nbsp;/&nbsp;&nbsp; चूक ]</strong>
+                    <span class="opt-pill-neutral"><span class="opt-box"></span> बरोबर</span> &nbsp;&nbsp;&nbsp;&nbsp;
+                    <span class="opt-pill-neutral"><span class="opt-box"></span> चूक</span>
                 </div>
             </div>
 
             <div class="q-item" style="margin-left: 10px;">
-                <div class="q-title"><span class="q-no">(२)</span> <div>संगणक खूप वेगाने आणि न थकता अचूक काम करतो.</div></div>
+                <div class="q-title"><span class="q-no">(२)</span> <div>संगणक माणसापेक्षा खूप हळू आणि चुकून काम करतो.</div></div>
                 <div style="margin-left: 32px; margin-top: 4px; font-size: 13px;">
-                    उत्तर: <strong>[ बरोबर &nbsp;&nbsp;/&nbsp;&nbsp; चूक ]</strong>
+                    <span class="opt-pill-neutral"><span class="opt-box"></span> बरोबर</span> &nbsp;&nbsp;&nbsp;&nbsp;
+                    <span class="opt-pill-neutral"><span class="opt-box"></span> चूक</span>
                 </div>
             </div>
 
             <div class="q-item" style="margin-left: 10px;">
-                <div class="q-title"><span class="q-no">(३)</span> <div>कीबोर्डची बटणे खूप जोरात आपटून दाबावीत.</div></div>
+                <div class="q-title"><span class="q-no">(३)</span> <div>कीबोर्डची बटणे हलक्या हाताने दाबावीत, जोरात आपटू नये.</div></div>
                 <div style="margin-left: 32px; margin-top: 4px; font-size: 13px;">
-                    उत्तर: <strong>[ बरोबर &nbsp;&nbsp;/&nbsp;&nbsp; चूक ]</strong>
+                    <span class="opt-pill-neutral"><span class="opt-box"></span> बरोबर</span> &nbsp;&nbsp;&nbsp;&nbsp;
+                    <span class="opt-pill-neutral"><span class="opt-box"></span> चूक</span>
                 </div>
             </div>
         </article>
@@ -1340,7 +1387,7 @@
             </div>
 
             <div class="meta-chips">
-                <span>विषय: स्मार्ट उपकरणे, इंटरनेट व सुरक्षा (सोपे)</span>
+                <span>विषय: स्मार्ट उपकरणे, इंटरनेट व सुरक्षा</span>
                 <span>वेळ: ४५ मिनिटे</span>
                 <span>एकूण गुण: १०</span>
             </div>
@@ -1348,15 +1395,15 @@
             <div class="general-instructions">
                 <strong>बालमित्रांसाठी सोप्या सूचना:</strong>
                 <ol>
-                    <li>सर्व प्रश्न खूप सोपे आहेत, काळजीपूर्वक वाचा.</li>
-                    <li>चित्रे पहा आणि योग्य उत्तरासमोरील पर्यायाला <strong>गोल (⭕)</strong> करा किंवा <strong>टिक (✅)</strong> करा.</li>
-                    <li>उत्तरे दिलेल्या चौकटीतच लिहा.</li>
+                    <li>सर्व प्रश्न सोपे आहेत, काळजीपूर्वक वाचा.</li>
+                    <li>चित्रे पहा आणि योग्य पर्यायासमोरील <strong>गोल ( )</strong> किंवा <strong>चौकट [ ]</strong> मध्ये पेन्सिलने खूण करा.</li>
+                    <li>कोणत्याही प्रश्नाचे उत्तर आधीच दिलेले नाही, स्वतः विचार करून उत्तरे नोंदवा.</li>
                 </ol>
             </div>
         
             <!-- प्रश्न १: ४ गुण -->
             <div class="section-bar">
-                <span>प्रश्न १. खालील स्मार्ट साधने ओळखा व पर्यायाला गोल (⭕) करा</span>
+                <span>प्रश्न १. खालील स्मार्ट साधने ओळखा व योग्य पर्यायासमोरील चौकोनात [✓] अशी खूण करा</span>
                 <span class="sec-marks">४ गुण [प्रत्येकी १ गुण]</span>
             </div>
 
@@ -1371,8 +1418,8 @@
     </svg>
                     <span class="diagram-card-title">(१) वेळ व हृदयाचे ठोके दाखवणारे स्मार्ट घड्याळ</span>
                     <div style="display: flex; gap: 8px; margin-top: 6px;">
-                        <span style="border: 1.5px solid #2563eb; padding: 4px 10px; border-radius: 15px; font-weight: bold; background: #eff6ff;">⭕ स्मार्ट वॉच</span>
-                        <span style="border: 1.5px solid #cbd5e1; padding: 4px 10px; border-radius: 15px; color: #64748b;">भिंतीवरील घड्याळ</span>
+                        <span class="opt-pill-neutral"><span class="opt-box"></span> (अ) भिंतीवरील घड्याळ</span>
+                        <span class="opt-pill-neutral"><span class="opt-box"></span> (ब) स्मार्ट वॉच</span>
                     </div>
                 </div>
 
@@ -1389,8 +1436,8 @@
     </svg>
                     <span class="diagram-card-title">(२) माणसासारखी कामे करणारा यंत्रमानव</span>
                     <div style="display: flex; gap: 8px; margin-top: 6px;">
-                        <span style="border: 1.5px solid #2563eb; padding: 4px 10px; border-radius: 15px; font-weight: bold; background: #eff6ff;">⭕ रोबोट (Robot)</span>
-                        <span style="border: 1.5px solid #cbd5e1; padding: 4px 10px; border-radius: 15px; color: #64748b;">खेळणे</span>
+                        <span class="opt-pill-neutral"><span class="opt-box"></span> (अ) रोबोट (Robot)</span>
+                        <span class="opt-pill-neutral"><span class="opt-box"></span> (ब) साधे खेळणे</span>
                     </div>
                 </div>
 
@@ -1406,10 +1453,10 @@
         <path d="M45,20 A15,15 0 0,1 65,20" fill="none" stroke="#2563eb" stroke-width="2"/>
         <path d="M40,14 A22,22 0 0,1 70,14" fill="none" stroke="#60a5fa" stroke-width="1.5"/>
     </svg>
-                    <span class="diagram-card-title">(३) संगणकाला इंटरनेट जोडणारे साधन</span>
+                    <span class="diagram-card-title">(३) संगणकाला इंटरनेट जोडणारे बिनतारी साधन</span>
                     <div style="display: flex; gap: 8px; margin-top: 6px;">
-                        <span style="border: 1.5px solid #2563eb; padding: 4px 10px; border-radius: 15px; font-weight: bold; background: #eff6ff;">⭕ वाय-फाय राउटर</span>
-                        <span style="border: 1.5px solid #cbd5e1; padding: 4px 10px; border-radius: 15px; color: #64748b;">स्पीकर</span>
+                        <span class="opt-pill-neutral"><span class="opt-box"></span> (अ) साऊंड स्पीकर</span>
+                        <span class="opt-pill-neutral"><span class="opt-box"></span> (ब) वाय-फाय राउटर</span>
                     </div>
                 </div>
 
@@ -1423,36 +1470,39 @@
     </svg>
                     <span class="diagram-card-title">(४) आपल्या आवाजावरील आज्ञेने गाणी लावणारा स्पीकर</span>
                     <div style="display: flex; gap: 8px; margin-top: 6px;">
-                        <span style="border: 1.5px solid #2563eb; padding: 4px 10px; border-radius: 15px; font-weight: bold; background: #eff6ff;">⭕ स्मार्ट स्पीकर (उदा. Alexa)</span>
-                        <span style="border: 1.5px solid #cbd5e1; padding: 4px 10px; border-radius: 15px; color: #64748b;">रेडिओ</span>
+                        <span class="opt-pill-neutral"><span class="opt-box"></span> (अ) स्मार्ट स्पीकर (उदा. Alexa)</span>
+                        <span class="opt-pill-neutral"><span class="opt-box"></span> (ब) रेडिओ</span>
                     </div>
                 </div>
             </div>
 
             <!-- प्रश्न २: ३ गुण -->
             <div class="section-bar">
-                <span>प्रश्न २. योग्य पर्याय निवडा</span>
+                <span>प्रश्न २. योग्य पर्याय निवडा (पर्यायासमोरील वर्तुळात खूण करा)</span>
                 <span class="sec-marks">३ गुण [प्रत्येकी १ गुण]</span>
             </div>
 
             <div class="q-item" style="margin-left: 10px;">
                 <div class="q-title"><span class="q-no">(१)</span> <div>इंटरनेटवरून माहिती शोधण्यासाठी गुगल (Google) हे काय आहे?</div></div>
                 <div style="margin-left: 32px; margin-top: 4px; font-size: 13px;">
-                    पर्याय: <strong>[ सर्च इंजिन (माहिती शोधक) &nbsp;&nbsp;/&nbsp;&nbsp; संगणक गेम ]</strong>
+                    <span class="opt-pill-neutral"><span class="opt-circle"></span> (अ) संगणक गेम</span> &nbsp;&nbsp;&nbsp;&nbsp;
+                    <span class="opt-pill-neutral"><span class="opt-circle"></span> (ब) सर्च इंजिन (माहिती शोधक)</span>
                 </div>
             </div>
 
             <div class="q-item" style="margin-left: 10px;">
                 <div class="q-title"><span class="q-no">(२)</span> <div>आपल्या मोबाईल किंवा कॉम्प्युटरचा गुप्त पासवर्ड अनोळखी व्यक्तीला सांगावा का?</div></div>
                 <div style="margin-left: 32px; margin-top: 4px; font-size: 13px;">
-                    पर्याय: <strong>[ नाही (कधीही सांगू नये) &nbsp;&nbsp;/&nbsp;&nbsp; होय (सांगावा) ]</strong>
+                    <span class="opt-pill-neutral"><span class="opt-circle"></span> (अ) नाही (कधीही सांगू नये)</span> &nbsp;&nbsp;&nbsp;&nbsp;
+                    <span class="opt-pill-neutral"><span class="opt-circle"></span> (ब) होय (सांगावा)</span>
                 </div>
             </div>
 
             <div class="q-item" style="margin-left: 10px;">
                 <div class="q-title"><span class="q-no">(३)</span> <div>रोबोट आणि स्मार्ट उपकरणांमध्ये मानवासारखा विचार करण्यासाठी काय वापरले जाते?</div></div>
                 <div style="margin-left: 32px; margin-top: 4px; font-size: 13px;">
-                    पर्याय: <strong>[ कृत्रिम बुद्धिमत्ता (AI) &nbsp;&nbsp;/&nbsp;&nbsp; पेट्रोल ]</strong>
+                    <span class="opt-pill-neutral"><span class="opt-circle"></span> (अ) डिझेल / पेट्रोल</span> &nbsp;&nbsp;&nbsp;&nbsp;
+                    <span class="opt-pill-neutral"><span class="opt-circle"></span> (ब) कृत्रिम बुद्धिमत्ता (AI)</span>
                 </div>
             </div>
 
@@ -1785,8 +1835,8 @@
                 <div class="q-title"><span class="q-no">Q.1</span> <div>खालीलपैकी कोणती ऑपरेटिंग सिस्टीम (Operating System) आहे?<span class="q-en">Which of the following is an Operating System?</span></div></div>
                 <div class="options-list">
                     <div class="option-item"><span class="checkbox-box"></span> A) MS Paint</div>
-                    <div class="option-item"><span class="checkbox-box"></span> B) Windows 11</div>
-                    <div class="option-item"><span class="checkbox-box"></span> C) गुगल क्रोम</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) गुगल क्रोम (Google Chrome)</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) Windows 11</div>
                     <div class="option-item"><span class="checkbox-box"></span> D) कीबोर्ड</div>
                 </div>
                 <div class="ans-box-row"><span>उत्तर पर्याय:</span> <span class="ans-sq-box"></span></div>
@@ -1795,8 +1845,8 @@
             <div class="q-item">
                 <div class="q-title"><span class="q-no">Q.2</span> <div>स्क्रीनवरील छोट्या चित्रांना काय म्हणतात ज्यावर क्लिक करून प्रोग्रॅम उघडतात?<span class="q-en">What are small screen pictures called that open programs?</span></div></div>
                 <div class="options-list">
-                    <div class="option-item"><span class="checkbox-box"></span> A) फोल्डर</div>
-                    <div class="option-item"><span class="checkbox-box"></span> B) आयकॉन (Icons)</div>
+                    <div class="option-item"><span class="checkbox-box"></span> A) आयकॉन (Icons)</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) फोल्डर</div>
                     <div class="option-item"><span class="checkbox-box"></span> C) वायर</div>
                     <div class="option-item"><span class="checkbox-box"></span> D) चिप</div>
                 </div>
@@ -1807,9 +1857,9 @@
                 <div class="q-title"><span class="q-no">Q.3</span> <div>कचऱ्यात टाकलेल्या (डिलीट केलेल्या) फाईल्स तात्पुरत्या कोठे साठवल्या जातात?<span class="q-en">Where are temporarily deleted files stored?</span></div></div>
                 <div class="options-list">
                     <div class="option-item"><span class="checkbox-box"></span> A) माय कॉम्प्युटर</div>
-                    <div class="option-item"><span class="checkbox-box"></span> B) रिसायकल बिन (Recycle Bin)</div>
-                    <div class="option-item"><span class="checkbox-box"></span> C) टास्कबार</div>
-                    <div class="option-item"><span class="checkbox-box"></span> D) इंटरनेट</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) टास्कबार</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) इंटरनेट</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) रिसायकल बिन (Recycle Bin)</div>
                 </div>
                 <div class="ans-box-row"><span>उत्तर पर्याय:</span> <span class="ans-sq-box"></span></div>
             </div>
@@ -2239,8 +2289,8 @@
                 <div class="q-title"><span class="q-no">Q.1</span> <div>मशीन लर्निंग (Machine Learning) मध्ये संगणक कशाच्या आधारे स्वतः शिकतो?<span class="q-en">In Machine Learning, on what basis does a computer learn?</span></div></div>
                 <div class="options-list">
                     <div class="option-item"><span class="checkbox-box"></span> A) वीज पुरवठा</div>
-                    <div class="option-item"><span class="checkbox-box"></span> B) जुना डेटा व पूर्वानुभव (Historical Data & Patterns)</div>
-                    <div class="option-item"><span class="checkbox-box"></span> C) कीबोर्डचा वेग</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) कीबोर्डचा वेग</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) जुना डेटा व पूर्वानुभव (Historical Data & Patterns)</div>
                     <div class="option-item"><span class="checkbox-box"></span> D) स्क्रीनचा आकार</div>
                 </div>
                 <div class="ans-box-row"><span>उत्तर पर्याय:</span> <span class="ans-sq-box"></span></div>
@@ -2261,9 +2311,9 @@
                 <div class="q-title"><span class="q-no">Q.3</span> <div>इंटरनेटवर खोट्या किंवा दिशाभूल करणाऱ्या माहितीला काय म्हणतात?<span class="q-en">What is false or misleading information online called?</span></div></div>
                 <div class="options-list">
                     <div class="option-item"><span class="checkbox-box"></span> A) ई-न्यूज</div>
-                    <div class="option-item"><span class="checkbox-box"></span> B) फेक न्यूज (Fake News / Misinformation)</div>
-                    <div class="option-item"><span class="checkbox-box"></span> C) ब्लॉग</div>
-                    <div class="option-item"><span class="checkbox-box"></span> D) ई-मेल</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) ब्लॉग</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) ई-मेल</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) फेक न्यूज (Fake News / Misinformation)</div>
                 </div>
                 <div class="ans-box-row"><span>उत्तर पर्याय:</span> <span class="ans-sq-box"></span></div>
             </div>
@@ -2466,9 +2516,9 @@
                 <div class="q-title"><span class="q-no">Q.1</span> <div>पायथन (Python) या प्रोग्रॅमिंग भाषेत स्क्रीनवर संदेश दाखवण्यासाठी कोणते फंक्शन वापरतात?<span class="q-en">Which function is used to output text in Python?</span></div></div>
                 <div class="options-list">
                     <div class="option-item"><span class="checkbox-box"></span> A) input()</div>
-                    <div class="option-item"><span class="checkbox-box"></span> B) print()</div>
-                    <div class="option-item"><span class="checkbox-box"></span> C) scan()</div>
-                    <div class="option-item"><span class="checkbox-box"></span> D) display()</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) scan()</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) display()</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) print()</div>
                 </div>
                 <div class="ans-box-row"><span>उत्तर पर्याय:</span> <span class="ans-sq-box"></span></div>
             </div>
@@ -2487,9 +2537,9 @@
             <div class="q-item">
                 <div class="q-title"><span class="q-no">Q.3</span> <div>कृत्रिम बुद्धिमत्तेचा वापर करून नवीन निबंध, कथा किंवा चित्रे तयार करणाऱ्या AI ला काय म्हणतात?<span class="q-en">AI that generates new text, code, or images is known as?</span></div></div>
                 <div class="options-list">
-                    <div class="option-item"><span class="checkbox-box"></span> A) जनरेटिव्ह AI (Generative AI - उदा. ChatGPT)</div>
-                    <div class="option-item"><span class="checkbox-box"></span> B) साधे प्रिंटर</div>
-                    <div class="option-item"><span class="checkbox-box"></span> C) स्टोरेज डिस्क</div>
+                    <div class="option-item"><span class="checkbox-box"></span> A) साधे प्रिंटर</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) स्टोरेज डिस्क</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) जनरेटिव्ह AI (Generative AI - उदा. ChatGPT)</div>
                     <div class="option-item"><span class="checkbox-box"></span> D) अँटीव्हायरस</div>
                 </div>
                 <div class="ans-box-row"><span>उत्तर पर्याय:</span> <span class="ans-sq-box"></span></div>
@@ -2693,8 +2743,8 @@
                 <div class="q-title"><span class="q-no">Q.1</span> <div>संगणकीय विचारसरणीमध्ये (Computational Thinking) एखाद्या मोठ्या समस्येचे लहानात लहान भागात विभाजन करण्याला काय म्हणतात?<span class="q-en">Breaking a complex problem into smaller manageable parts is called?</span></div></div>
                 <div class="options-list">
                     <div class="option-item"><span class="checkbox-box"></span> A) ॲब्स्ट्रॅक्शन (Abstraction)</div>
-                    <div class="option-item"><span class="checkbox-box"></span> B) डीकंपोझिशन (Decomposition)</div>
-                    <div class="option-item"><span class="checkbox-box"></span> C) पॅटर्न रेकग्निशन</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) पॅटर्न रेकग्निशन</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) डीकंपोझिशन (Decomposition)</div>
                     <div class="option-item"><span class="checkbox-box"></span> D) अल्गोरिदम</div>
                 </div>
                 <div class="ans-box-row"><span>उत्तर पर्याय:</span> <span class="ans-sq-box"></span></div>
@@ -2703,8 +2753,8 @@
             <div class="q-item">
                 <div class="q-title"><span class="q-no">Q.2</span> <div>AI मॉडेल प्रशिक्षित करताना जर डेटा एकांगी असेल, तर AI सिस्टीममध्ये कोणता दोष निर्माण होतो?<span class="q-en">If training data is biased, what defect is introduced into the AI model?</span></div></div>
                 <div class="options-list">
-                    <div class="option-item"><span class="checkbox-box"></span> A) हार्डवेअर बिघाड</div>
-                    <div class="option-item"><span class="checkbox-box"></span> B) अल्गोरिदम पूर्वग्रह (AI Bias / पूर्वग्रह)</div>
+                    <div class="option-item"><span class="checkbox-box"></span> A) अल्गोरिदम पूर्वग्रह (AI Bias / पूर्वग्रह)</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) हार्डवेअर बिघाड</div>
                     <div class="option-item"><span class="checkbox-box"></span> C) संगणक रीस्टार्ट</div>
                     <div class="option-item"><span class="checkbox-box"></span> D) स्क्रीन ब्लॅकआऊट</div>
                 </div>
@@ -2714,10 +2764,10 @@
             <div class="q-item">
                 <div class="q-title"><span class="q-no">Q.3</span> <div>इंटरनेटवर वापरकर्त्याला बनावट बँकेच्या लिंकवर क्लिक करायला लावून पासवर्ड चोरण्याच्या सायबर हल्ल्याला काय म्हणतात?<span class="q-en">Tricking users with deceptive links to steal credentials is called?</span></div></div>
                 <div class="options-list">
-                    <div class="option-item"><span class="checkbox-box"></span> A) फिशिंग अटॅक (Phishing Attack)</div>
-                    <div class="option-item"><span class="checkbox-box"></span> B) फायरवॉल</div>
-                    <div class="option-item"><span class="checkbox-box"></span> C) कुकीज सेव्हिंग</div>
-                    <div class="option-item"><span class="checkbox-box"></span> D) बॅकअप</div>
+                    <div class="option-item"><span class="checkbox-box"></span> A) फायरवॉल</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) कुकीज सेव्हिंग</div>
+                    <div class="option-item"><span class="checkbox-box"></span> C) बॅकअप</div>
+                    <div class="option-item"><span class="checkbox-box"></span> D) फिशिंग अटॅक (Phishing Attack)</div>
                 </div>
                 <div class="ans-box-row"><span>उत्तर पर्याय:</span> <span class="ans-sq-box"></span></div>
             </div>
@@ -2725,8 +2775,8 @@
             <div class="q-item">
                 <div class="q-title"><span class="q-no">Q.4</span> <div>कृत्रिम बुद्धिमत्ता (AI) सिस्टीमच्या नैतिक आणि जबाबदार वापराच्या नियमावलीला काय म्हणतात?<span class="q-en">Framework for moral and fair usage of AI is known as?</span></div></div>
                 <div class="options-list">
-                    <div class="option-item"><span class="checkbox-box"></span> A) AI एथिक्स (AI Ethics & Governance)</div>
-                    <div class="option-item"><span class="checkbox-box"></span> B) हार्डवेअर चाचणी</div>
+                    <div class="option-item"><span class="checkbox-box"></span> A) हार्डवेअर चाचणी</div>
+                    <div class="option-item"><span class="checkbox-box"></span> B) AI एथिक्स (AI Ethics & Governance)</div>
                     <div class="option-item"><span class="checkbox-box"></span> C) मेमरी स्पीड</div>
                     <div class="option-item"><span class="checkbox-box"></span> D) प्रिंटिंग कोड</div>
                 </div>
