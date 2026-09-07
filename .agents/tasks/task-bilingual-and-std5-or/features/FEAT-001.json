@@ -1,0 +1,26 @@
+{
+  "id": "FEAT-001",
+  "type": "fix",
+  "description": "Std 1-4 bilingual polish. KEEP these four papers exactly as they are now: visual/image diagram-labeling papers worth 10 marks each, current section pattern, current images (images/*.jpg) and ONLY those existing assets. Do NOT restructure them to the 20-mark text the user pasted (that pasted Std 1-4 content is superseded by the user's explicit instruction to keep Std 1-4 at 10 marks in the current pattern with images). The only change: scan every Std 1-4 paper (articles id=paper-std-1 .. paper-std-4, roughly lines 835-1460 of index.html) for any option pill, diagram-card title, fill-in label, or match-the-following cell that is English-only, and add natural Marathi so a Marathi-only reader understands it, while keeping any technical English token (CPU, Monitor, etc.) intact. This is additive Marathi; do not remove existing text, do not change marks, images, or structure.",
+  "status": "completed",
+  "steps": [
+    "Read articles id=paper-std-1 through id=paper-std-4 in index.html (approx lines 835-1460).",
+    "Confirm each of Std 1-4 keeps its meta-chip 'एकूण गुण: १०', marks box '/ १०', and tab-subtext '(10 Marks)' unchanged.",
+    "For each opt-pill-neutral option, diagram-card-title, match-grid <td> cell, and any fill/identify label: if it is English-only, add Marathi (primary Marathi with English token in parentheses, matching the neighbouring bilingual style already used in that paper). If it already has Marathi, leave it.",
+    "Do NOT add or remove questions, do NOT change images or image filenames, do NOT change the 10-mark totals or section structure.",
+    "Verify no correct answers are visually marked/revealed."
+  ],
+  "acceptance_criteria": [
+    "Std 1-4 remain visual 10-mark papers with identical structure and identical images/*.jpg references.",
+    "Every option/label/match cell in Std 1-4 that a Marathi-only student would read now contains Marathi (technical tokens like CPU may remain as tokens with a gloss).",
+    "meta-chip 'एकूण गुण: १०', marks box '/ १०', and tab-subtext '(10 Marks)' unchanged for Std 1-4.",
+    "git diff for Std 1-4 is purely additive (no English removed)."
+  ],
+  "verification": [
+    "grep the Std 1-4 article ranges for option-item/opt-pill/td/diagram-card-title lines and confirm none are English-only (each has Devanagari) except pure technical tokens which carry a Marathi gloss.",
+    "Confirm images/ filenames referenced by Std 1-4 are unchanged (git diff shows no img src changes).",
+    "Open index.html in a browser (or structural check) and confirm Std 1-4 tabs still show (10 Marks) and papers render."
+  ],
+  "blocked_reason": null,
+  "findings": "Audited all four Std 1-4 papers (index.html lines 835-1462) element by element: every diagram-card-title, opt-pill-neutral option, match-grid <td> cell, fill-blank label, word-bank-box choice set, label-pointer-item, and section-bar span. RESULT: all four papers are ALREADY fully bilingual with Marathi as the primary/leading language; the only English present is technical tokens carried as parenthetical glosses (e.g. 'मॉनिटर (Monitor)', 'सीपीयू (CPU)', 'प्रिंटर (Printer)', 'हार्ड डिस्क (Hard Disk)', 'आउटपुट साधने (Output Devices)'). No English-only option/label/cell exists that a Marathi-only student would hit. Per-standard: Std 1 (paper-std-1) = already fully bilingual, no change (options माउस/मॉनिटर/कीबोर्ड/सीपीयू, match cells Marathi, diagram labels Marathi). Std 2 (paper-std-2) = already fully bilingual, no change (options + fill-ins + बरोबर/चूक all Marathi, tokens glossed). Std 3 (paper-std-3) = already fully bilingual, no change (word-bank इलेक्ट्रॉनिक (Electronic)/इनपुट (Input)/आउटपुट (Output), all Marathi primary). Std 4 (paper-std-4) = already fully bilingual, no change (diagram titles, options, word-bank, and both match columns Marathi primary with English gloss). Kept 10-mark structure, images/*.jpg references, meta-chip 'एकूण गुण: १०', marks box '/ १०', and tab-subtext '(10 Marks)' all unchanged. NOTE: the user's pasted 20-mark text for Std 1-4 is intentionally NOT applied here (superseded by the explicit instruction to keep Std 1-4 at 10 marks in current pattern with images). No index.html edit was required for FEAT-001; this commit records the audit outcome in task state."
+}
