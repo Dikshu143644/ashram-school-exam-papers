@@ -1,0 +1,20 @@
+{
+  "project_type": "Pure static HTML site (single-page) hosting Government ashram school Computer & AI exam question papers in Marathi/English, grades 1-10",
+  "language": "HTML + inline CSS/JS, bilingual Marathi (Devanagari) / English content",
+  "build_system": "none - static site, no build step, no package manager",
+  "test_framework": "none - verification is manual: read the HTML and re-sum sec-marks per paper",
+  "build_command": "none (open index.html in a browser)",
+  "test_command": "none automated; verification = grep sec-marks/meta totals and re-sum per paper to confirm each edited paper sums to exactly 20; validate HTML structure balance",
+  "verification_instructions": "For each edited paper (Std 5,6,7,8,9,10): (1) extract the sec-marks spans and confirm the Devanagari numerals sum to exactly 20; (2) confirm meta-chips last span reads 'एकूण गुण: २० (Max Marks: 20)'; (3) confirm each section's sec-marks equals the number of gradable q-item/rows in it (1 mark/item) unless explicit per-question [N गुण] tags sum correctly; (4) confirm Q.N numbering is sequential with no gaps/duplicates within each paper; (5) for match sections: rows == stated marks == ans-input boxes; (6) confirm Std 8,9,10 each still contain a descriptive/theory section (विभाग E short-answer and/or विभाग F application) carrying real marks; (7) confirm Std 1,2,3,4 are byte-identical to origin/main; (8) run a tag-balance sanity check (count of opening vs closing article/div).",
+  "snapshot_or_generated_files": "none",
+  "setup_instructions": "Repo already cloned at /projects/sandbox/ashram-school-exam-papers. Work is on branch rebalance-papers-20-marks (already created off latest origin/main which includes merged PR #2 answer-shuffle). No dependencies to install.",
+  "environment_constraints": "No external network needed. No build/test tooling. All work is careful text editing of index.html plus a small markdown table update.",
+  "contribution_requirements": "Do NOT push or open a PR (orchestrator handles). Preserve merged PR #2 shuffled answer positions - never reset correct options back to position A. Preserve all bilingual text, HTML structure, CSS classes. Std 1,2,3,4 must be byte-untouched.",
+  "key_patterns": "Each paper is <article id='paper-std-N'>. meta-chips block's LAST <span> holds total 'एकूण गुण: X (Max Marks: N)'. Sections: <div class='section-bar'><span>विभाग X — TITLE</span><span class='sec-marks'>N गुण [N Marks]</span></div> (Std 1-2 use '[N Marks]' suffix; Std 3-10 use just 'N गुण'). Questions are <div class='q-item'> with <span class='q-no'>Q.N</span>. Match sections use <table class='match-grid'> rows + an <div class='ans-inputs'> row of boxes. Short/long answer use <div class='write-line'></div>. Devanagari numerals: ०१२३४५६७८९, १०=10 ११=11 १२=12 १३=13. Tab labels: <span class='tab-subtext'>Std. N (M Marks)</span> in the nav must also be updated for Std 5-10 to (20 Marks).",
+  "relevant_files": [
+    "index.html (all 10 papers + nav tab-subtext labels)",
+    "Computer_Std_1_to_10_Question_Papers.md (syllabus/difficulty table with per-class marks column; full papers only exist for Std 1-2, so only the table's marks column for Std 5-10 needs updating to 20)",
+    "AI_Exam_Question_Paper.html / .md / AI_Exam_Model_Answer_Key.md (standalone AI paper - confirmed they do NOT contain per-standard 5-10 papers; DO NOT touch)"
+  ],
+  "directory_structure": "Root: index.html (the site, 1741 lines, holds all 10 papers as article#paper-std-1..10). Computer_Std_1_to_10_Question_Papers.md (markdown mirror: syllabus table + full Std 1-2 papers only). AI_Exam_* (separate standalone AI paper). render.yaml (Render deploy config). README.md. .agents/tasks/ (task state)."
+}
