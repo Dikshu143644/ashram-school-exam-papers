@@ -1,0 +1,32 @@
+{
+  "id": "FEAT-001",
+  "type": "fix",
+  "description": "Rebalance Std 5, 6, 7 exam papers in index.html from 30 marks each down to exactly 20 marks each by trimming questions and adjusting sec-marks + the meta-chips total. These are lower-middle grades so they can stay mostly objective (MCQ/fill/true-false/match) with a small short-answer portion. PRESERVE the merged PR #2 shuffled answer positions - do NOT re-order options or reset any correct answer to position A. Preserve all Marathi/English bilingual text, HTML structure and CSS classes; only remove whole q-item blocks / match rows and edit numeric mark labels + totals. Std 1,2,3,4 must remain byte-untouched.",
+  "status": "completed",
+  "steps": [
+    "Std 5 (article#paper-std-5): TARGET blueprint A6 + B3 + C3 + D4 + E4 = 20. (a) विभाग A MCQs currently 8 marks / Q.1-Q.8: DELETE q-item Q.7 and Q.8 (keep Q.1-Q.6), change its sec-marks span from '८ गुण' to '६ गुण'. (b) विभाग B fill currently 4 marks / Q.9-Q.12: DELETE q-item Q.12 (keep 3), change sec-marks '४ गुण' to '३ गुण'. (c) विभाग C true/false stays 3 marks / 3 items - no change. (d) विभाग D जोड्या जुळवा is a 5-row match-grid (rows: Monitor/Keyboard/Mouse/CPU/AI) with sec-marks '५ गुण' and 5 ans-input boxes: REMOVE the LAST table row (the '५. AI' row) so 4 rows remain, REMOVE the last '५ — [ ]' ans-input span so 4 boxes remain, and change sec-marks '५ गुण' to '४ गुण'. Keep the shuffled right-column order of remaining rows intact. (e) विभाग E थोडक्यात उत्तरे currently 10 marks / Q.21-Q.25 (5 items): DELETE one q-item (remove Q.25) so 4 short-answer items remain, change sec-marks '१० गुण' to '४ गुण'. (f) After deletions, RENUMBER every q-no in Std 5 sequentially Q.1..Q.N with no gaps (MCQ Q.1-6, fill Q.7-9, T/F Q.10-12, then short-answer Q.13-16; the match section has no Q.N). (g) Change the meta-chips total span from 'एकूण गुण: ३० (Max Marks: 30)' to 'एकूण गुण: २० (Max Marks: 20)'.",
+    "Std 6 (article#paper-std-6): TARGET A6 + B3 + C3 + D4 + E4 = 20. (a) विभाग A currently 8 / Q.1-Q.8: DELETE Q.7 and Q.8, sec-marks '८ गुण' -> '६ गुण'. (b) विभाग B currently 4 / Q.9-Q.12: DELETE Q.12, sec-marks '४ गुण' -> '३ गुण'. (c) विभाग C stays 3 marks / 3 items. (d) विभाग D 5-row match-grid (Monitor/Keyboard/Mouse/CPU/AI) sec-marks '५ गुण' with 5 boxes: REMOVE last row ('५. AI'), remove last ans-input box, sec-marks '५ गुण' -> '४ गुण'. (e) विभाग E currently 10 / Q.20-Q.24 (5 items): DELETE one q-item so 4 remain, sec-marks '१० गुण' -> '४ गुण'. (f) RENUMBER all q-no sequentially. (g) meta-chips total -> 'एकूण गुण: २० (Max Marks: 20)'.",
+    "Std 7 (article#paper-std-7): TARGET A6 + B3 + C3 + D4 + E4 = 20. (a) विभाग A currently 8 / Q.1-Q.8: DELETE Q.7 and Q.8, sec-marks '८ गुण' -> '६ गुण'. (b) विभाग B stays 3 marks / 3 items (Q.9-Q.11) - no change. (c) विभाग C stays 3 marks / 3 items (Q.12-Q.14). (d) विभाग D already a 4-row match-grid with 4 boxes and sec-marks '४ गुण' - no change to rows/boxes. (e) विभाग E currently 12 marks / Q.19-Q.23 (5 items): DELETE one q-item so 4 remain, sec-marks '१२ गुण' -> '४ गुण'. (f) RENUMBER all q-no sequentially. (g) meta-chips total -> 'एकूण गुण: २० (Max Marks: 20)'.",
+    "Update the nav class-tabs in index.html: change the <span class='tab-subtext'> text for Std 5, 6, 7 from 'Std. 5 (30 Marks)' / 'Std. 6 (30 Marks)' / 'Std. 7 (30 Marks)' to '(20 Marks)' variants.",
+    "After editing, self-verify: for Std 5,6,7 extract sec-marks values and confirm they sum to exactly 20, confirm each sec-marks equals the count of gradable items in that section, confirm meta total shows २० / 20, and confirm Q.N is sequential with no gaps or duplicates."
+  ],
+  "acceptance_criteria": [
+    "Std 5 sec-marks sum to exactly 20 and meta-chips reads 'एकूण गुण: २० (Max Marks: 20)'",
+    "Std 6 sec-marks sum to exactly 20 and meta-chips reads 'एकूण गुण: २० (Max Marks: 20)'",
+    "Std 7 sec-marks sum to exactly 20 and meta-chips reads 'एकूण गुण: २० (Max Marks: 20)'",
+    "In each of Std 5,6,7 every section's sec-marks equals the actual number of gradable q-item/match-rows in it",
+    "Match sections kept have rows == stated marks == number of ans-input boxes",
+    "Q.N numbering within each of Std 5,6,7 is sequential with no gaps or duplicates",
+    "Shuffled option/answer order from merged PR #2 is preserved (no correct answers reset to position A)",
+    "nav tab-subtext for Std 5,6,7 shows (20 Marks)",
+    "Std 1,2,3,4 articles are byte-identical to origin/main (git diff shows no changes in those line ranges)"
+  ],
+  "verification": [
+    "Run: grep -n 'sec-marks' index.html within each of the paper-std-5/6/7 article ranges and manually re-sum the Devanagari numerals; confirm each paper totals 20",
+    "Run: grep -n 'एकूण गुण' index.html and confirm Std 5,6,7 meta lines show २० (Max Marks: 20)",
+    "Run: git diff origin/main -- index.html and confirm the paper-std-1..4 regions are unchanged",
+    "Count opening vs closing <article ...> and per-paper <div> balance did not break (visual read of the edited regions)"
+  ],
+  "blocked_reason": null,
+  "findings": "All three papers rebalanced to A6+B3+C3+D4+E4 = 20. Std 5: A 8->6 (deleted MCQ Q.7,Q.8), B 4->3 (deleted last fill Q.12), C 3 unchanged, D 5->4 (removed AI match row + last ans box), E 10->4 (deleted last short-answer Q.25); renumbered Q.1-16. Std 6: A 8->6 (deleted Q.7,Q.8), B 4->3 (deleted Q.12), C 3 unchanged, D 5->4 (removed AI row + box), E 10->4 (deleted last short-answer); renumbered Q.1-16. Std 7: A 8->6 (deleted Q.7,Q.8), B 3 unchanged, C 3 unchanged, D 4 unchanged (already 4 rows/boxes), E 12->4 (deleted last short-answer Q.23); renumbered Q.1-16. All meta totals set to 'एकूण गुण: २० (Max Marks: 20)'. Nav tab-subtext for Std 5,6,7 set to (20 Marks). Verified: each paper sec-marks sum=20, q-no sequential 1-16, match rows==marks==boxes==4. Std 1-4 papers byte-untouched (git diff confirms only nav-tab 5/6/7 and paper-std-5/6/7 regions changed). Shuffled PR #2 answer order preserved: only whole q-items/last match row removed, no option reordering. No build/test system (static HTML); verification via grep re-sum. Did NOT commit per orchestrator instruction."
+}

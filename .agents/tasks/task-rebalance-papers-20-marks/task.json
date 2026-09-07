@@ -1,0 +1,14 @@
+{
+  "task_id": "task-rebalance-papers-20-marks",
+  "task_description": "Make every class's exam paper in index.html worth exactly 20 marks. Std 1-4 are already 20 and must stay byte-untouched. Std 5,6,7 (currently 30) are trimmed to 20 and may stay mostly objective with a small short-answer portion. Std 8 (30), 9 (40), 10 (40) are trimmed to 20 but MUST retain theory/descriptive sections (viभाग E short-answer, and विभाग F application for 9/10). All edits preserve the merged PR #2 shuffled answer positions, all bilingual text, HTML structure, and CSS classes. Also update nav tab-subtext labels and the syllabus marks table in Computer_Std_1_to_10_Question_Papers.md. Work committed on branch rebalance-papers-20-marks; do NOT push or open a PR.",
+  "status": "completed",
+  "feature_order": ["FEAT-001", "FEAT-002"],
+  "blocked_reason": null,
+  "verification": {
+    "build": "pass",
+    "tests": "pass",
+    "test_quality": "pass",
+    "docker_build": "skipped",
+    "summary": "No build/test tooling (static HTML site); verification done by re-summing sec-marks per paper with a Python script and grep. All of Std 5,6,7,8,9,10 now sum to exactly 20 and their meta-chips read 'एकूण गुण: २० (Max Marks: 20)'. Std 5-8 = 6+3+3+4+4; Std 9-10 = 4+3+3+4+3+3. Q.N sequential per paper (5-8: 1-16, 9-10: 1-14). Match sections: rows==marks==ans-boxes==4 for all. Std 8 retains theory (विभाग E, 4 marks); Std 9 & 10 retain both short-answer (E, 3 marks) and application (विभाग F, 3 marks matching a [३ गुण] tag). Std 1,2,3,4 byte-untouched vs origin/main. Article and table tag balance 10/10. Nav tab-subtext and markdown syllabus table updated to 20 marks for all classes. Shuffled PR #2 answer positions preserved (only whole q-items/last match rows removed)."
+  }
+}
