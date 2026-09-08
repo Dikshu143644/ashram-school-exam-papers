@@ -1,0 +1,7 @@
+{
+  "task_id": "task-or-std5-10-blank-std1-4",
+  "task_description": "Add 'किंवा / OR' internal-choice question pairs to Std 5-10 (OR-alternative text sourced from PR#2 commit c8174d0 for the same standard, mark-neutral so each paper stays at 20), and blank the इयत्ता (Std) field value in the student-info box for Std 1-4 only while keeping Std 1-4 questions otherwise byte-identical. Single file: index.html.",
+  "status": "in_progress",
+  "feature_order": ["FEAT-001"],
+  "blocked_reason": null
+}

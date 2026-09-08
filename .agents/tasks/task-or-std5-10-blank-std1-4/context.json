@@ -1,0 +1,19 @@
+{
+  "project_type": "Single-file static bilingual (Marathi/English) exam-paper website. No framework, no build system.",
+  "language": "HTML + inline CSS (Vanilla). Devanagari + English bilingual content.",
+  "build_system": "none",
+  "test_framework": "none (manual browser/print verification)",
+  "build_command": "none",
+  "test_command": "none",
+  "verification_instructions": "Open index.html in a browser. Validate HTML well-formedness. Confirm each Std 5-10 paper still totals 20 marks (sec-marks per section, meta-chip 'एकूण गुण: २०', marks box '/ २०', tab-subtext '(20 Marks)' all consistent). Confirm OR blocks render with or-divider styling and blank answer-space/ruled-line. Confirm Std 1-4 इयत्ता value is blank and Std 1-4 questions are otherwise byte-identical to current main.",
+  "snapshot_or_generated_files": "null",
+  "setup_instructions": "None. Repo is at /projects/sandbox/ashram-school-exam-papers on branch add-or-questions-std5-10-blank-std1-4-class off latest origin/main (19b4c5a).",
+  "environment_constraints": "Network mode: none needed. No package installs. All 10 papers live in index.html (~3002 lines) as <article id='paper-std-1..10'>.",
+  "contribution_requirements": "Preserve all existing HTML structure, CSS classes, images, headers, bilingual text, blank-answer approach. Do NOT reveal correct answers. Do NOT reorder MCQ options. Std 1-4 stay 10 marks; Std 5-10 stay exactly 20 marks and internally consistent.",
+  "key_patterns": "OR markup MUST reuse existing CSS classes (defined in <style>): .or-divider (with inner <span>), .q-marks-tag, .answer-space, .ans-prompt, .ruled-line. Short-answer questions use pattern: <div class=\"q-item\"><div class=\"q-title\"><span class=\"q-no\">Q.N</span> <div>MARATHI<span class=\"q-en\">English</span></div> <span class=\"q-marks-tag\">[१ गुण]</span></div><div class=\"answer-space\"><span class=\"ans-prompt\">उत्तर (Answer):</span><div class=\"ruled-line\"></div><div class=\"ruled-line\"></div></div></div>. OR pair markup (per orchestrator, classes already exist): give the target question a Q.N (A) label, insert <div class=\"or-divider\"><span>— किंवा / OR —</span></div>, then a Q.N (B) q-title with the PR#2-sourced alternative and SAME q-marks-tag, then a SINGLE shared answer-space (student answers one). Keep technical tokens (Input, Output, CPU, AI, Icon, Monitor, Keyboard, Mouse, Shut Down, Program, Application, YouTube) in English with Marathi gloss as existing papers do.",
+  "relevant_files": [
+    "index.html (the only file to edit)",
+    "PR#2 source is git commit c8174d0:index.html (regenerate to /tmp/pr2_index.html with: git show c8174d0:index.html > /tmp/pr2_index.html)"
+  ],
+  "directory_structure": "index.html = master viewer with all 10 papers. Std 5 article starts ~line 1465; Std 6 ~1718; Std 7 ~1971; Std 8 ~2224; Std 9 ~2477; Std 10 ~2716. Std 1-4 इयत्ता <strong> values at lines 859, 1021, 1175, 1329."
+}
