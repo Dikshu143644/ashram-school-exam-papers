@@ -4,6 +4,11 @@
   "status": "completed",
   "feature_order": ["FEAT-001"],
   "blocked_reason": null,
+  "review": {
+    "verdict": "APPROVED",
+    "iterations": 1,
+    "review_file": ".agents/tasks/task-or-std5-10-blank-std1-4/2026-09-08-030554-review.md"
+  },
   "verification": {
     "build": "pass",
     "tests": "pass",
